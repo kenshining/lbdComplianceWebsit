@@ -1,0 +1,127 @@
+<% include ../navheader.html %>
+<script type="text/javascript" src="/dist/javascripts/helpCenter/helpCenter_control.min.js?v=9437d355b5"></script>
+<div class="helpCenterOverview_wrapper">
+	<!-- 新手指引 -->
+	<div class="novice_guide_wrapper">
+		<h2>新手指引</h2>
+		<div class="flex_box">
+			<section class="flex_item">
+				<em class='icon icon-zh-help-guide1'></em>
+				<div>
+					<h3>成为会员</h3>
+					<p>注册&nbsp;>&nbsp;认证</p>
+				</div>
+			</section>
+			<section class="flex_item">
+				<em class='icon icon-zh-help-guide2'></em>
+				<div>
+					<h3>投资流程</h3>
+					<p>充值&nbsp;>&nbsp;投资&nbsp;>&nbsp;回款</p>
+			</section>
+			<section class="flex_item">
+				<em class='icon icon-zh-help-guide3'></em>
+				<div>
+					<h3>借款流程</h3>
+					<p>借款&nbsp;>&nbsp;还款</p>
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- 快捷服务 -->
+	<div class='clipper_service_wrapper'>
+		<h2>快捷服务</h2>
+		<div class='flex_box'>
+			<section class='flex_item'>
+				<a href="/account/accountOverview?v=/account/securitySetting/reviseMobile&m=securitySetting_sub_m_btn">
+					<em class="icon icon-zh-help-service1"></em>
+					<em class="icon icon_h icon-zh-help-sevice1"></em>
+				</a>
+				<h4>修改手机号码</h4>
+			</section>
+			<section class='flex_item'>
+				<a href="/user/forget_password">
+					<em class="icon icon-zh-help-service2"></em>
+					<em class="icon icon_h icon-zh-help-sevice2"></em>
+				</a>
+				<h4>找回登录密码</h4>
+			</section>
+			<section class='flex_item'>
+				<a href="/account/accountOverview?v=/account/securitySetting/reviseLoginPwd&m=securitySetting_sub_m_btn">
+					<em class="icon icon-zh-help-service3"></em>
+					<em class="icon icon_h icon-zh-help-sevice3"></em>
+				</a>
+				<h4>修改登录密码</h4>
+			</section>
+			<section class='flex_item'>
+				<a onclick="reviseBindBankCard();">
+					<em class="icon icon-zh-help-service4"></em>
+					<em class="icon icon_h icon-zh-help-sevice4"></em>
+				</a>
+				<h4>更换银行卡</h4>
+			</section>
+			<section class='flex_item'>
+				<a href="/account/accountOverview?v=/account/securitySetting/findDealPwd&m=securitySetting_sub_m_btn">
+					<em class="icon icon-zh-help-service5"></em>
+					<em class="icon icon_h icon-zh-help-sevice5"></em>
+				</a>
+				<h4>找回交易密码</h4>
+			</section>
+			<section class='flex_item'>
+				<a href="/account/accountOverview?v=/account/securitySetting/reviseDealPwd&m=securitySetting_sub_m_btn">
+					<em class="icon icon-zh-help-service6"></em>
+					<em class="icon icon_h icon-zh-help-sevice6"></em>
+				</a>
+				<h4>修改交易密码</h4>
+			</section>
+		</div>
+	</div>
+	<!-- 常见问题 -->
+	<div class='common_problem_wrapper'>
+		<h2>常见问题</h2>
+		<ul>
+			<li>
+				<h4><em class='icon icon-zh-help-hr'></em>我要投资</h4>
+				<ol>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/investmentProblem/investGuide&m=investGuide_sub_m_btn">投资指引</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/investmentProblem/investPlay&m=investPlay_sub_m_btn">投资演示</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/investmentProblem/transferOperation&m=transferOperation_sub_m_btn">转让操作</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/investmentProblem/investCommonProblem&m=investCommonProblem_sub_m_btn">投资常见问题</a></li>
+				</ol>
+			</li>
+			<li class='bottom'>
+				<h4><em class='icon icon-zh-help-hr'></em>账户管理</h4>
+				<ol>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/accountManagement/loginAndRegist&m=loginAndRegist_sub_m_btn">注册/登录</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/accountManagement/setPassword&m=setPassword_sub_m_btn">密码设置</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/accountManagement/rechargeProblem&m=rechargeProblem_sub_m_btn">充值</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/accountManagement/withdrawProblem&m=withdrawProblem_sub_m_btn">提现</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/accountManagement/authProblem&m=authProblem_sub_m_btn">安全认证</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/accountManagement/newsProblem&m=newsProblem_sub_m_btn">消息</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/accountManagement/rewardProblem&m=rewardProblem_sub_m_btn">奖励</a></li>
+				</ol>
+			</li>
+		</ul>
+
+		<ul>
+			<li>
+				<h4><em class='icon icon-zh-help-hr'></em>我要借款</h4>
+				<ol>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/loanManagement/loanGuide&m=loanGuide_sub_m_btn">借款指引</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/loanManagement/loanPlay&m=loanPlay_sub_m_btn">借款演示</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/loanManagement/repayment&m=repayment_sub_m_btn">还款</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/loanManagement/loanCommonProblem&m=loanCommonProblem_sub_m_btn">借款常见问题</a></li>
+				</ol>
+			</li>
+			<li class='bottom'>
+				<h4><em class='icon icon-zh-help-hr'></em>安全保障</h4>
+				<ol>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/securityGuarantee/policyAndLaw&m=policyAndLaw_sub_m_btn">政策与法律</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/securityGuarantee/windControlSystem&m=windControlSystem_sub_m_btn">风控体系</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/securityGuarantee/capitalSecurity&m=capitalSecurity_sub_m_btn">资金安全</a></li>
+					<li><a href="/helpCenter/commonProblemOverview?v=/helpCenter/securityGuarantee/informationSafety&m=informationSafety_sub_m_btn">信息安全</a></li>
+				</ol>
+			</li>
+		</ul>
+	</div>
+<% include ../footer.html %>
+</div>

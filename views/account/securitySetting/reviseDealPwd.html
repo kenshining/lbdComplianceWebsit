@@ -1,0 +1,32 @@
+<script type="text/javascript" src="/dist/javascripts/account/reviseDealPwd_control.min.js?v=f149c8f39f"></script>
+<div class="securitySetting_title">
+	<a class='orange' onclick="changeCurrentMenu('/account/securitySetting/securitySetting','securitySetting_sub_m_btn');">账户信息</a>
+	<a class='gary' href="javascript:;">> 修改交易密码</a>
+</div>
+<div class="reviseDealPwd_wrapper">
+	<div class="securitySetting_form_wrapper">
+		<section>
+			<span class='l'>原交易密码</span>
+			<div class="s_input_wrapper"><input maxlength="6" id="old_pwd" type="password" placeholder="请输入原交易密码" maxlength="20" /></div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+		<section>
+			<span class='l'>新交易密码</span>
+			<div class="s_input_wrapper"><input maxlength="6" id="new_pwd" type="password" placeholder="请输入新交易密码" maxlength="20" /></div>
+			<div class="set_tip hide">6位纯数字</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+		<section>
+			<span class='l'>确认交易密码</span>
+			<div class="s_input_wrapper"><input maxlength="6" id="ok_pwd" type="password" placeholder="请输入新交易密码"  maxlength="20"/></div>
+			<div class="set_tip hide">6位纯数字</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+		<section style='margin-top: 50px;'>
+			<span class='l'></span>
+			<input id="reviseDealPwd_btn" type="button" value='确定' class='btn revise_mobile_btn'>
+		</section>
+	</div>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+

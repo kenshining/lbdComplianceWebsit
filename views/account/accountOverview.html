@@ -1,0 +1,11 @@
+<% include ../navheader.html %>
+<script type="text/javascript" src="/dist/javascripts/account/accountOverview_control.min.js?v=7fb74085a9"></script>
+<div class='account_wrapper clearfix'>
+	<div id="accountBasicTopBar" class='accountBasicTopBar clearfix'></div>
+	<div id="accountMenu" class='accountMenu left'></div>
+	<div id='accountView' class="accountView right"></div>
+</div>
+<input type="hidden" id="accountViewParam" value="<%=view%>"/>
+<input type="hidden" id="accountMenuParam" value="<%=menu%>"/>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+<% include ../footer.html %>

@@ -1,0 +1,238 @@
+<script type="text/javascript" src="/dist/javascripts/account/investmentView_control.min.js?v=fc29f2b4bc"></script> 
+<div class="lmybody">
+	<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+	<div class="lmy_investBaseInfo lmy_background">
+		<div class="baseinfo">
+			<p class="value orange">￥<span id="totalInvestment"> </span></p>
+			<p class="text">投资总额</p>
+			<p class="value lmy_textblack">￥<span id='redAmount'></span></p>
+			<p class="text">使用红包金额</p> 
+		</div>
+		<div class="baseinfo">
+			<p class="value orange">￥<span id='receivePrincipal'> </span></p>
+			<p class="text">待收本金</p>
+			<p class="value lmy_textblack">￥<span id='receivedBj'> </span></p>
+			<p class="text">已收本金</p> 
+		</div>
+		<div class="baseinfo">
+			<p class="value orange">￥<span id='receivedInterest'> </span></p>
+			<p class="text">待收利息</p> 
+			<p class="value lmy_textblack">￥<span id='receivedLx'> </span></p>
+			<p class="text">已收利息</p>
+		</div>
+	</div> 
+	<div class="lmy_investList lmy_background">
+		<div class="queryCon clearfix">
+			<span class="queryType">投资日期</span> 
+			<ul id="investDate" data-type='investDate'>
+				<li class="click">
+					<a class="selected" href="javascript:void(0);" data-value="">
+						全部
+					</a>
+				</li>
+				<li class="click">
+					<a href="javascript:void(0);" data-value="7">
+						近7天 
+					</a>
+				</li>
+				<li class="click">
+					<a href="javascript:void(0);" data-value="30">
+						近1个月 
+					</a>
+				</li>
+				<li class="click">
+					<a href="javascript:void(0);" data-value="90">
+						近3个月 
+					</a>
+				</li>
+				<li class="click">
+					<a href="javascript:void(0);" data-value="180">
+						近6个月 
+					</a>
+				</li>
+				<li class="click">
+					<a href="javascript:void(0);" data-value="365">
+						近1年 
+					</a>
+				</li>
+				<li class="dateLi">
+					<input type="text" class="dateInput" id="fromDate" readonly='true' placeholder="开始日期"/>
+				</li>
+				<li class="sperateLine">—</li>
+				<li class="dateLi">
+					<input type="text" class="dateInput" id="endDate" readonly='true' placeholder="结束日期"/>
+				</li>
+			</ul> 
+		</div>
+		<div class="queryCon clearfix queryCon2">
+			<span class="queryType">标的状态</span> 
+			<ul data-type='targetState'>
+				<li class="click">
+					<a class="selected" href="javascript:void(0);" data-value=''>
+						全部
+					</a>
+				</li>
+				<li class="click">
+					<a class="" href="javascript:void(0);" data-value='1'>
+						投资中 
+					</a>
+				</li>
+				<li class="click">
+					<a href="javascript:void(0);" data-value='2'>
+						回款中 
+					</a>
+				</li>
+				<li class="click">
+					<a href="javascript:void(0);" data-value='3'>
+						已完结 
+					</a>
+				</li>  
+				<li class="click">
+					<a href="javascript:void(0);" data-value='4'>
+						已流标 
+					</a>
+				</li> 
+			</ul> 
+		</div>
+		<div class="investListTable">
+			<table>
+				<thead>
+					<tr>
+						<td style="width:14.6%;">借款编号</td>
+						<td style="width:11%;">预期年化收益率</td>
+						<td style="width:16.2%;">投资时间</td>
+						<td style="width:11%;">投资金额(元)</td>
+						<td style="width:19%;">计息时间</td>
+						<td style="width:4.8%;">期数</td>
+						<td style="width:10.1%;">待收本息(元)</td>
+						<td style="width:6.5%;">状态</td>
+						<td style="width:5.5%;">操作</td>
+					</tr>
+				</thead>
+				<tbody id="investmentList">
+					<!-- <tr>
+						<td><a onclick="changeCurrentMenu('/account/investment/investmentViewDesp','investmentView_sub_m_btn');" class="viewLink" href="javascript:void(0);">20161103636785</a></td>
+						<td>9%</td>
+						<td>2016-02-04 18:00:00</td>
+						<td>500,000.00</td>
+						<td>－－</td>
+						<td>－－</td>
+						<td>－－</td>
+						<td>投标中</td>
+						<td>－－</td>
+					</tr>
+					<tr>
+						<td><a class="viewLink" href="javascript:void(0);">20161103636785</a></td>
+						<td>9%</td>
+						<td>2016-02-04 18:00:00</td>
+						<td>2,000,000.00</td>
+						<td>2016-02-04~2016-02-04</td>
+						<td>1/6</td>
+						<td>2,000,000.00</td>
+						<td>回款中</td>
+						<td><a class="viewLink" href="javascript:void(0);">查看</a></td>
+					</tr>
+					<tr>
+						<td><a class="viewLink" href="javascript:void(0);">20161103636785</a></td>
+						<td>9%</td>
+						<td>2016-02-04 18:00:00</td>
+						<td>2,000,000.00</td>
+						<td>2016-02-04~2016-02-04</td>
+						<td>1/6</td>
+						<td>2,000,000.00</td>
+						<td>回款中</td>
+						<td><a class="viewLink" href="javascript:void(0);">查看</a></td>
+					</tr>
+					<tr>
+						<td><a class="viewLink" href="javascript:void(0);">20161103636785</a></td>
+						<td>9%</td>
+						<td>2016-02-04 18:00:00</td>
+						<td>2,000,000.00</td>
+						<td>2016-02-04~2016-02-04</td>
+						<td>1/6</td>
+						<td>2,000,000.00</td>
+						<td>回款中</td>
+						<td><a class="viewLink" href="javascript:void(0);">查看</a></td>
+					</tr>
+					<tr>
+						<td><a class="viewLink" href="javascript:void(0);">20161103636785</a></td>
+						<td>9%</td>
+						<td>2016-02-04 18:00:00</td>
+						<td>2,000,000.00</td>
+						<td>2016-02-04~2016-02-04</td>
+						<td>1/6</td>
+						<td>2,000,000.00</td>
+						<td>回款中</td>
+						<td><a class="viewLink" href="javascript:void(0);">查看</a></td>
+					</tr>
+					<tr>
+						<td><a class="viewLink" href="javascript:void(0);">20161103636785</a></td>
+						<td>9%</td>
+						<td>2016-02-04 18:00:00</td>
+						<td>2,000,000.00</td>
+						<td>2016-02-04~2016-02-04</td>
+						<td>1/6</td>
+						<td>2,000,000.00</td>
+						<td>回款中</td>
+						<td><a class="viewLink" href="javascript:void(0);">查看</a></td>
+					</tr>
+					<tr>
+						<td><a class="viewLink" href="javascript:void(0);">20161103636785</a></td>
+						<td>9%</td>
+						<td>2016-02-04 18:00:00</td>
+						<td>2,000,000.00</td>
+						<td>2016-02-04~2016-02-04</td>
+						<td>1/6</td>
+						<td>2,000,000.00</td>
+						<td>回款中</td>
+						<td><a class="viewLink" href="javascript:void(0);">查看</a></td>
+					</tr>
+					<tr>
+						<td><a class="viewLink" href="javascript:void(0);">20161103636785</a></td>
+						<td>9%</td>
+						<td>2016-02-04 18:00:00</td>
+						<td>2,000,000.00</td>
+						<td>2016-02-04~2016-02-04</td>
+						<td>1/6</td>
+						<td>2,000,000.00</td>
+						<td>回款中</td>
+						<td><a class="viewLink" href="javascript:void(0);">查看</a></td>
+					</tr>
+					<tr>
+						<td><a class="viewLink" href="javascript:void(0);">20161103636785</a></td>
+						<td>9%</td>
+						<td>2016-02-04 18:00:00</td>
+						<td>2,000,000.00</td>
+						<td>2016-02-04~2016-02-04</td>
+						<td>1/6</td>
+						<td>2,000,000.00</td>
+						<td>回款中</td>
+						<td><a class="viewLink" href="javascript:void(0);">查看</a></td>
+					</tr>
+					<tr>
+						<td><a class="viewLink" href="javascript:void(0);">20161103636785</a></td>
+						<td>9%</td>
+						<td>2016-02-04 18:00:00</td>
+						<td>2,000,000.00</td>
+						<td>2016-02-04~2016-02-04</td>
+						<td>1/6</td>
+						<td>2,000,000.00</td>
+						<td>回款中</td>
+						<td><a class="viewLink" href="javascript:void(0);">查看</a></td>
+					</tr> -->
+				</tbody>
+				<!-- <tbody>
+					<tr class="datanull">
+						<td colspan="9">
+							<div class="contentNullImg"></div>
+							<div class="contentNullText">暂无投资记录</div>
+						</td>
+					</tr>
+				</tbody>  -->
+			</table>
+		</div>
+		<div class="lmy_investPage">
+			<div id="investListPage"></div>
+		</div>
+	</div> 
+</div>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title><%=title%></title>
+	    <!--使用webkit内核-->
+		<meta name="renderer" content="webkit">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	    <!--避免IE使用兼容模式-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	    <meta baidu-gxt-verify-token="7cf3f0d6913ab476a3bb13b48d592221">
+	    <meta name="sogou_site_verification" content="ltlCd1kPBx">
+	    <meta http-equiv="Cache-Control" content="no-transform" >
+	    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+		<meta name="keywords" content="">
+	    <meta name="description" content="">
+
+	    <!--DNS PreFetch content="on" or "off"-->
+	    <!-- <meta http-equiv="x-dns-prefetch-control" content="off"> -->
+	    <!-- <link rel="dns-prefetch" href="https://www.lebaidai.com"> -->
+
+	    <link rel="stylesheet" href="/dist/stylesheets/style.min.css?v=d2c86e0cb8"/>
+	    <link rel="stylesheet" href="/dist/icon/sprite.css?v=1ab684fb46"/>
+	    <link rel="stylesheet" href="/plugins/layer/skin/layer.css"/>
+
+		<script type="text/javascript" src="/plugins/html5Css3/html5.js"></script>
+		<script type="text/javascript" src="/plugins/html5Css3/css3-mediaqueries.js"></script>
+	    <script type="text/javascript" src="/plugins/jQuery/jquery-1.12.0.min.js"></script>
+	    <script type="text/javascript" src="/plugins/jQuery/jquery.cookie.js"></script>
+	    <script type="text/javascript" src="/plugins/placeholder/jquery-placeholder.js"></script>
+	    <script type="text/javascript" src="/plugins/md5/md5.js"></script>
+	    <script type="text/javascript" src="/plugins/layer/layer.js"></script>
+	    <script type="text/javascript" src="/dist/javascripts/base.min.js?v=30c2134f9d>"></script>
+		<script type="text/javascript" src="/dist/javascripts/CommonUtils.min.js?v=194e4994e9>"></script>
+		<script type="text/javascript" src="/dist/javascripts/CommonValidationUtils.min.js?v=953c45f32f>"></script>
+		<script type="text/javascript" src="/dist/javascripts/CommonValidationEmu_zh_cn.min.js?v=6bb17932fb>"></script>
+		<script type="text/javascript" src="/dist/javascripts/jquery.lbdAjax.min.js?v=b1ffdcc5a6>"></script>
+		<!-- <script type="text/javascript" src="/dist/javascripts/window.error.monitor.min.js?v=31b04c175c>"></script> -->
+		
+		
+	    <script type="text/javascript">
+	    function placeholderSupport() {
+            return 'placeholder' in document.createElement('input');
+        };
+        $(function () {
+            //通过value模拟placeholder
+            //$('input').placeholder();
+            //默认使用IE8模式下支持placeholder属性，使用Span模拟。
+            //不支持IE8以下浏览器模式
+            //通过插入元素模拟placeholder
+            if(!placeholderSupport()){   // 判断浏览器是否支持 placeholder
+                $('[placeholder]').focus(function() {
+                    var input = $(this);
+                    if (input.val() == input.attr('placeholder')) {
+                        input.val('');
+                        input.removeClass('placeholder');
+                    }
+                }).blur(function() {
+                    var input = $(this);
+                    if (input.val() == '' || input.val() == input.attr('placeholder')) {
+                        input.addClass('placeholder');
+                        input.val(input.attr('placeholder'));
+                    }
+                }).blur();
+            };
+            $(".topbar .login .follow").on("mouseover", function (e) {
+                $(".ercode").css("display", "block");
+            });
+
+            $(".topbar .login .follow").on("mouseout", function (e) {
+                $(".ercode").css("display", "none");
+            });
+
+            //修改手机号的格式 undefined
+      		var telephone=$('#telephone').html()==undefined?'':$('#telephone').html();
+      		var regmobile=/^(.{3})(.{4})(.{4})$/;
+	 	 	if(telephone!=''){ 
+	 	 		$('#telephone').html(telephone.replace(regmobile,'$1****$3'));
+	 	 	}
+ 
+        });
+	    </script>
+    </head>
+	<body>
+	<!-- 登录注册页面头部部分 -->
+	<div class='header_bar_wrapper'>
+		<div class="header_bar">
+			<div class="welcome">
+			    <span class="icon_c"></span>
+			    <span><em class='icon-t' style='display: inline-block;position: relative;right: 3px;top:2px'></em>欢迎致电：010-57170465 / 57170470 / 59488174</span><span> 服务时间：周一至周六 9:30-18:00777777</span>
+			</div>
+			<ol class="nav">
+				<%if(userInfo && userInfo != null){%>
+				<!--用户登录判断-->
+				<li><a href="/account/accountOverview">欢迎您，<span id="telephone"><%=userInfo.telephone%></span></a></li>
+				<li><a href="#" onclick="logout();">退出</a></li>
+				<%}else{%>
+				<li><a href="/user/login" target='_blank' id='login_href'>登录</a></li> 
+				<li><a href="/user/regist" target='_blank' id='regist_href'>注册</a></li>
+				<%}%>
+				<li><a id='nav_header_bar_noviceGuide' href="/noviceGuide/noviceGuide">新手指引</a></li>
+				<li><a href="#">活动专区</a></li>
+				<li><a id='nav_header_bar_helpCenter' href="/helpCenter/helpCenter">帮助中心</a></li>
+			</ol>
+		</div>
+	</div>
+
+	

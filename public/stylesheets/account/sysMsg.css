@@ -1,0 +1,123 @@
+.sysMsg_wrapper{
+	width: 944px;
+	background: #f9fcff;
+	box-sizing: border-box;
+	padding: 0 28px;
+	padding-bottom: 50px;
+}
+.sysMsg_topBtn_wrapper{
+	width: 100%;
+	height: 28px;
+ 	padding-top: 22px;
+}
+.sysMsg_topBtn_wrapper li{
+	float: right;
+	margin-left: 20px; 
+}
+.sysMsg_topBtn_wrapper li a{
+	float: left;
+	width: 42px;
+	height: 28px;
+	background: none;
+	border-radius: 4px;
+	color:#253b4c;
+	text-align:center;
+	line-height: 28px;
+	font-size: 14px;
+}
+.sysMsg_topBtn_wrapper li a.on{
+	background: #ff7a33;
+	color:#fff7f3;
+}
+
+.sysMsg_list_wrapper div.icon{
+	width: 14px;
+	height: 14px;
+	border:1px #2a84d8 solid;
+	border-radius: 4px;
+	position: absolute;
+	left:8px;
+	top:26px;
+}
+.sysMsg_list_wrapper li a.up{
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+}
+.sysMsg_list_wrapper a.icon{
+	position: absolute;
+	right:8px;
+	top:30px;
+	transition: all .2s;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-ms-transition: all .2s;
+	-o-transition: all .2s;
+}
+.sysMsg_list_wrapper li{
+	position: relative;
+	height: 67px;
+	line-height: 67px;
+	border-bottom: 1px solid #e4e9ee;
+	box-sizing: border-box;
+	padding-left: 47px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: height .2s;
+	-webkit-transition: height .2s;
+	-moz-transition: height .2s;
+	-ms-transition: height .2s;
+	-o-transition: height .2s;
+}
+.sysMsg_list_title {
+	position: relative;
+	height: 67px;
+	line-height: 67px;
+	border-bottom: 1px solid #e4e9ee;
+	box-sizing: border-box;
+	padding-left: 47px;
+	color:#253b4c;
+}
+.sysMsg_list_wrapper .time_box{
+	color:#253b4c;
+}
+.sysMsg_list_wrapper li .red{
+	position: absolute;
+    left: 32px;
+    top: 30px;
+    width: 8px;
+    height: 8px;
+    background: #ff3431;
+    border-radius: 999px;
+    border:1px solid transparent;
+}
+.sysMsg_list_wrapper li[data-isRead=true] .red{
+    display: none;
+}
+.sysMsg_list_wrapper li:hover{
+	background: #ebf2fe;
+}
+.sysMsg_list_wrapper li[data-isRead=true]:hover .red{
+	display: block;
+	background: #f9fcff;
+	border:1px solid #c1c9d2;
+}
+.sysMsg_list_wrapper .time{
+	float: right;
+	width: 300px;
+	text-align:left;
+}
+.sysMsg_list .time{
+	color:#7285a0;
+}
+.sysMsg_list_wrapper li p{
+	color: #7285a0;
+	font-size: 14px;
+	line-height: 1.8;
+	padding-bottom: 20px;
+}
+.sysMsg_wrapper .pagenation{
+	bottom: 0;
+}

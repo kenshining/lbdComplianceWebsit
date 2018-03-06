@@ -1,0 +1,109 @@
+<% include ../navheader.html %> 
+<div class="invest_main"> 
+	<div class="invest_content">
+		<!-- <div class="invest_webmap">
+			<a href="#" class="orange">我要投资</a>
+			>
+			<a href="#">项目详情</a>
+		</div> -->
+		<div class="invest_filter">
+			<div class="filter_type filter">
+				<div class="typename"><span>类型</span></div>
+				<ul data-id="swDklx">
+					<li data-id="" class="filterall select">
+						<a href="#">全部</a></li>
+ 					<li data-id="104"><a href="#">房产周转贷</a></li>
+					<li data-id="103"><a href="#">车辆周转贷</a></li>
+					<li data-id="105"><a href="#">个人消费贷</a></li>
+					<li data-id="106"><a href="#">个体经营贷</a></li>
+					<li data-id="107"><a href="#">农业贷</a></li>
+					<li data-id="108"><a href="#">企业经营贷</a></li>
+				</ul>
+			</div>
+			<div class="filter_deadline filter">
+				<div class="typename"><span>期限</span></div>
+				<ul data-id="swFkqx">
+					<li data-id=""  class="filterall select">
+						<a href="#">全部</a></li>
+					<li data-id="0,1"><a href="#">0-1个月</a></li>
+					<li data-id="1,3"><a href="#">1-3个月</a></li>
+					<li data-id="3,6"><a href="#">3-6个月</a></li>
+					<li data-id="6,12"><a href="#">6-12个月</a></li>
+					<li data-id="12"><a href="#">12个月以上</a></li> 
+				</ul>
+			</div>  
+			<div class="filter_rate filter">
+				<div class="typename"><span>利率</span></div>
+				<ul data-id="rate">
+					<li data-id='' class="filterall select"><a href="#">全部</a> </li>
+					<li data-id='0,6'><a href="#">0-6%</a></li>
+					<li data-id='6,12'><a href="#">6-12%</a></li>
+					<li data-id='12,18'><a href="#">12-18%</a></li>
+					<li data-id='18,20'><a href="#">18-20%</a></li> 
+				</ul>
+				 
+			</div>
+			<div class="filter_state filter">
+				<div class="typename"><span>状态</span></div>
+				<ul data-id="targetState">
+					<li class="filterall select"><a href="#">全部</a> </li>
+					<li data-id="1"><a href="#">投标中</a></li>
+					<li data-id="4"><a href="#">还款中</a></li>
+					<li data-id="5"><a href="#">已完结</a></li> 
+				</ul>
+				 
+			</div>
+		</div>
+		<div class="invest_pro">
+			<div class="invest_sort">
+				<div>
+					<ul class="invest_sort_ul">
+						<li data-id="nhsyl">
+							<a href="#">预期年化收益率
+								<span class="arrowsort">
+									<!-- <em class="icon icon-larrowgray iconsortup"></em>
+									<em class="icon icon-larrowlight iconsortdown"></em> -->
+									<em class="icon icon-larrowgray iconsortup"></em>
+									<em class="icon icon-larrowgray iconsortdown"></em>
+								</span>
+							
+							</a>
+						</li>
+						<li data-id="htqx">
+							<a href="#">投资期限
+								<span class="arrowsort">
+									<em class="icon icon-larrowgray iconsortup"></em>
+									<em class="icon icon-larrowgray iconsortdown"></em>
+								</span>
+							</a>
+						</li>
+						<li data-id="start_amount">
+							<a href="#">起投金额
+								<span class="arrowsort">
+									<!-- <em class="icon icon-larrowlight iconsortup"></em>
+									<em class="icon icon-larrowgray iconsortdown"></em> -->
+									<em class="icon icon-larrowgray iconsortup"></em>
+									<em class="icon icon-larrowgray iconsortdown"></em>
+								</span>
+							</a>
+						</li>
+						<li data-id="target_state" class="select"><a href="#">默认排序<em></em></a></li>
+
+						<div class="invert_pro_value">共<span id="totalLoanNum">0</span>个借款项目</div> 
+					</ul>
+				</div>  
+			</div>
+			<div class="invest_prolist" id="invest_prolist">
+				
+			</div>
+			<div class="invest_pagination">
+				<div id="investment_list_pager"></div>
+			</div> 
+		</div>
+	</div>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+<script type="text/javascript" src="/dist/javascripts/investment/investmentList_control.min.js?v=b995ccdb38"></script>
+	
+<% include ../footer.html %>
+

@@ -1,0 +1,42 @@
+.insuranceMain{
+	background: #f9fcff;
+}
+.margin40{
+	margin-right: 40px;
+}
+.mgT90{
+	margin-top: 90px;
+}
+.insuranceMain .insuranceHeader{
+	height: 404px;
+	background: url('../images/aboutUs/banner.jpg');
+}
+.insuranceMain .insuranceIntro{
+	width: 824px;
+	margin: 0 auto;
+	margin-top: 65px;
+}
+.introList .instroImg{
+	width: 235px;
+	height: 235px;
+}
+.introList .instroText{
+	position: relative;
+	width: 545px;
+	height: 235px;  
+} 
+.instroText .textInfo{
+	position: absolute;
+	top:50%;
+	left: 0;
+	right: 0;
+	transform:translateY(-50%);
+	-ms-transform:translateY(-50%); 	
+	-moz-transform:translateY(-50%); 	
+	-webkit-transform:translateY(-50%);
+	-o-transform:translateY(-50%); 
+	line-height: 25px;
+}
+.introlast{
+	padding-bottom: 160px;
+}

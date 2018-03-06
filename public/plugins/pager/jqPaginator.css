@@ -1,0 +1,79 @@
+.pagenation{
+	/*width: 45%;
+    margin: 0 auto;*/
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	transform:translateX(-50%); 
+	-ms-transform:translateX(-50%);  
+	-moz-transform:translateX(-50%);  
+	-webkit-transform:translateX(-50%);  
+	-o-transform:translateX(-50%); 
+	bottom: 18px;
+}
+.pagenation div{
+	font-size: 14px;
+	font-family: proxima-nova,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Wenquanyi Micro Hei","WenQuanYi Micro Hei Mono","WenQuanYi Zen Hei","WenQuanYi Zen Hei","Apple LiGothic Medium",SimHei,"ST Heiti","WenQuanYi Zen Hei Sharp";
+	padding: 0px 10px 0px 0px;
+}
+.pagenation span{
+	display:block;
+	border-radius: 10%;
+	float: left;
+	text-align:center;
+	padding: 2px;
+	cursor: pointer;
+	margin-left: 15px;
+	min-width: 20px;
+}
+.pagenation span:hover{
+	color: #fb8743;
+}
+.pagenation span.spanpage{
+	color: #7285a0;
+	font-size: 12px;
+	margin-top: 2px;
+}
+.pagenation span.spanpage:hover{
+	color: #fb8743;
+}
+.pagenation span.itemsgray{
+	color: #c1c4ca;
+	cursor: auto;
+}
+.pagenation span.itemsgray:hover{
+	color: #c1c4ca;
+	cursor: auto; 
+}
+.pagenation .pageSelectText{   
+	color: #fb8743;
+}
+.pagenation span.spannum{
+	color: #203750;
+}
+.pagenation .pageSelect{
+	/*background-color: #34abf2;*/
+	border:1px solid #fb8743;
+	border-radius: 5px;
+	color: #fb8743;
+}
+.pagenation .items{
+	float: left;
+}
+.pagenation .itemsgray{
+	 color: #c1c4ca;
+}
+.pagenation .jumpTo{
+	font-size: 14px;
+	-moz-border-radius: 5px 5px 5px 5px;     /* Gecko browsers */
+	-webkit-border-radius: 5px 5px 5px 5px;   /* Webkit browsers */
+	border-radius:5px 5px 5px 5px;            /* W3C syntax */
+	border: 1px solid gainsboro;
+	padding: 2px 2px 2px 2px;
+	max-width: 250px;
+	width: 30px;
+}
+.pagenation .auto{
+	padding: 2px 3px 2px 3px;
+	cursor: pointer;
+}

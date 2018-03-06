@@ -1,0 +1,167 @@
+<% include ../navheader.html %>
+<script type="text/javascript" src="/plugins/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="/plugins/countTo/countTo.js"></script>
+<script type="text/javascript" src="/dist/javascripts/operationData/operationData_control.min.js?v=a053c60a55"></script>
+<div class="operationData_wrapper">
+	<!-- 运营数据报告 -->
+	<div class="operationData_report_wrapper auto_parent">
+		<div class="operationData_report_bg icon-zh-operationData-bgIcon auto_sun">
+		</div>
+		<div class="operationData_report_logoIcon icon-zh-operationData-logo auto_sun">
+			
+		</div>
+		<p class='operationData_report_title auto_sun'>运营数据报告</p>
+		<h6 class='auto_sun'>2016年</h6>
+		<small class='auto_sun'>温馨提示：本数据仅供参考。乐百贷平台采用人工放款机制，周末节假日不予放款。谢谢支持！</small>
+	</div>
+	<!--  运营数据总览-->
+	<div class="operationData_total_wrapper">
+		<h2>运营数据总览</h2>
+		<p>统计时间截止昨日</p>
+		<div class="operationData_total_data1 flex_box">
+			<section class='flex_item'>
+				<h3>投资总金额</h3>
+				<h4 class='formatMoney count-timer count-title' id="count-number" data-to="<%=operationData.globe.totalAmount%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+			<section class='flex_item'>
+				<h3>为用户累计赚取</h3>
+				<h4 class='formatMoney count-timer count-title' id="count-number" data-to="<%=operationData.globe.totalProfit%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+		</div>
+		<div class="operationData_total_data2 flex_box">
+			<section class='flex_item'>
+				<em class='icon icon-zh-operationData-icon1'></em>
+				<h3>投资人数</h3>
+				<h4 class='count-timer count-title' id="count-number" data-to="<%=operationData.globe.totalPersonalCount%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+			<section class='flex_item'>
+				<em class='icon icon-zh-operationData-icon2'></em>
+				<h3>交易笔数</h3>
+				<h4 class='count-timer count-title' id="count-number" data-to="<%=operationData.globe.totalInvestCount%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+			<section class='flex_item'>
+				<em class='icon icon-zh-operationData-icon3'></em>
+				<h3>借款人数</h3>
+				<h4 class='count-timer count-title' id="count-number" data-to="<%=operationData.globe.totalLoanCount%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+		</div>
+	</div>
+	<!-- 投资统计 -->
+	<div class="operationData_investTotal_wrapper">
+		<h2>投资统计</h2>
+		<p>统计时间截止昨日</p>
+		<div class="echart_wrapper" id='myInvestChart' style="width: 900px;height:440px;"></div>
+		<div class="operationData_investTotal_data flex_box">
+			<section class='flex_item'>
+				<em class='icon icon-zh-operationData-icon4'></em>
+				<h3>待收本金</h3>
+				<h4 class='formatMoney count-timer count-title' id="count-number" data-to="<%=operationData.investStatic.investAmount%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+			<section class='flex_item'>
+				<em class='icon icon-zh-operationData-icon5'></em>
+				<h3>待收利息</h3>
+				<h4 class='formatMoney count-timer count-title' id="count-number" data-to="<%=operationData.investStatic.investProfit%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+			<section class='flex_item'>
+				<em class='icon icon-zh-operationData-icon6'></em>
+				<h3>平均投资金额</h3>
+				<h4 class='formatMoney count-timer count-title' id="count-number" data-to="<%=operationData.investStatic.investAvgAmount%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+			<section class='flex_item'>
+				<em class='icon icon-zh-operationData-icon7'></em>
+				<h3>人均累计投资金额</h3>
+				<h4 class='formatMoney count-timer count-title' id="count-number" data-to="<%=operationData.investStatic.investPersonalAvgAmount%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+			<section class='flex_item'>
+				<em class='icon icon-zh-operationData-icon8'></em>
+				<h3>平均满标时长</h3>
+				<h4 id='operationDataInvestTracks' data-time=<%=operationData.investStatic.tracks%>>
+					<span class="count-timer count-title operationDataInvestTracks_h" id='count-number' data-to="" data-speed="3000" data-counttoinit="0"></span>小时
+					<span class="count-timer count-title operationDataInvestTracks_m" id='count-number' data-to="" data-speed="3000" data-counttoinit="0"></span>分
+					<span class="count-timer count-title operationDataInvestTracks_s" id='count-number' data-to="" data-speed="3000" data-counttoinit="0"></span>秒
+				</h4>
+			</section>
+		</div>
+		<div class="operationData_tab_box">
+			<h3>最大10位投资用户</h3>
+			<%if(operationData.investStatic.top10 && operationData.investStatic.top10.length > 0){%>
+				<table>
+					<thead>
+						<tr><td>用户名</td><td>待收本金(元)</td><td>占比</td></tr>
+					</thead>
+					<tbody>
+						<%operationData.investStatic.top10.forEach(function(item){%>
+							<tr><td><%=item.telephone.substr(0,3)%>****<%=item.telephone.slice(7)%></td><td class='formatMoney'><%=item.amt%></td><td><%=item.percent%>%</td></tr>
+						<%})%>
+					</tbody>
+				</table>
+			<%}%>
+		</div>
+	</div>
+	<!-- 预期统计-->
+	<div class="operationData_overdue_wrapper">
+		<h2>逾期统计</h2>
+		<p>统计时间截止昨日</p>
+		<div class="operationData_overdue_data flex_box icon-zh-operationData-overdue-bgIcon">
+			<section class="flex_item">
+				<h3>逾期金额</h3>
+				<small>--</small>
+			</section>
+			<section class="flex_item">
+				<h3>项目逾期率</h3>
+				<small>--</small>
+			</section>
+			<section class="flex_item">
+				<h3>金额逾期率</h3>
+				<small>--</small>
+			</section>
+			<section class="flex_item">
+				<h3>逾期项目数</h3>
+				<small>--</small>
+			</section>
+		</div>
+	</div>
+	<!-- 借款统计 -->
+	<div class="operationData_loanTotal_wrapper">
+		<h2>借款统计</h2>
+		<p>统计时间截止昨日</p>
+		<div id='myLoanChart' class="echart_wrapper" style="width: 900px;height:440px;"></div>
+		<div class="operationData_loanTotal_data flex_box">
+			<section class="flex_item icon-zh-operationData-icon9">
+				<h3>待还本金</h3>
+				<h4 class='formatMoney count-timer count-title' id="count-number" data-to="<%=operationData.loanStatistic.loanAmount%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+			<section class="flex_item icon-zh-operationData-icon10">
+				<h3>待还利息</h3>
+				<h4 class='formatMoney count-timer count-title' id="count-number" data-to="<%=operationData.loanStatistic.loanProfit%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+			<section class="flex_item icon-zh-operationData-icon11">
+				<h3>平均借款金额</h3>
+				<h4 class='formatMoney count-timer count-title' id="count-number" data-to="<%=operationData.loanStatistic.loanAvgAmount%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+			<section class="flex_item icon-zh-operationData-icon12">
+				<h3>人均累计借款金额</h3>
+				<h4 class='formatMoney count-timer count-title' id="count-number" data-to="<%=operationData.loanStatistic.loanPersonalAvgAmount%>" data-speed="3000" data-counttoinit="0"></h4>
+			</section>
+		</div>
+		<div class="operationData_tab_box">
+			<h3>最大10位借款用户</h3>
+			<%if(operationData.loanStatistic.top10 && operationData.loanStatistic.top10.length > 0){%>
+				<table>
+					<thead>
+						<tr><td>用户名</td><td>待还本金(元)</td><td>占比</td></tr>
+					</thead>
+					<tbody>
+						<%operationData.loanStatistic.top10.forEach(function(item){%>
+							<tr><td><%=item.telephone.substr(0,3)%>****<%=item.telephone.slice(7)%></td><td class='formatMoney'><%=item.amt%></td><td><%=item.percent%>%</td></tr>
+						<%})%>
+					</tbody>
+				</table>
+			<%}%>
+		</div>
+	</div>
+</div>
+<% include ../footer.html %>
+<input type="hidden" name="_INVESTGRAPH" id='_INVESTGRAPH' value='<%=JSON.stringify(operationData.investStatic.graph)%>'>
+<input type="hidden" name="_LOANGRAPH" id='_LOANGRAPH' value='<%=JSON.stringify(operationData.loanStatistic.graph)%>'>
+

@@ -1,0 +1,369 @@
+<% include navheader.html %>
+<script type="text/javascript" src="/dist/javascripts/index_control.min.js?v=211ce38698"></script>
+<script type="text/javascript">
+	$(function(){ 
+		layer.open({
+			type:1,
+			content:'<div class="warningtip">此平台是合规测试平台，仅用于用户体验，所有数据将在正式上线后删除</div>',
+			offset:'0px',
+			area:['100%','40px'],
+			title: false,
+			closeBtn:1,
+			shade:0
+		});
+	});
+</script>
+<style type="text/css">
+	.layui-layer-setwin .layui-layer-close2{
+	right: -17px;
+	top: -10px;
+	z-index: 999999999999;
+}
+</style>
+<!-- 首页 -->
+<div class="index_page">
+	<!-- 首页banner轮播图部分 -->
+	<div class="figure">
+        <div class="flicker-example" style="width:100%;height:310px;min-width:1100px;">
+            <ul id="flicker_ul">
+            	<%if(indexDatas[3] && indexDatas[3].banner && indexDatas[3].banner.data && indexDatas[3].banner.data.length > 0){%>
+            		<%indexDatas[3].banner.data.forEach(function(oBanner){%>
+            			<!-- 图片有链接 -->
+            			<%if(oBanner.link){%>
+            				<!-- 新窗口打开 -->
+            				<%if(oBanner.targetNew == 1){%>
+            					<li data-background="<%=configImgUrl%><%=oBanner.imgUrl%>" onclick="javascript:window.open('//<%=oBanner.link%>');"></li>
+            				<!-- 本窗口打开 -->
+            				<%}else if(oBanner.targetNew == 0){%>
+            					<li data-background="<%=configImgUrl%><%=oBanner.imgUrl%>" onclick="javascript:window.location.href='//<%=oBanner.link%>';"></li>
+            				<%}%>
+            			<!-- 图片无链接 -->
+            			<%}else{%>
+            				<li data-background="<%=configImgUrl%><%=oBanner.imgUrl%>"></li>
+            			<%}%>
+            		<%})%>
+            	<%}else{%>
+            	<!-- banner默认图片 -->
+                	<li data-background="/dist/images/index_banner1.png?v=040b4b5d5d" ></li>
+                <%}%>
+            </ul>
+        </div>
+    </div>
+    <!-- 首页内容部分 -->
+	<div class="index_wrapper">
+		<!-- 系统公告部分 -->
+		<div class="index_info index_title">
+			<h2 class="index_title_l left"><div class="icon icon-zh-info"></div>系统公告：
+				<%if(indexDatas[1] && indexDatas[1].announcementList && indexDatas[1].announcementList.data && indexDatas[1].announcementList.data.content &&indexDatas[1].announcementList.data.content.length >0){%>
+					<a href="/aboutUs/aboutUsOverview?v=/aboutUs/platformAnnounce&m=menuPlatformAnnounce&type=notice&id=<%=indexDatas[1].announcementList.data.content[0].title.id%>" title='<%=indexDatas[1].announcementList.data.content[0].title%>'><span><%=indexDatas[1].announcementList.data.content[0].title%></span></a>
+				<%}%>
+			</h2>
+			<a class="index_title_r right" href="/aboutUs/aboutUsOverview?v=/aboutUs/platformAnnounce&m=menuPlatformAnnounce">更多<div class="icon icon-zh-more"></div></a>
+		</div>
+		
+		<!-- 预告部分 -->
+		<div class='index_notice_wrapper'>
+			<ul class="index_notice_t">
+				<li class='index_notice_t_item'>
+					<div class="icon icon-zh-notice1 left"></div>
+					<div class="left">
+						<h3>信息撮合</h3>
+						<p>历史预期收益为</br>6%-10.5%</p>
+					</div>
+				</li>
+				<li class='index_notice_t_item'>
+					<div class="icon icon-zh-notice2 left"></div>
+					<div class="left">
+						<h3>专业风控</h3>
+						<p>严格的风控流程</br>专业的风控团队</p>
+					</div>
+				</li>
+				<li class='index_notice_t_item'>
+					<div class="icon icon-zh-notice3 left"></div>
+					<div class="left">
+						<h3>公开透明</h3>
+						<p>联动优势提供支付服务</br>信息公开透明</p>
+					</div>
+				</li>
+				<li class='index_notice_t_item'>
+					<div class="icon icon-zh-notice4 left"></div>
+					<div class="left">
+						<h3>灵活方便</h3>
+						<p>期限灵活</br>投资提现更便捷</p>
+					</div>
+				</li>
+			</ul>
+			<!-- 投资统计 -->
+			<ol class='index_notice_b' id='totel_investment'>
+				<li class='index_notice_b_item'>
+					<h3 class='formatMoney'>￥
+						<%if(indexDatas[2].acount.data && indexDatas[2].acount.data.buyAmt){%>
+							<%=indexDatas[2].acount.data.buyAmt%>
+						<%}else{%>
+							0
+						<%}%>
+					</h3><p>投资总金额</p></li>
+				<li class='index_notice_b_item'>
+					<h3>
+						<%if(indexDatas[2].acount.data && indexDatas[2].acount.data.totalPerson){%>
+							<%=indexDatas[2].acount.data.totalPerson%>
+						<%}else{%>
+							0
+						<%}%>
+					</h3><p>投资人数</p></li>
+				<li class='index_notice_b_item'>
+					<h3 class='formatMoney'>￥
+						<%if(indexDatas[2].acount.data && indexDatas[2].acount.data.moneys){%>
+							<%=indexDatas[2].acount.data.moneys%>
+						<%}else{%>
+							0
+						<%}%>
+					</h3>
+					<p>为用户累计赚取</p></li>
+			</ol>	
+		</div>
+		<!-- 投资产品信息部分 -->
+		<div class='index_invet_wrapper'>
+			<div class="index_invet index_title clearfix">
+				<h2 class="index_title_l left tit"><div class="icon icon-zh-invet"></div>投资产品信息<span>高收益，低风险，安心省心的理财首选</span></h2>
+				<a class="index_title_r right" href="/investment/investmentList">更多<div class="icon icon-zh-more"></div></a>
+			</div>
+			<ul class="index_invet_pro clearfix">
+			<%if(indexDatas[4] && indexDatas[4].investmentList && indexDatas[4].investmentList.data && indexDatas[4].investmentList.data.content.length >0){%>
+				<%indexDatas[4].investmentList.data.content.forEach(function(investmentItem){%>
+					<!-- 立即投资 -->
+					<% if(investmentItem.targetState == 1){ %>
+						<li data-state='<%=investmentItem.targetState%>'>
+							<a href='/investment/investmentDescriptionById?id=<%=investmentItem.id%>' >
+								<h3 data-name='<%=investmentItem.productid%>' class='index_product_name'></h3>
+								<div class="index_per" data-per='<%=investmentItem.nhsyl%>'></div>
+								<p class='expect safari-bg'>预期年化收益率</p>
+								<div class="invet_day_range">
+									<p class='invet_days'><span class='safari-bg'>投资期限</span><em><%=investmentItem.htqx%>个月</em></p>
+									<div class="invet_range"><span class='safari-bg'>投资进度</span><div class='range bg_gary'><p class='invest_range' data-amount='<%=investmentItem.investAmount%>' data-htje='<%=investmentItem.htje%>'></p></div><em></em></div>
+								</div>
+								<input type="button" class="invet_btn btn" value='立即投资' />
+							</a>
+						</li>
+					<!-- 即将开放 -->
+					<%}else if(investmentItem.targetState == 2){%>
+						<li data-state='<%=investmentItem.targetState%>'>
+							<a href='/investment/investmentDescriptionById?id=<%=investmentItem.id%>' >
+								<h3 data-name='<%=investmentItem.productid%>' class='index_product_name'></h3>
+								<div class="index_per" data-per='<%=investmentItem.nhsyl%>'></div>
+								<p class='expect safari-bg'>预期年化收益率</p>
+								<div class="invet_day_range">
+									<p class='invet_days'><span class='safari-bg'>投资期限</span><em><%=investmentItem.htqx%>个月</em></p>
+									<div class="invet_range"><span class='safari-bg'>投资进度</span><div class='range bg_gary'><p class='invest_range' data-amount='<%=investmentItem.investAmount%>' data-htje='<%=investmentItem.htje%>'></p></div><em></em></div>
+								</div>
+								<input type="button" class="invet_btn btn disabled " value='即将开放' />
+							</a>
+						</li>
+					<!-- 已满标 -->
+					<%}else if(investmentItem.targetState == 3){%>
+						<li data-state='<%=investmentItem.targetState%>'>
+							<div class="icon icon-lfullmark"></div>
+							<a href='/investment/investmentDescriptionById?id=<%=investmentItem.id%>' >
+								<h3 data-name='<%=investmentItem.productid%>' class='index_product_name'></h3>
+								<div class="index_per" data-per='<%=investmentItem.nhsyl%>'></div>
+								<p class='expect safari-bg'>预期年化收益率</p>
+								<div class="invet_day_range">
+									<p class='invet_days'><span class='safari-bg'>投资期限</span><em><%=investmentItem.htqx%>个月</em></p>
+									<div class="invet_range"><span class='safari-bg'>投资进度</span><div class='range bg_gary'><p class='invest_range' data-amount='<%=investmentItem.investAmount%>' data-htje='<%=investmentItem.htje%>'></p></div><em></em></div>
+									<p><span class='safari-bg'>待还总额</span><em class="formatMoney">￥<%=investmentItem.whbjlx%></em></p>
+									<p><span class='safari-bg'>满标时间</span><em><%=investmentItem.fullDate%></em></p>
+								</div>
+							</a>
+						</li>
+					<!-- 还款中 -->
+					<%}else if(investmentItem.targetState == 4){%>
+						<li data-state='<%=investmentItem.targetState%>'>
+							<div class="icon icon-lpaying"></div>
+							<a href='/investment/investmentDescriptionById?id=<%=investmentItem.id%>' >
+								<h3 data-name='<%=investmentItem.productid%>' class='index_product_name'></h3>
+								<div class="index_per" data-per='<%=investmentItem.nhsyl%>'></div>
+								<p class='expect safari-bg'>预期年化收益率</p>
+								<div class="invet_day_range">
+									<p class='invet_days'><span class='safari-bg'>投资期限</span><em><%=investmentItem.htqx%>个月</em></p>
+									<div class="invet_range"><span class='safari-bg'>投资进度</span><div class='range bg_gary'><p class='invest_range' data-amount='<%=investmentItem.investAmount%>' data-htje='<%=investmentItem.htje%>'></p></div><em></em></div>
+									<p><span class='safari-bg'>本息待还金额</span><em class="formatMoney">￥<%=investmentItem.whbjlx%></em></p>
+									<p><span class='safari-bg'>本息还款日</span><em><%=investmentItem.yhkr.toString().split(' ')[0]%></em>
+									</p>
+								</div>
+							</a>
+						</li>
+					<!-- 已完结（包括已流标） -->
+					<%}else if(investmentItem.targetState == 5 || investmentItem.targetState == 6){%>
+						<li data-state='<%=investmentItem.targetState%>'>
+							<div class="icon icon-lover"></div>
+							<a href='/investment/investmentDescriptionById?id=<%=investmentItem.id%>' >
+								<h3 data-name='<%=investmentItem.productid%>' class='index_product_name'></h3>
+								<div class="index_per" data-per='<%=investmentItem.nhsyl%>'></div>
+								<p class='expect safari-bg'>预期年化收益率</p>
+								<div class="invet_day_range">
+									<p class='invet_days'><span class='safari-bg'>投资期限</span><em><%=investmentItem.htqx%>个月</em></p>
+									<div class="invet_range"><span class='safari-bg'>投资进度</span><div class='range bg_gary'><p class='invest_range' data-amount='<%=investmentItem.investAmount%>' data-htje='<%=investmentItem.htje%>'></p></div><em></em></div>
+									<p><span class='safari-bg'>已还总额</span><em class="formatMoney">￥<%=investmentItem.backTotal%></em></p>
+									<p><span class='safari-bg'>完结时间</span><em><%=investmentItem.endDate%></em></p>
+								</div>
+							</a>
+						</li>
+					<!-- 异常标的 -->
+					<%}else{%>
+						<li data-state='<%=investmentItem.targetState%>'>
+							<a href='/investment/investmentDescriptionById?id=<%=investmentItem.id%>' >
+								<h3 data-name='<%=investmentItem.productid%>' class='index_product_name'></h3>
+								<div class="index_per" data-per='<%=investmentItem.nhsyl%>'></div>
+								<p class='expect safari-bg'>预期年化收益率</p>
+								<div class="invet_day_range">
+									<p class='invet_days'><span class='safari-bg'>投资期限</span><em><%=investmentItem.htqx%>个月</em></p>
+									<div class="invet_range"><span class='safari-bg'>投资进度</span><div class='range bg_gary'><p class='invest_range' data-amount='<%=investmentItem.investAmount%>' data-htje='<%=investmentItem.htje%>'></p></div><em></em></div>
+								</div>
+								<input type="button" class="invet_btn btn disabled " value='状态异常' />
+							</a>
+						</li>
+					<%}%>
+				<%})%>
+			<%}%>
+			</ul>
+		</div>
+		<!-- 媒体报道，公司动态部分 -->	
+		<div class="index_media clearfix">
+			<div class="left index_media_item">
+				<div class="index_media_tit index_title clearfix">
+					<h2 class="index_title_l left tit"><div class="icon icon-zh-media"></div>媒体报道</h2>
+					<a class="index_title_r right" href="/aboutUs/aboutUsOverview?v=/aboutUs/mediaReport&m=menuMediaReport">更多<div class="icon icon-zh-more"></div></a>
+				</div>
+				<ol class="index_media_list">
+				<!--  媒体报道列表渲染 -->
+				<%if(indexDatas[5] && indexDatas[5].mediaNews && indexDatas[5].mediaNews.data && indexDatas[5].mediaNews.data.content.length >0){%>
+					<%indexDatas[5].mediaNews.data.content.forEach(function(mediaItem){%>
+						<li class='clearfix'>
+							<a href="/aboutUs/aboutUsOverview?v=/aboutUs/mediaReport&m=menuMediaReport&type=news&id=<%=mediaItem.id%>" title='<%=mediaItem.title%>'>
+								<img src="<%=configImgUrl%><%=mediaItem.previewImg%>"><p><%=mediaItem.title%></p><span class="right"><%=mediaItem.createdDate.split(" ")[0]%></span>
+							</a>
+						</li>
+					<%})%>
+				<%}%>				
+				</ol>
+			</div>
+			<div class="left index_media_item index_media_itemCenter">
+				<div class="index_media_tit index_title clearfix">
+					<h2 class="index_title_l left tit"><div class="icon icon-zh-company"></div>公司动态</h2>
+					<a class="index_title_r right" href="/aboutUs/aboutUsOverview?v=/aboutUs/companyNews&m=menuCompanyNews">更多<div class="icon icon-zh-more"></div></a>
+				</div>
+				<ol class="index_media_list">
+					<!--  公司动态列表渲染 -->
+				<%if(indexDatas[6] && indexDatas[6].campanyDynamic && indexDatas[6].campanyDynamic.data && indexDatas[6].campanyDynamic.data.content.length >0){%>
+					<%indexDatas[6].campanyDynamic.data.content.forEach(function(campanyDynamicItem){%>
+						<li class='clearfix'>
+							<a href="/aboutUs/aboutUsOverview?v=/aboutUs/companyNews&m=menuCompanyNews&type=companyDynamic&id=<%=campanyDynamicItem.id%>" title='<%=campanyDynamicItem.title%>'>
+								<img src="<%=configImgUrl%><%=campanyDynamicItem.previewImg%>"><p><%=campanyDynamicItem.title%></p><span class="right"><%=campanyDynamicItem.createdDate.split(" ")[0]%></span>
+							</a>
+						</li>
+					<%})%>
+				<%}%>	
+				</ol>
+			</div> 
+			<div class="right index_media_item index_media_itemRight">
+				<div class="index_media_tit index_media_titRight index_title clearfix">
+					<h2 class="index_title_l left tit"><div class="icon icon-lendingkonw"></div>网络借贷知识</h2>
+					<a class="index_title_r right" href="/aboutUs/aboutUsOverview?v=/aboutUs/lendingKnow&m=menuLendingKnow">更多<div class="icon icon-zh-more"></div></a>
+				</div>
+				<ol class="index_media_list">
+					<!--  网络借贷知识 --> 
+				<%if(indexDatas[7] && indexDatas[7].lendingKnow && indexDatas[7].lendingKnow.data && indexDatas[7].lendingKnow.data.content.length >0){%>
+					<%indexDatas[7].lendingKnow.data.content.forEach(function(lendingKnowItem){%>
+						<li class='clearfix'>
+							<a traget="_blank" href="/aboutUs/aboutUsOverview?v=/aboutUs/lendingKnow&m=menuLendingKnow&type=netLoanKnowledge&id=<%=lendingKnowItem.id%>" title='<%=lendingKnowItem.title%>'>
+								<p><%=lendingKnowItem.title%></p><span class="right"><%=lendingKnowItem.createdDate.split(" ")[0]%></span>
+							</a>
+						</li>
+					<%})%>
+				<%}%>	
+				</ol>
+			</div>
+		</div>
+	</div> 
+
+	<%if(userInfo && userInfo != null){%>
+	<!--用户登录判断-->
+	 	<!-- 弹框 -->
+		<div class="hide" id="warnHtmlIndex">
+			<div class="filterlayer"></div>
+			<div class="warnDialogIndex"> 
+				<div class="left warnText">
+					<h2>《投资资金风险提示书》</h2>
+					<p>尊敬的用户，您好！</p>
+					<p class="text_indent">
+						欢迎您来到北京乐百贷财富投资有限公司（以下简称“乐百贷”）理财平台。您可根据您的投资需求，自愿选择通过乐百贷平台进行资金出借，以期获得相应预期收益。但在您出借资金的过程中，也许会面临可能导致您资金及收益受损的各种风险。为保障您出借资金的安全及相关合法权益，请您在与债务人达成资金交易前仔细阅读以下内容，了解资金出借的特征，并根据自身的风险承受能力选择是否出借资金及出借资金的数额。
+					</p>
+					<p class="text_indent">
+						当您点击“确认”“投资”“同意”或其他类似涵义选项时，即视为您已经充分理解本提示书内容，并自愿承担相应风险。  
+					</p>
+					<div class="riskType">
+						<ul>
+							<li>政策风险</li>
+							<li>市场风险</li>
+							<li>债务人/保证人信用风险</li> 
+							<li>技术风险</li>
+							<li>操作风险</li>
+							<li>资金流动性风险</li>
+							<li>不可抗力风险</li>
+						</ul>
+					</div>
+					<p>"本人已经阅读《投资资金风险提示书》的所有内容，充分了解并清楚知晓相应的权利义务，并愿意承担相关风险。"</p>
+					<p class="tipBottom">风险提示方：北京乐百贷财富投资有限公司</p> 
+				</div>
+				<div class="left warnLink">
+					<div><img src="/dist/images/indexFilter.jpg"></div>
+					<div class="linkbox">
+						<h2 class="title">欢迎来到乐百贷！</h2> 	
+						<div><a class="btn btnlink" href="/user/login">登录</a></div>
+						<div><a class="btn btnlink" href="/user/regist">注册</a></div>
+						<div class="bottom">乐享收益，百年理财</div>
+					</div>
+				</div>
+			</div> 
+		</div>
+	<%}else{%>
+		 <div class="" id="warnHtmlIndex">
+				<div class="filterlayer"></div>
+				<div class="warnDialogIndex"> 
+					<div class="left warnText">
+						<h2>《投资资金风险提示书》</h2>
+						<p>尊敬的用户，您好！</p>
+						<p class="text_indent">
+							欢迎您来到北京乐百贷财富投资有限公司（以下简称“乐百贷”）理财平台。您可根据您的投资需求，自愿选择通过乐百贷平台进行资金出借，以期获得相应预期收益。但在您出借资金的过程中，也许会面临可能导致您资金及收益受损的各种风险。为保障您出借资金的安全及相关合法权益，请您在与债务人达成资金交易前仔细阅读以下内容，了解资金出借的特征，并根据自身的风险承受能力选择是否出借资金及出借资金的数额。
+						</p>
+						<p class="text_indent">
+							当您点击“确认”“投资”“同意”或其他类似涵义选项时，即视为您已经充分理解本提示书内容，并自愿承担相应风险。  
+						</p>
+						<div class="riskType">
+							<ul>
+								<li>政策风险</li>
+								<li>市场风险</li>
+								<li>债务人/保证人信用风险</li> 
+								<li>技术风险</li>
+								<li>操作风险</li>
+								<li>资金流动性风险</li>
+								<li>不可抗力风险</li>
+							</ul>
+						</div>
+						<p>"本人已经阅读《投资资金风险提示书》的所有内容，充分了解并清楚知晓相应的权利义务，并愿意承担相关风险。"</p>
+						<p class="tipBottom">风险提示方：北京乐百贷财富投资有限公司</p> 
+					</div>
+					<div class="left warnLink">
+						<div><img src="/dist/images/indexFilter.jpg"></div>
+						<div class="linkbox">
+							<h2 class="title">欢迎来到乐百贷！</h2> 	
+							<div><a class="btn btnlink" href="/user/login">登录</a></div>
+							<div><a class="btn btnlink" href="/user/regist">注册</a></div>
+							<div class="bottom">乐享收益，百年理财</div>
+						</div>
+					</div>
+				</div> 
+			</div>
+	<%}%>
+</div>
+<% include footer.html %>

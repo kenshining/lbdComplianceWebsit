@@ -1,0 +1,106 @@
+.testContent{
+	width: 1099px; 
+	background: #fff;
+	margin: 28px auto 238px;
+	padding: 38px 35px;	
+}
+.testContent .title{
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+.testContent .tipname{
+	font-size: 14px;
+	line-height: 23px;
+}
+.testContent .tiptext{
+	font-size: 14px;
+	color: #7285a0;
+	line-height: 23px;
+}
+.testContent .question{
+	margin-top: 35px; 
+	font-size: 14px;
+}
+.testContent .question p{
+	height: 49px;
+	background: #F0F7FF;
+	line-height: 49px; 
+	font-weight: bold;
+	padding-left: 15px;
+}
+.testContent .question .questionAnswer{
+	padding-left: 15px;  
+}
+.testContent .question .questionAnswer span{
+	display: inline-block;
+	margin-right: 45px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+.testContent .question .questionAnswer span em{
+	background: url('/dist/images/investment/radioPoint.png');
+	display: inline-block;
+	width: 13px;
+	height: 13px; 
+	margin-right: 5px;
+}
+.testContent .question .questionAnswer span em.selected{
+	background: url('/dist/images/investment/radioPointSelect.png');
+}
+.testContent .btnTest{
+	margin: 90px auto 20px;
+	width: 268px;
+}
+/*投资结果框*/
+.riskTestDialog{
+	position: fixed;
+	top: 0px;
+	left: 0px; 
+	right: 0px;
+	bottom: 0px;
+	width:552px;
+	height: 407px;
+	z-index: 99999;
+	margin: 0 auto; 
+	border-radius: 5px;
+	background: #fcfeff;
+	margin-top: 130px;  
+	box-sizing:border-box;
+}
+.riskTestDialog .title{
+	font-size: 16px; 
+	text-align: center;
+	padding: 21px 0px;
+	border-bottom: 1px solid #E6EAEE;
+}
+.riskTestDialog .tip{
+	font-size: 14px;
+	color: #7285A0;
+	line-height: 25px;
+}
+.riskTestDialog .resultContent{
+	padding: 0px 32px;
+}
+.riskTestDialog .resultInfo{
+	margin: 20px 0px 25px;
+}
+.riskTestDialog .resultInfo .value{
+	 color: #FF7A33;
+	 font-size: 26px;
+}
+.riskTestDialog .resultInfo .text{
+	 font-size: 14px;  
+}
+.riskTestDialog .resultInfo .score,.riskTestDialog .resultInfo .type{
+	width: 224px;
+	text-align: center;
+}
+.riskTestDialog .desp{
+	font-size: 14px;
+	line-height: 25px;
+}
+.riskTestDialog .btnInvest{
+	width: 168px; 
+	margin: 20px auto 10px;
+
+}

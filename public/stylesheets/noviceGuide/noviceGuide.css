@@ -1,0 +1,209 @@
+.noviceGuide_wrapper,.noviceGuide_wrapper section{
+	width: 100%;
+	text-align: center;
+}
+.noviceGuide_wrapper section{
+	height: 770px;
+}
+.noviceGuide_wrapper section:nth-child(2n-1){
+	background:url(/dist/images/noviceGuide2.png) no-repeat center center;
+}
+.noviceGuide_wrapper section:nth-child(2n){
+	background:url(/dist/images/noviceGuide1.png) no-repeat center center;
+}
+
+.noviceGuide_wrapper section h2{
+	font-size: 44px;
+}
+.noviceGuide_wrapper section:nth-child(2n-1) h2,.noviceGuide_wrapper section:nth-child(2n-1) h4,.noviceGuide_wrapper section:nth-child(2n-1) p{
+	color: #e8f1ff;
+}
+.noviceGuide_wrapper section:nth-child(2n) h2{
+	color: #253b4c;
+}
+
+.noviceGuide_wrapper section:nth-child(1) h2{
+	margin:70px auto 48px;
+}
+.noviceGuide_wrapper section:nth-child(1) .flex_box{
+	width: 640px;
+}
+.noviceGuide_wrapper section:nth-child(1) h4{
+	font-size: 20px;
+	margin:20px auto 40px;
+}
+.noviceGuide_wrapper section:nth-child(1) div{
+	width: 74px;
+	height: 74px;
+	border: 1px solid #e8f1ff;
+	border-radius: 50%;
+}
+.noviceGuide_wrapper section:nth-child(1) p{
+	width: 640px;
+	margin:0 auto;
+	text-align: left;
+	font-size: 14px;
+	line-height: 20px;
+}
+.icon-zh-noviceGuide-lbd{
+	margin-top: 140px;
+}
+.noviceGuide_wrapper section:nth-child(2){
+	padding-top: 165px;
+	box-sizing: border-box;
+}
+.noviceGuide_wrapper section:nth-child(2) .flex_box{
+	width: 1080px;
+}
+.noviceGuide_wrapper section:nth-child(2) .flex_item{
+	width: 200px;
+	height: 296px;
+	background: #f4faff;
+	margin-top: 90px;
+	overflow: hidden;
+}
+.noviceGuide_wrapper section:nth-child(2) img{
+	width: 200px;
+	height: auto;
+}
+.noviceGuide_wrapper section:nth-child(2) h3{
+	font-size: 20px;
+	color: #253b4c;
+	padding-top: 44px;
+}
+.noviceGuide_wrapper section:nth-child(2) p{
+	font-size: 14px;
+	color:#7285a0;
+	line-height: 24px;
+	padding: 15px  10px 0;
+}
+.noviceGuide_wrapper section:nth-child(3) h2{
+	padding:145px 0 100px 0;
+	box-sizing: border-box;
+}
+.noviceGuide_wrapper section:nth-child(3) dl{
+	width: 790px;
+	margin:0 auto;
+}
+.noviceGuide_wrapper section:nth-child(3) dl h3,.noviceGuide_wrapper section:nth-child(3) dl p{
+	text-align: left;
+}
+.noviceGuide_wrapper section:nth-child(3) dt,.noviceGuide_wrapper section:nth-child(3) dd{
+	float: left;
+}
+.noviceGuide_wrapper section:nth-child(3) dl:last-child{
+	margin-top: 40px;
+}
+.noviceGuide_wrapper section:nth-child(3) dd{
+	margin-left: 40px;
+}
+.noviceGuide_wrapper section:nth-child(3) h3{
+	font-size: 24px;
+	color:#e8f1ff;
+	padding: 35px 0 20px;
+}
+.noviceGuide_wrapper section:nth-child(3) p{
+	line-height: 30px;
+}
+.noviceGuide_wrapper section:nth-child(3) .bottom{
+	padding-top: 0; 
+}
+
+.noviceGuide_wrapper section:nth-child(4){
+	padding-top: 120px;
+	box-sizing: border-box;
+}
+.noviceGuide_wrapper section:nth-child(4) dl{
+	width: 710px;
+	margin: 80px auto 0;
+}
+.noviceGuide_wrapper section:nth-child(4) dt,.noviceGuide_wrapper section:nth-child(4) dd{
+	float: left;
+}
+.noviceGuide_wrapper section:nth-child(4) p{
+	text-align: left;
+	padding-left: 55px;
+	font-size: 20px;
+	color:#253b4c;
+	line-height: 52px;
+	position: relative;
+	top: -15px;
+}
+.noviceGuide_wrapper section:nth-child(5) h2{
+	padding:80px 0 55px 0;
+	box-sizing: border-box;
+}
+.noviceGuide_wrapper .slider_item ol{
+	width: 460px;
+	margin: 0 auto;
+	height: 3px;
+	background: #6fa8f9;
+}
+.noviceGuide_wrapper .slider_wrapepr{
+	width: 638px;
+	margin:0 auto; 
+	position: relative;
+}
+.noviceGuide_wrapper .slider_item li{
+	float: left;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: #6fa8f9;
+	position: relative;
+	top:-15px;
+}
+.noviceGuide_wrapper .slider_item h5{
+	font-size: 22px;
+	color: #5396f6;
+	line-height: 32px;
+}
+.noviceGuide_wrapper .slider_item small{
+	font-size: 12px;
+	color:#253b4c;
+}
+.noviceGuide_wrapper .slider_item .on{
+	background: #f2f7ff;
+}
+.noviceGuide_wrapper .slider_item .on h5{
+	color:#3974ce;
+}
+.noviceGuide_wrapper .slider_item .on small{
+	color:#f2f7ff;
+}
+.noviceGuide_wrapper .slider_item img{
+	margin-top: 60px;
+}
+.noviceGuide_wrapper .go_regist_btn{
+	margin:45px auto;
+	width: 270px;
+}
+.noviceGuide_wrapper section:nth-child(5) .icon{
+	position: absolute;
+	top:50%;
+	cursor: pointer;
+}
+.noviceGuide_wrapper section:nth-child(5) .left_arrow{
+	left:-100px;
+	transform: rotate(180deg);
+}
+.noviceGuide_wrapper section:nth-child(5) .left_arrow.icon-zh-novice-arrowH{
+	transform: rotate(0);
+}
+.noviceGuide_wrapper section:nth-child(5) .right_arrow{
+	right:-100px;
+}
+.noviceGuide_wrapper section:nth-child(5) .right_arrow.icon-zh-novice-arrowH{
+	transform: rotate(180deg);
+}
+.noviceGuide_wrapper section:nth-child(6) h2{
+	padding:128px 0 88px 0;
+	box-sizing: border-box;
+}
+.noviceGuide_wrapper section:nth-child(6) ol{
+	width: 500px;
+	margin:0 auto; 
+}
+.noviceGuide_wrapper section:nth-child(6)  h3{
+	margin-top: 10px;
+}

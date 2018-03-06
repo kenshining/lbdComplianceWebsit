@@ -1,0 +1,217 @@
+<script type="text/javascript" src="/dist/javascripts/account/bonusView_control.min.js?v=1b81a31252"></script> 
+<div class="lmybody">
+	<div class="lmy_background">
+		<div class="bonustype">
+			<ul>
+				<li class="selected" data-type='1'>红包</li>
+				<li data-type='2'>加息劵</li>
+				<!-- <li data-type='1'>体验金</li> -->
+			</ul>
+			<!-- <p class="bonusTitle">红包</p> -->
+			<!-- <span class="useRule"><a href="javascript:void(0);">使用规则</a></span> -->
+			<span class="slideBorder"></span> 
+		</div> 
+		<div class="bonuscontent">
+			<div class="queryCon">
+				<span class="queryType">状态</span> 
+				<ul>
+					<li>
+						<a data-state='' class="selected" href="javascript:void(0);">
+							全部
+						</a>
+					</li>
+					<li>
+						<a data-state='1' href="javascript:void(0);">
+							未使用
+						</a>
+					</li>
+					<li>
+						<a data-state='2' href="javascript:void(0);">
+							已使用 
+						</a>
+					</li>
+					<li>
+						<a data-state='3' href="javascript:void(0);">
+							已过期 
+						</a>
+					</li> 
+				</ul> 
+			</div>
+			<div class="bonuslist" id="bonuslist">
+				<!-- <ul>
+					<li class="left noUse">
+						<div class="bonusText">
+							<div class="bonusleft left">
+								<p class="value"><span>1050</span><span class="smallfont">元</span></p>
+								<p class="valueName">红包</p>
+								<p class="moneyText dateText">有效日期：</p>
+							</div>
+							<div class="bonusright left">
+								<p class="moneyText mgtop">使用条件：</p>
+								<p class="moneyValue"> 投资≥5000元</p>
+								<p class="moneyText">适用产品：</p>
+								<p class="moneyValue">乐保理/散标购买/债权转让标签</p>
+								<p class="moneyText">奖励来源：</p>
+								<p class="moneyValue">新用户注册奖励</p>
+								<p class="date">2016-08-01~2016-0-31</p>
+							</div>
+						</div>
+					</li>
+					<li class="left noUse">
+						<div class="bonusText">
+							<div class="bonusleft left">
+								<p class="value"><span>1050</span><span class="smallfont">元</span></p>
+								<p class="valueName">红包</p>
+								<p class="moneyText dateText">有效日期：</p>
+							</div>
+							<div class="bonusright left">
+								<p class="moneyText mgtop">使用条件：</p>
+								<p class="moneyValue"> 投资≥5000元</p>
+								<p class="moneyText">适用产品：</p>
+								<p class="moneyValue">乐保理/散标购买/债权转让标签</p>
+								<p class="moneyText">奖励来源：</p>
+								<p class="moneyValue">新用户注册奖励</p>
+								<p class="date">2016-08-01~2016-0-31</p>
+							</div>
+						</div>
+					</li>
+					<li class="left noUse">
+						<div class="bonusText">
+							<div class="bonusleft left">
+								<p class="value"><span>1050</span><span class="smallfont">元</span></p>
+								<p class="valueName">红包</p>
+								<p class="moneyText dateText">有效日期：</p>
+							</div>
+							<div class="bonusright left">
+								<p class="moneyText mgtop">使用条件：</p>
+								<p class="moneyValue"> 投资≥5000元</p>
+								<p class="moneyText">适用产品：</p>
+								<p class="moneyValue">乐保理/散标购买/债权转让标签</p>
+								<p class="moneyText">奖励来源：</p>
+								<p class="moneyValue">新用户注册奖励</p>
+								<p class="date">2016-08-01~2016-0-31</p>
+							</div>
+						</div>
+					</li>
+					<li class="left used">
+						<div class="bonusText">
+							<div class="bonusleft left">
+								<p class="value"><span>1050</span><span class="smallfont">元</span></p>
+								<p class="valueName">红包</p>
+								<p class="moneyText dateText">有效日期：</p>
+							</div>
+							<div class="bonusright left">
+								<p class="moneyText mgtop">使用条件：</p>
+								<p class="moneyValue"> 投资≥5000元</p>
+								<p class="moneyText">适用产品：</p>
+								<p class="moneyValue">乐保理/散标购买/债权转让标签</p>
+								<p class="moneyText">奖励来源：</p>
+								<p class="moneyValue">新用户注册奖励</p>
+								<p class="date">2016-08-01~2016-0-31</p>
+							</div>
+						</div>
+					</li>
+					<li class="left used">
+						<div class="bonusText">
+							<div class="bonusleft left">
+								<p class="value"><span>1050</span><span class="smallfont">元</span></p>
+								<p class="valueName">红包</p>
+								<p class="moneyText dateText">有效日期：</p>
+							</div>
+							<div class="bonusright left">
+								<p class="moneyText mgtop">使用条件：</p>
+								<p class="moneyValue"> 投资≥5000元</p>
+								<p class="moneyText">适用产品：</p>
+								<p class="moneyValue">乐保理/散标购买/债权转让标签</p>
+								<p class="moneyText">奖励来源：</p>
+								<p class="moneyValue">新用户注册奖励</p>
+								<p class="date">2016-08-01~2016-0-31</p>
+							</div>
+						</div>
+					</li>
+					<li class="left used">
+						<div class="bonusText">
+							<div class="bonusleft left">
+								<p class="value"><span>1050</span><span class="smallfont">元</span></p>
+								<p class="valueName">红包</p>
+								<p class="moneyText dateText">有效日期：</p>
+							</div>
+							<div class="bonusright left">
+								<p class="moneyText mgtop">使用条件：</p>
+								<p class="moneyValue"> 投资≥5000元</p>
+								<p class="moneyText">适用产品：</p>
+								<p class="moneyValue">乐保理/散标购买/债权转让标签</p>
+								<p class="moneyText">奖励来源：</p>
+								<p class="moneyValue">新用户注册奖励</p>
+								<p class="date">2016-08-01~2016-0-31</p>
+							</div>
+						</div>
+					</li>
+					<li class="left pass">
+						<div class="bonusText">
+							<div class="bonusleft left">
+								<p class="value"><span>1050</span><span class="smallfont">元</span></p>
+								<p class="valueName">红包</p>
+								<p class="moneyText dateText">有效日期：</p>
+							</div>
+							<div class="bonusright left">
+								<p class="moneyText mgtop">使用条件：</p>
+								<p class="moneyValue"> 投资≥5000元</p>
+								<p class="moneyText">适用产品：</p>
+								<p class="moneyValue">乐保理/散标购买/债权转让标签</p>
+								<p class="moneyText">奖励来源：</p>
+								<p class="moneyValue">新用户注册奖励</p>
+								<p class="date">2016-08-01~2016-0-31</p>
+							</div>
+						</div>
+					</li>
+					<li class="left pass">
+						<div class="bonusText">
+							<div class="bonusleft left">
+								<p class="value"><span>1050</span><span class="smallfont">元</span></p>
+								<p class="valueName">红包</p>
+								<p class="moneyText dateText">有效日期：</p>
+							</div>
+							<div class="bonusright left">
+								<p class="moneyText mgtop">使用条件：</p>
+								<p class="moneyValue"> 投资≥5000元</p>
+								<p class="moneyText">适用产品：</p>
+								<p class="moneyValue">乐保理/散标购买/债权转让标签</p>
+								<p class="moneyText">奖励来源：</p>
+								<p class="moneyValue">新用户注册奖励</p>
+								<p class="date">2016-08-01~2016-0-31</p>
+							</div>
+						</div>
+					</li>
+					<li class="left pass">
+						<div class="bonusText">
+							<div class="bonusleft left">
+								<p class="value"><span>1050</span><span class="smallfont">元</span></p>
+								<p class="valueName">红包</p>
+								<p class="moneyText dateText">有效日期：</p>
+							</div>
+							<div class="bonusright left">
+								<p class="moneyText mgtop">使用条件：</p>
+								<p class="moneyValue"> 投资≥5000元</p>
+								<p class="moneyText">适用产品：</p>
+								<p class="moneyValue">乐保理/散标购买/债权转让标签</p>
+								<p class="moneyText">奖励来源：</p>
+								<p class="moneyValue">新用户注册奖励</p>
+								<p class="date">2016-08-01~2016-0-31</p>
+							</div>
+						</div>
+					</li>
+				</ul> -->
+				<!-- <div class="bonusNull"> 
+					<img src="/dist/images/account/bonusNull.png?v=44d07eaa2a">
+					<div class="bonusNullText">暂无奖励</div> 
+				</div> --> 
+			</div>
+		</div>
+		<div class="inviteMain"> 
+			<div class="lmy_investPage">
+				<div id="bonusPage"></div>
+			</div>
+		</div>
+	</div>
+</div>

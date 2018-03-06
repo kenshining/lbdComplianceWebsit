@@ -1,0 +1,22 @@
+.commonProblem_wrapper{
+	margin-top: 30px;
+}
+.commonProblem_menu ul .icon{
+	margin-top: -1px;
+}
+.commonProblem_wrapper .accountMenu h2, .commonProblem_wrapper .accountMenu p{
+	padding-left: 35px;
+}
+.commonProblem_wrapper .accountMenu h2 em{
+	left: 17px;
+}
+.commonProblem_view{
+	width: 944px;
+	box-sizing: border-box;
+}
+.investGuide_wrapper ul .commonProblem_list_item_detail_wrapper {
+	display: none;
+}
+.investGuide_wrapper ul .commonProblem_list_item_detail_wrapper img{
+	width: 100%;
+}

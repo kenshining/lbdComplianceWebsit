@@ -1,0 +1,198 @@
+.recharge_paga{
+	width: 944px;
+	background: #f9fcff;
+	box-sizing: border-box;
+	padding-bottom: 30px;
+}
+.recharge_title_wrapper{
+	width: 100%;
+	height:67px;
+	border-bottom: 1px solid #e4e9ee;
+	position: relative;
+	padding: 0 28px;
+	box-sizing: border-box;
+}
+.recharge_title_wrapper .orange_slider{
+	width: 110px;
+	height: 4px;
+	background: #ff7a33;
+	position: absolute;
+	left: 28px;
+	bottom: 0;
+}
+.recharge_title_wrapper ol li{
+	display: inline-block;
+	width: 110px;
+	text-align: center;
+	line-height: 68px;
+	font-size: 18px;
+	color: #253b4c;
+	margin-right: 40px;
+	cursor: pointer;
+}
+.recharge_title_wrapper ol li.on{
+	color: #ff7a33;
+}
+.recharge_record_btn,.withdraw_record_btn{
+	position: absolute;
+	right: 28px;
+	top:0;
+	color: #3974ce;
+	font-size: 14px;
+	line-height: 68px;
+}
+.recharge_tabpage_wrapper{
+	box-sizing: border-box;
+	padding: 40px 0 28px 28px;
+}
+.recharge_kjcz .recharge_bankcard{
+	margin-bottom:48px;
+	width: 270px;
+}
+.recharge_kjcz .recharge_bankcard li{
+	float: left;
+	height: 100%;
+	line-height: 40px;
+}
+.recharge_kjcz .recharge_bankcard li:nth-child(1){
+	width: 164px;
+	border-right: 1px solid #e4e9ee;
+	position: relative;
+}
+.recharge_kjcz .recharge_bankcard li:nth-child(2){
+	width: 105px;
+	text-align: center;
+	line-height: 40px;
+	background: #f3f7fb;
+	font-size: 16px;
+	color: #253b4c;
+}
+.recharge_form li{
+	height: 50px;
+}
+.recharge_form li:nth-child(1){
+	margin:40px 0 20px 0;
+}
+.recharge_form li input,.recharge_form li p,.recharge_form li em,.recharge_form li span{
+	display: inline-block;
+	line-height: 50px;
+}
+.recharge_form li span.l{
+	width: 120px;
+	text-align: right;
+	margin-right: 30px;
+	font-size: 16px;
+	color: #253b4c;
+}
+.recharge_form li input{
+	background: none;
+	border:1px solid #e4e9ee;
+	border-radius: 4px;
+	width: 230px;
+	height: 40px;
+	padding: 0 20px;
+	line-height: 20px;
+	color: #253b4c;
+}
+.onfocus{
+	border:1px solid #78a1df!important;
+}
+.error{
+	border:1px solid #f77070!important;
+}
+.recharge_form_wrapper .recharge_btn{
+	width: 270px;
+	margin-left: 150px;
+}
+.recharge_form .tip{
+	font-size: 12px;
+	color: #7285a0;
+	padding-left: 10px;
+}
+.sweet_reminders{
+	margin-top: 50px;
+}
+.sweet_reminders li {
+	color: #7285a0;
+	line-height: 40px;
+	font-size: 14px;
+	padding-left: 28px;
+}
+.sweet_reminders li:first-child{
+	padding-left: 0;
+}
+.sweet_reminders .icon{
+	margin-right: 15px;
+	position: relative;
+	top:2px;
+}
+.sweet_reminders li h2{
+	color: #253b4c;
+	font-size: 16px;
+	display: inline-block;
+}
+.recharge_wycz{
+	box-sizing: border-box;
+}
+.recharge_wycz section,#recharge_wycz_isUsed section{
+	background: #fff;
+}
+.recharge_bankcard_used_wrapper{
+	margin-bottom: 30px;
+}
+.recharge_bankcard_wrapper{
+	width: 100%;
+}
+.recharge_bankcard_wrapper .more{
+	color: #3974ce;
+	font-size: 14px;
+	line-height: 40px;
+}
+.recharge_bankcard{
+	width: 162px;
+	height:40px;
+	overflow: hidden;
+	border:1px solid #e4e9ee;
+	border-radius: 4px;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	margin: 0 13px 18px 0;
+}
+.recharge_bankcard li{
+	text-align: center;
+}
+.recharge_bankcard li:first-child{
+	background: #fff;
+}
+.recharge_bankcard em,.recharge_kjcz .recharge_bankcard li:nth-child(1) .icon{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom:0;
+	margin: auto;
+}
+.recharge_bankcard .icon-yhck{
+	left: 140px;
+	top: -18px;
+	z-index: 2;
+}
+.recharge_bankcard.ck{
+	border:1px solid #fda576!important;
+}
+#recharge_bankcard_more{
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.recharge_ok_dialog{
+	height: 230px !important;
+}
+.recharge_ok_dialog ul{
+	position: relative;
+	top:-10px;
+}
+.recharge_paga .tab{
+	width: 888px;
+}

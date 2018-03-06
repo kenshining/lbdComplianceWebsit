@@ -1,0 +1,16 @@
+.main_error_content {
+	width: 65%;
+	margin:0 auto;
+	margin-top: 3%;
+	padding: 25px;
+	background-color:#F7F6CE;
+	border: solid 1px #D2B305;
+}
+.main_error_content .mian_error_title {
+	font-size: 16px;
+	color: #10438F;
+}
+.main_error_content .mian_error_line{
+	padding: 25px 15px;
+	font-size: 14px;
+}

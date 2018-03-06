@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/plugins/Jcrop/css/jquery.Jcrop.min.css" type="text/css" />
+<script type="text/javascript" src="/dist/javascripts/account/setUserPhoto_control.min.js?v=2a1b8fd13f"></script>
+<script type="text/javascript" src="/plugins/cropbox/cropbox.js"></script>
+<div class="securitySetting_title">
+	<a class='orange' onclick="changeCurrentMenu('/account/securitySetting/securitySetting','securitySetting_sub_m_btn');">账户信息</a>
+	<a class='gary' href="javascript:;">>头像设置</a>
+</div>
+<div class="setUserPhoto_wrapper" id="initOrChangePanel">
+	<div class="left">
+		<div class="lbd_bg auto_parent">
+			<%if(control == 'update'){%>
+				<img src="<%=imageServer%><%=userInfo.headPortrait%>"  class='photo' id="user_top_pic_s">
+			<%}else{%>
+				<img class='photo' id="user_top_pic_s" src='/dist/images/kong.png?v=12378c415f'>
+			<%}%>
+		</div>
+		<span>当前头像</span>
+	</div>
+	<div class="right">
+		<p class='gary'>请选择图片文件，格式仅限JPG、PNG，大小不超过5M</p>
+		<section class='photo_file_wrapper'>
+			<input type="file" name="" class='file_btn' id='photo_file_btn' id="file_btn" onchange="preViewUploadPic(this)">
+			<label class='btn' for='photo_file_btn'>选择图片文件</label>
+		</section>
+	</div>
+</div>
+
+<div class="setUserPhoto_wrapper setUserPhoto_next_wrapper hide" id="controlPanel">
+	<div class="left">
+		<div class="jcrop_wrapper" id="preViewPanel_container">
+			<div class="thumbBox" id="preViewPanel"></div>
+			<div class="spinner" style="display: none">Loading...</div>
+		</div>
+		<ul>
+			<li class='photo_file_wrapper'>
+				<input type="file" name="" class='file_btn btn' id='photo_file_btn' onchange="preViewUploadPic(this)">
+				<label class='btn' for='photo_file_btn'>上传</label>
+			</li>
+			<li class='btn addOrSub' onclick="zoomInPic();">+</li>
+			<li class='btn addOrSub' onclick="zoomOutPic();">-</li>
+			<li class='btn preview' onclick="cropperPic();">预览</li>
+		</ul>
+	</div>
+	<div class="right">
+		<div class='photo_preview'>
+			<img id="photo_preview_img" src='/dist/images/kong.png?v=12378c415f'>
+		</div>
+		<!-- <p>预览头像</p> -->
+		<div class="photo_preview_uploadBar">
+			<input type="button" value="保存选择" class='btn' onclick="saveAndUploadPic();" />
+		</div>
+	</div>
+</div>
+<!--操作显示-->
+<input type="hidden" id="photo_control" value="<%=control%>"/>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>

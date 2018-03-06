@@ -1,0 +1,84 @@
+.loanview_total_datas,.loanview_list_wrapper{
+	width:944px;
+	background: #f9fcff;
+	box-sizing: border-box;
+}
+.loanview_list_wrapper{
+	margin-top: 15px;
+}
+.loanview_total_datas{
+	height: 190px;
+	width: 944px;
+	background: #f9fcff;
+	padding:20px 80px;
+}
+.loanview_total_datas li{
+	float: left;
+	width: 33.33%;
+}
+.loanview_total_datas li span{
+	font-size: 26px;
+	color: #253b4c;
+}
+.loanview_total_datas li h2{
+	font-size: 16px;
+	color: #7285a0;
+	padding-top: 5px;
+}
+.loanview_total_datas li:nth-child(4),.loanview_total_datas li:nth-child(5),.loanview_total_datas li:nth-child(6){
+	margin-top: 30px;
+}
+
+
+.loanview_list_wrapper{
+	padding:15px 28px;
+}
+.loatview_fliter_tit{
+	height: 80px;
+}
+.loatview_fliter_tit li{
+	margin-top: 15px;
+}
+.loatview_fliter_tit li h3,.loatview_fliter_tit li span{
+	font-size: 14px;
+	line-height: 27px;
+	float: left;
+	width:80px;
+}
+.loatview_fliter_tit li h3{
+	color:#7285a0;
+}
+.loatview_fliter_tit li span{
+	color: #253b4c;
+}
+.loatview_fliter_tit li a{
+	padding: 4px 7px;
+	border-radius: 4px;
+}
+.loatview_fliter_tit li a:hover{
+	color: #e5641e;
+}
+.loatview_fliter_tit li .one{
+	width: 60px;
+}
+.loatview_fliter_tit li a.orange-bg{
+	background: #ff7a33;
+	color: #fff;
+}
+.no_data_wrapper{
+	position:relative;
+	height: 100%;
+	width:100%;
+}
+.no_data_wrapper .icon{
+	position: absolute;
+	left:50%;
+	margin-left: -18px;
+	top:30px;
+}
+.no_data_wrapper p{
+	text-align:center;
+	color: #7285a0;
+	font-size: 14px;
+	padding-top: 98px;
+}

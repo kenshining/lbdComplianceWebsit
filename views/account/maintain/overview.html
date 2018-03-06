@@ -1,0 +1,277 @@
+<script type="text/javascript" src="/plugins/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="/dist/javascripts/account/overview_control.min.js?v=8d7ba12d5d"></script>
+<div class='overview_wrapper'>
+	<div class="overview_top_bar">
+		<!-- 账户总览资产总览 -->
+		<%if(overviewDatas[1] && overviewDatas[1].overviewAsset && overviewDatas[1].overviewAsset.state == "SUCCESS" && overviewDatas[1].overviewAsset.data){%>
+			<div class="total_wrapper arrow left">
+				<span class="total_number formatMoney">￥<%=overviewDatas[1].overviewAsset.data.totalAssets%></span>
+				<h2>
+					资产总额
+					<span id='total_float_icon' class='icon-float icon'></span>
+					<div class='float arrow total_number_float hide' id='total_float'>待收本金+待收收益+冻结金额+可用余额+待还本息（负资产）</div>
+				</h2>
+			</div>
+			<ul class="fenlei_info left">
+				<li>
+					<span class="formatMoney">￥<%=overviewDatas[1].overviewAsset.data.receivePrincipal%></span>
+					<h3>待收本金</h3>
+				</li>
+				<li>
+					<span class="formatMoney">￥<%=overviewDatas[1].overviewAsset.data.receiveIncome%></span>
+					<h3>待收收益</h3>
+				</li>
+				<li>
+					<span class="formatMoney">￥<%=overviewDatas[1].overviewAsset.data.paybackbx%></span>
+					<h3>待还本息</h3>
+				</li>
+				<li>
+					<span class="formatMoney">￥<%=overviewDatas[1].overviewAsset.data.freezingAmount%></span>
+					<h3>冻结金额</h3>
+				</li>
+			</ul>
+		<%}%>
+		<!-- 用户奖励信息 -->
+		<%if(overviewDatas[2] && overviewDatas[2].userBonus && overviewDatas[2].userBonus.state == "SUCCESS" && overviewDatas[2].userBonus.data){%>
+			<ol class='right'>
+				<li><em class='icon icon-zh-hb'></em><span class='l'>红包(个)：</span><span class='orange'><%=overviewDatas[2].userBonus.data.redCount || 0%></span></li>
+				<li><em class='icon icon-zh-jxq'></em><span class='l'>加息券(张)：<span class='orange'><%=overviewDatas[2].userBonus.data.rateCount || 0%></li>
+				<li><em class='icon icon-zh-tyj'></em><span class='l'>体验金：</span><span class='orange formatMoney'>￥<%=overviewDatas[2].userBonus.data.experienceAmount%></span></li>
+			</ol>
+		<%}%>
+	</div>
+
+	<div class="overview_investment">
+		<!--  我的投资 -->
+			<section class="left" id='user_investment'>
+				<div class="overview_investment_title index_title clearfix">
+					<h2 class="index_title_l left tit">我的投资</h2>
+					<a class="index_title_r right" onclick="changeCurrentMenu('/account/investment/investmentView','investmentView_sub_m_btn');">更多<div class="icon icon-zh-more"></div></a>
+				</div>
+				<%if(overviewDatas[3] && overviewDatas[3].userInvest && overviewDatas[3].userInvest.state == "SUCCESS" && overviewDatas[3].userInvest.data.length >0){%>
+					<table class='tab'>
+						<thead>
+							<tr><td>状态</td><td>笔数</td><td>金额(元)</td></tr>
+						</thead>
+							<tbody>
+								<%overviewDatas[3].userInvest.data.forEach(function(item){%>
+									<tr><td class='invest_state' data-state='<%=item.state%>'>--</td><td><%=item.counts%></td><td class='formatMoney'><%=item.amout%></td></tr>
+								<%})%>
+							</tbody>
+					</table>
+				<%}else{%>
+					<table class='tab'>
+						<thead>
+							<tr><td>状态</td><td>笔数</td><td>金额(元)</td></tr>
+						</thead>
+					</table>
+					<div class="no_data_wrapper">
+						<div class="icon icon-zh-no" style='top:50px;'></div>
+						<p style='padding-top: 118px;'>暂无投资记录</p>
+					</div>
+				<%}%>
+			</section>
+		<!--  交易记录 -->
+			<section class="right" id='user_record'>
+				<div class="overview_investment_title index_title clearfix">
+					<h2 class="index_title_l left tit">交易记录</h2>
+					<a class="index_title_r right" onclick="changeCurrentMenu('/account/chargeManagement/tradeRecord','tradeRecord_sub_m_btn');">更多<div class="icon icon-zh-more"></div></a>
+				</div>
+				<%if(overviewDatas[4] && overviewDatas[4].userRecord && overviewDatas[4].userRecord.state == "SUCCESS" && overviewDatas[4].userRecord.data.content.length>0){%>
+				<table class='tab'>
+					<thead>
+						<tr><td>交易时间</td><td>交易类型</td><td>金额(元)</td></tr>
+					</thead>
+					<tbody>
+						<%overviewDatas[4].userRecord.data.content.forEach(function(item){%>
+							<tr><td><%=item.createdDate%></td><td class='overview_trading_record' data-type='<%=item.type%>'>--</td><td class='formatMoney'><%=item.amount%></td></tr>
+						<%})%>
+					</tbody>
+				</table>
+				<%}else{%>
+					<table class='tab'>
+						<thead>
+							<tr><td>交易时间</td><td>交易类型</td><td>金额(元)</td></tr>
+						</thead>
+					</table>
+					<div class="no_data_wrapper">
+						<div class="icon icon-zh-no" style='top:50px;'></div>
+						<p style='padding-top: 118px;'>暂无交易记录</p>
+					</div>
+				<%}%>
+			</section>
+	</div>
+	<!-- 我的借款 -->
+		<div class="overview_loan">
+			<section class="left">
+				<div class="overview_loan_title index_title clearfix">
+					<h2 class="index_title_l left tit">我的借款</h2>
+				</div>
+				<%if(overviewDatas[6] && overviewDatas[6].loanTotol && overviewDatas[6].loanTotol.state == "SUCCESS"){%>
+					<div class='overview_loan_data clearfix'>
+						<div class="left arrow">
+							<span>￥<span class="formatMoney" id='myLoan_dhbx'></span></span>
+							<h3>待还本息</h3>
+						</div>
+						<ol class='right'>
+							<li>
+								<span>￥<span class="formatMoney" id='myLoan_dhBj'><%=overviewDatas[6].loanTotol.data.dhBj%></span></span>
+								<h3>待还本金</h3>
+							</li>
+							<li>
+								<span>￥<span class="formatMoney" id='myLoan_dhLx'><%=overviewDatas[6].loanTotol.data.dhLx%></span></span>
+								<h3>待还利息</h3>
+							</li>
+						</ol>
+					</div>
+				<%}else{%>
+					<div class='overview_loan_data clearfix'>
+						<div class="left arrow">
+							<span>￥0.00</span>
+							<h3>待还本息</h3>
+						</div>
+						<ol class='right'>
+							<li>
+								<span>￥0.00</span> 
+								<h3>待还本金</h3>
+							</li>
+							<li>
+								<span>￥0.00</span>
+								<h3>待还利息</h3>
+							</li> 
+						</ol>
+					</div>
+				<%}%>
+			</section>
+			<!-- 近期还款 -->
+			<section class="right">
+				<div class="overview_investment_title index_title clearfix">
+					<h2 class="index_title_l left tit">近期还款</h2>
+					<a class="index_title_r right" onclick="changeCurrentMenu('/account/loan/loanView','loanView_sub_m_btn');">更多<div class="icon icon-zh-more"></div></a>
+				</div>
+				<%if(overviewDatas[5] && overviewDatas[5].userPayBack && overviewDatas[5].userPayBack.state == "SUCCESS" && overviewDatas[5].userPayBack.data.length >0 ){%>
+					<table class='tab repayment_tab'>
+						<thead>
+							<tr><td>本期还款日</td><td>应还本息(元)</td><td>当期还款</td></tr>
+						</thead>
+						<tbody>
+							<%overviewDatas[5].userPayBack.data.forEach(function(item){%>
+								<tr><td><%=item.yhkr%></td><td class='formatMoney'><%=item.bx%></td><td><a onclick="changeCurrentMenu('/account/loan/loanViewDesp?targetid=<%=item.targetId%>','loanView_sub_m_btn');">立即还款</a></td></tr>
+							<%})%>
+						</tbody>
+					</table>
+				<%}else{%>
+					<table class='tab repayment_tab'>
+						<thead>
+							<tr><td>本期还款日</td><td>应还本息(元)</td><td>当期还款</td></tr>
+						</thead>
+					</table>
+					<div class="no_data_wrapper">
+						<div class="icon icon-zh-no" style='top:20px;'></div>
+						<p style='padding-top: 88px;'>暂无还款记录</p>
+					</div>
+				<%}%>
+			</section>
+		</div>
+	<!--收益统计-->
+	<div class="overview_income_statistics hide">
+		<div class="overview_income_statistics_tit">
+			<h2 class='left tit'>收益统计</h2>
+			<ol class='right'>
+				<li>已收收益：<span class='orange'>￥10,000.00</span></li>
+				<li>待收收益：<span class='orange'>￥10,000.00</span></li>
+			</ol>
+		</div>
+		<!-- 收益统计折线图 -->
+		<section id='myChart' style="width: 892px;height:360px;">
+			
+		</section>
+	</div>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+<!-- <script type="text/javascript">
+	var myChart = echarts.init(document.getElementById('myChart'))
+	var datas = [
+		{'dssy':'','tzcs':''},
+		{'dssy':'','tzcs':''},
+		{'dssy':'','tzcs':''},
+		{'dssy':'','tzcs':''},
+		{'dssy':'','tzcs':''},
+		{'dssy':'','tzcs':''},
+		{'dssy':'200','tzcs':'3'},
+		{'dssy':'180','tzcs':'4'},
+		{'dssy':'250','tzcs':'5'},
+		{'dssy':'300','tzcs':'2'},
+		{'dssy':'280','tzcs':'7'},
+		{'dssy':'300','tzcs':'8'},
+		{'dssy':'500','tzcs':'2'},
+		{'dssy':'','tzcs':''},
+		{'dssy':'','tzcs':''}
+	];
+	var showDatas = [];
+	for(var i in datas){
+		showDatas.push(datas[i].dssy);
+	};
+	option = {
+	    title: {
+	        show:false
+	    },
+	    series: [
+	        {
+	            name:'待收收益',
+	            type:'line',
+	            stack: '',
+	            data:showDatas
+	        }
+	    ],
+	    tooltip: {
+	        trigger: 'axis',
+	       	formatter: function(params){
+	       		var idx = params[0].dataIndex;
+	       		var res = '<div style="position:absolute;left:0;top:0;padding:5px;border-radius:4px;background:#fca948;box-shadow:0 0 2px 1px rgba(0,0,0,0.1);">待收收益 : '+datas[idx].dssy+'元</br>投资次数 : '+datas[idx].tzcs+'次</div>';
+	       		if(datas[idx].dssy == "" && datas[idx].tzcs == ""){
+	       			return;
+	       		}else{
+	       			return res ;
+	       		}
+	       	},
+	       	axisPointer:{
+	       		type:'none'
+	       	},
+	       	position:function(p){
+	       		return [p[0]-50,p[1]-40];
+	       	}
+	    },
+	    toolbox:{
+	    	feature:{
+
+	    	}
+	    },
+	    grid: {
+	        left: '0',
+	        right: '2%',
+	        top:'2%',
+	        containLabel: true
+	    },
+	    toolbox: {
+	        feature: {
+	            saveAsImage: {show:false}
+	        }
+	    },
+	    xAxis: {
+	        type: 'category',
+	        boundaryGap: false,
+	        data: ['8.01','8.02','8.03','8.04','8.05','8.06','8.07','8.08','8.09','8.10','8.11','8.12','8.13','8.14','8.15'],
+	        splitLine:{show:true}
+	    },
+	    yAxis: {
+	        type: 'value',
+	        splitLine:{show:true}
+	    },
+	    color:['#fca948']
+	};
+
+ 	myChart.setOption(option);
+
+</script> -->
+

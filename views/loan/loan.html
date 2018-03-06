@@ -1,0 +1,125 @@
+<% include ../navheader.html %>
+	<div class="loan_page_wrapper">
+		<div class="loan_top">
+		<!-- 贷款申请部分 -->
+			<div class="loan_application_wrapper">
+				<h2>贷款申请</h2>
+				<p  id='loan_error_tip' class="error_tip"></p>
+				<div class="input_wrapper hover">
+					<span class="icon icon-user"></span>
+					<input id='loan_name' type="text" name="" maxlength="6" placeholder="请输入姓名">
+				</div>
+				<div class="input_wrapper hover">
+					<span class="icon icon-zh-tel"></span>
+					<input id='loan_mobile' type="text" name="" placeholder="请输入手机号" maxlength="11">
+				</div>
+				<div class="input_wrapper hover">
+					<span class="icon icon-zh-money"></span>
+					<input id='loan_money' type="text" name="" placeholder="请输入借款金额" maxlength="4">
+					<span class="yuan">万元</span>
+				</div>
+				<div class="input_wrapper hover">
+					<span class="icon icon-zh-city"></span>
+					<input id='loan_city' type="text" name="" placeholder="请输入常住城市" maxlength="10">
+				</div>
+				<div class='clearfix'>
+					<div class="input_wrapper imgcode_input_wrapper hover ">
+						<input maxlength="4" type="text" name="" placeholder="请输入图形验证码" id='loan_img_code'>
+					</div>
+					<div class="input_wrapper imgcode_wrapper">
+						<img id="loan_imgCode"  src="">
+					</div>
+				</div>
+				<input type='button'  id='loan_regist_submit' class="btn" value="立即申请" />
+			</div>
+		</div>
+		<!-- 借款产品特点 -->
+		<div class="loan_pro_character">
+			<h2>借款产品特点</h2>
+			<ol class='clearfix'>
+				<li>
+					<div class='icon_wrapper'><div class="icon icon-zh-speed"></div></div>
+					<h3>快捷</h3>
+					<p>1分钟申请，资料齐全<br>24小时内放款</p>
+				</li>
+				<li>
+					<div class='icon_wrapper'><div class="icon icon-zh-wdy"></div></div>
+					<h3>无抵押</h3>
+					<p>无抵押、无担保<br>纯信用贷款</p>
+				</li>
+				<li>
+					<div class='icon_wrapper'><div class="icon icon-zh-loan-high"></div></div>
+					<h3>额度高</h3>
+					<p>流程简单<br>最高可贷50万元</p>
+				</li>
+				<li>
+					<div class='icon_wrapper'><div class="icon icon-zh-lh"></div></div>
+					<h3>期限灵活</h3>
+					<p>按需定制还款周期<br>降低还款压力</p>
+				</li>
+			</ol>
+		</div>
+		<!-- 申请流程 -->
+		<div class="loan_application_process">
+			<h2>申请流程</h2>
+			<div class="icon-zh-sqlc"></div>
+			<ol class='clearfix'>
+				<li>填写个人信息</li><li>专业客服电话回访</li><li>提交资料审批放款</li>
+			</ol>
+		</div>
+		<!-- 产品介绍 -->
+		<div class="loan_pro_instroduce">
+			<h2>产品介绍</h2>
+			<div class="loan_pro_list clearfix">
+				<dl>
+					<dt><img src="/dist/images/loan/jyd.png?v=3ac1630602"></dt>
+					<dd><h3>精英贷</h3><p>一款针对公务员等优质职业人员的优质贷款产品。贷款额度大、期限长且费率低。</p></dd>
+				</dl>
+				<dl>
+					<dt><img src="/dist/images/loan/xxd.png?v=9cff6be579"></dt>
+					<dd><h3>新薪贷</h3><p>有稳定职业和持续收入来源的工薪阶层 ,还款方式灵活、无需抵押物。</p></dd>
+				</dl>
+				<dl>
+					<dt><img src="/dist/images/loan/wqsd.png?v=fa0162e1be"></dt>
+					<dd><h3>微企速贷</h3><p>在其本市拥有房产的经营类人群。无抵押、无担保、无贷前费用、手续简便、放款快捷。</p></dd>
+				</dl>
+				<dl>
+					<dt><img src="/dist/images/loan/qyd.png?v=82324beb03"></dt>
+					<dd><h3>企业贷</h3><p>用于日常经营周转，以经营收入作为主要还款来源。无代签费用、手续简便、放款快捷。</p></dd>
+				</dl>
+				<dl>
+					<dt><img src="/dist/images/loan/nyd.png?v=c2e9c84035"></dt>
+					<dd><h3>农业贷</h3><p>流程更简单，服务更专业，资金更安全，额度更高!一对一顾问量身制作方案，不成功不收费。</p></dd>
+				</dl>
+			</div>
+		</div>
+		<!-- 成功案例 -->
+		<div class="loan_success_item">
+			<h2>成功案例</h2>
+			<ul>
+				<li>
+					<img src="/dist/images/zh-sqr.jpg?v=57b2711352">
+					<h3>李先生  公交公司驾驶员 年收入10万元</h3>
+					<p>杨老师 某国企财务主管 年收入24万元左右。<br>为孩子购买了住房，但缺少装修资金。经朋友介绍，杨老师找到了乐百贷，希望可以通过无抵押信用贷款的方式获得资金帮助。递交资料当即通过了审核，第二天上午签订借款协议，当天资金到账</p>
+				</li>
+				<li>
+					<img src="/dist/images/zh-sqr.jpg?v=57b2711352">
+					<h3>李先生  公交公司驾驶员 年收入10万元</h3>
+					<p>杨老师 某国企财务主管 年收入24万元左右。<br>为孩子购买了住房，但缺少装修资金。经朋友介绍，杨老师找到了乐百贷，希望可以通过无抵押信用贷款的方式获得资金帮助。递交资料当即通过了审核，第二天上午签订借款协议，当天资金到账</p>
+				</li>
+				<li>
+					<img src="/dist/images/zh-sqr.jpg?v=57b2711352">
+					<h3>李先生  公交公司驾驶员 年收入10万元</h3>
+					<p>杨老师 某国企财务主管 年收入24万元左右。<br>为孩子购买了住房，但缺少装修资金。经朋友介绍，杨老师找到了乐百贷，希望可以通过无抵押信用贷款的方式获得资金帮助。递交资料当即通过了审核，第二天上午签订借款协议，当天资金到账</p>
+				</li>
+				<li>
+					<img src="/dist/images/zh-sqr.jpg?v=57b2711352">
+					<h3>李先生  公交公司驾驶员 年收入10万元</h3>
+					<p>杨老师 某国企财务主管 年收入24万元左右。<br>为孩子购买了住房，但缺少装修资金。经朋友介绍，杨老师找到了乐百贷，希望可以通过无抵押信用贷款的方式获得资金帮助。递交资料当即通过了审核，第二天上午签订借款协议，当天资金到账</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+<% include ../footer.html %>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+<script type="text/javascript" src="/dist/javascripts/loan/loan_control.min.js?v=731b7dcebe"></script>

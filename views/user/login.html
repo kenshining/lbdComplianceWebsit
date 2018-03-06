@@ -1,0 +1,47 @@
+<% include ../header.html %>
+<script type="text/javascript" src="/dist/javascripts/user/login_control.min.js?v=a8eea4c607"></script>
+<div class="logo_bar_wrapper">
+	<div class="logo_bar">
+		<div class="logo_wrapper">
+			<div>
+            	<a href="/"><span class='icon-logo'></span></a>
+            	<span class='icon-logoText'></span>
+        	</div>
+		</div>
+		<div class="welcome_login"><span>欢迎登录</span></div>
+		<div class="regist_go">
+			<span>没有账户，<a href="/user/regist" target="_blank">去注册</a></span>
+		</div>
+	</div>
+</div>
+<div class="login_wrapper">
+	<div class="login_bg">
+		<div class="login_box">
+			<p  id='login_error_tip' class="error_tip hide_op">图片验证码错误</p>
+			<div class="input_wrapper hover">
+				<span class="icon icon-user"></span>
+				<input id='login_mobile' type="text" name="" placeholder="请输入手机号" maxlength="11">
+			</div>
+			<div class="input_wrapper hover">
+				<span class="icon icon-pwd"></span>
+				<input  id='login_pwd' type="password" name="" placeholder="请输入登录密码" maxlength="20" textmode="text">
+			</div>
+			<div class='clearfix hide' id="login_img_code_wrapper" >
+				<div class="input_wrapper imgcode_input_wrapper hover">
+					<input maxlength="4" type="text" name="" placeholder="请输入图形验证码" id='login_img_code'>
+				</div>
+				<div class="input_wrapper imgcode_wrapper">
+					<img id="login_validate_imgCode" src="">
+				</div>
+			</div>
+			<div class='rem_username'>
+				<span><input type="checkbox" name="" id='rem_username_ck'><label for='rem_username_ck'><em id="rem_username_icon"  class='icon'></em><em class='text'>记住用户名</em></label></span>
+				<a class='forget_pwd' href="/user/forget_password">忘记密码</a>
+			</div>
+			<input type='button'  id='login_submit' class="btn login_btn" value="登录" />
+		</div>
+	</div>
+</div>
+<input type="hidden" id="initValidateCount" value="<%=count%>" />
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+<% include ../footer.html %>

@@ -1,0 +1,176 @@
+.lmybody .invitemain{
+	width: 892px;
+	margin:0 auto;
+}
+.invitemain .title{
+	color: #253b4c;
+	font-size: 30px;
+	padding-top: 44px;
+	text-align: center;
+}
+.invitemain .desp{
+	color: #253b4c;
+	font-size: 18px;
+	padding-top: 25px;
+	padding-bottom: 38px;
+	border-bottom: 1px solid #e4e9ee;
+	text-align: center;
+}
+.invitemain .inviteProcess{
+	width: 515px;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-top: 54px;
+}
+.inviteProcess .iconview{
+	width: 115px;
+	text-align: center;
+}
+.inviteProcess .iconview .processDesp{
+	margin-top: 15px;
+}
+.inviteProcess .iconarrow{
+	height: 48px;
+	padding-top: 12px;
+	margin-left: -16px;
+	margin-right: -21px;
+}
+.invitemain .invitelink{
+	width: 721px;
+	margin:92px auto 49px; 
+}
+.btncopylink{
+	width: 191px;
+	height: 40px; 
+	cursor: pointer;
+}
+.invitelink .inviteLinkText{
+	display: inline-block;
+	width: 520px;
+	color: #7285a0;
+}
+.invitemain .share{
+	width: 653px;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+}
+.invitemain .share .iconwidth{
+	width: 162px;
+}
+.invitemain .share .iconshare{
+	height: 45px;
+}
+.invitemain .share .iconshare a{
+	display: block;	 
+    margin: 0 auto; 
+}
+.invitemain .share .iconshare a.aweixin{
+	width: 46px;
+	height: 39px;
+	background: url('/dist/images/account/weixin_all.png') no-repeat 0px 0px;
+}
+.invitemain .share .iconshare a.aweixin:hover{
+	background: url('/dist/images/account/weixin_all.png') no-repeat -47px 0px;
+}
+
+.invitemain .share .iconshare a.aqq{
+	width: 39px;
+	height: 39px;
+	background: url('/dist/images/account/qq_all.png') no-repeat 0px 0px;
+}
+.invitemain .share .iconshare a.aqq:hover{
+	background: url('/dist/images/account/qq_all.png') no-repeat -40px 0px;
+}
+
+.invitemain .share .iconshare a.aqone{
+	width: 41px;
+	height: 39px;
+	background: url('/dist/images/account/qone_all.png') no-repeat 0px 0px;
+}
+.invitemain .share .iconshare a.aqone:hover{
+	background: url('/dist/images/account/qone_all.png') no-repeat -41px 0px;
+}
+
+.invitemain .share .iconshare a.aweibo{
+	width: 49px;
+	height: 39px;
+	background: url('/dist/images/account/weibo_all.png') no-repeat 0px 0px;
+}  
+.invitemain .share .iconshare a.aweibo:hover{
+	background: url('/dist/images/account/weibo_all.png') no-repeat -49px 0px;
+} 
+.invitemain .inviteRule{
+	margin-top: 125px;
+	padding-left: 23px;
+	padding-bottom: 100px;
+}
+.inviteRule .inviteRuleTitle{
+	font-size: 16px;
+	height: 18px;
+	line-height: 18px;
+}
+.inviteRule .inviteRuleText{
+	color: #7285a0;
+	margin-top: 21px;
+	margin-left: 28px;
+}
+.inviteRuleTitle .iconrule{
+	background: url('/dist/images/account/inviteTip.png');
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	margin-right: 14px;
+	top: 1px;
+	position: relative;
+}
+.weixin {
+  margin-left: 154px;
+  margin-right: 165px;
+  margin-top: 70px; 
+}
+.weixin_tit {
+  padding-left: 50px;
+  font-size: 22px;
+  color: #25424c; 
+}
+.weixin_icon {
+  margin-top: 20px;
+  display: block;
+  width: 204px;
+  height: 203px;
+}
+.weixin_tit1 {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #25424c; 
+}
+/*申请记录*/
+.lmybody .inviteInfo{
+	width: 888px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 45px 0px;
+}
+.inviteInfo .divValue{
+	width: 222px;
+	text-align: center;
+}
+.inviteInfo .divValue .pvalue{  
+	font-size: 30px;
+}
+.inviteInfo .divValue .pvalue .fontsmall{
+	font-size: 18px;
+}
+.inviteInfo .divValue .ptext{  
+	font-size: 16px;
+	color: #7285a0;
+	margin-top: 15px;
+}
+.lmybody .inviteMain{
+	width: 888px;
+	margin: 16px auto 0px; 
+	padding-top: 30px;
+
+}

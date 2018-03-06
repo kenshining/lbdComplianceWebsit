@@ -1,0 +1,6 @@
+{
+	"h5Host":"http://122.11.59.133:3200",
+	"h5PathConfig":[
+		{"acceptURL":"/user/regist","redirectURL":"/financial/financial_main"}
+	]
+}

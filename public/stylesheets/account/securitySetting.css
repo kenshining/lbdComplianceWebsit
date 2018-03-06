@@ -1,0 +1,72 @@
+.securitySetting_wrapper{
+	width: 944px;
+	height: auto;
+	background: #f9fcff;
+	box-sizing: border-box;
+	padding:0 28px;
+	padding-bottom: 80px;
+}
+.securitySetting_userInfo_list{
+	padding-top: 30px;
+}
+.securitySetting_userInfo_list li{
+	height: 67px;
+	line-height: 67px;
+	border-bottom: 1px solid #e4e9ee;
+	padding:0 64px;
+  	box-shadow: border-box;
+}
+.securitySetting_userInfo_list h3,.securitySetting_userInfo_list p,.securitySetting_userInfo_list div,.securitySetting_userInfo_list section{
+	float: left;
+}
+.securitySetting_userInfo_list h3,.securitySetting_userInfo_list p,.securitySetting_userInfo_list a,.securitySetting_userInfo_list span{
+	font-size: 16px;
+}
+.securitySetting_userInfo_list h3{
+	width: 155px;
+	color: #253b4c;
+}
+.securitySetting_userInfo_list p{
+	width: 400px;
+}
+.securitySetting_userInfo_list section{
+	float: right;
+}
+.securitySetting_userInfo_list a{
+	color: #3974ce;
+}
+.securitySetting_userInfo_list p,.securitySetting_userInfo_list .state_no span,.securitySetting_userInfo_list .cannot{
+	color: #7285a0;
+}
+.securitySetting_userInfo_list .green{
+	color: #51d78d;
+}
+.securitySetting_userInfo_list .green,.securitySetting_userInfo_list .cannot{
+	cursor: auto;
+}
+.securitySetting_userInfo_list .icon{
+	position: relative;
+	top:2px;
+	margin-right: 8px;
+}
+.reviseBankCard_dailog{
+	height: 360px!important;
+}
+.reviseBankCard_dailog p{
+	text-align: left;
+	padding-left: 83px;
+	padding-right: 83px;
+	font-size: 14px;
+	color: #253b4c;
+	line-height: 24px;
+}
+.reviseBankCard_dailog .gary{
+	color:#7285a0;
+	font-size: 12px;
+}
+.reviseBankCard_dailog  .btn{
+	margin-top: -20px;
+}
+.photo_dialog img{
+	border-radius: 50%;
+}

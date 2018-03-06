@@ -1,0 +1,19 @@
+.reviseDealPwd_wrapper{
+	width: 944px;
+	height: 400px;
+	background: #f9fcff;
+}
+.set_dailog_wrpper{
+	height: 253px;
+}
+.set_dailog_wrpper{
+	line-height: 1.3;
+}
+.set_dailog_wrpper .href_login{
+	margin-top: 30px;
+	font-size: 14px;
+	color: #7582a0;
+}
+.set_dailog_wrpper .href_login a{
+	color: #3974ce;
+}

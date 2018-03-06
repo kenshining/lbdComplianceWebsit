@@ -1,0 +1,253 @@
+.overview_top_bar,.overview_investment,.overview_loan,.overview_income_statistics{
+	width: 944px;
+	background: #f9fcff;
+	box-sizing: border-box;
+	padding:10px 28px;
+}
+.overview_investment,.overview_loan,.overview_income_statistics{
+	margin-top: 15px;
+}
+.overview_top_bar{
+	height: 144px;
+	padding:28px 30px;
+	position: relative;
+}
+.overview_top_bar .right, .total_wrapper{
+	height: 90px;
+}
+.overview_top_bar .total_wrapper{
+	width: 232px;
+	border-right: 1px solid #dde3e8;
+	position: relative;
+}
+.overview_top_bar .total_wrapper .total_number{
+	font-size: 28px;
+	color: #ff7a33;
+}
+.overview_top_bar .total_wrapper h2{
+	font-size: 18px;
+	color: #253b4c;
+	margin-top:17px;
+	position: relative;	
+}
+.overview_top_bar .total_wrapper h2 .icon{
+	width: 15px;
+	height: 15px;
+	border-radius: 999px;
+	display: inline-block;
+	position: relative;
+	top:2px;
+	left:5px;
+	cursor: pointer;
+}
+.overview_top_bar .total_number_float{
+	position: absolute;
+	top:-23px;
+	left:127px;
+	width: auto;
+	white-space: nowrap;
+	padding:0 8px;
+	background: #f9fcff;
+	color:#253b4c;
+	z-index:99;
+}
+.overview_top_bar .total_number_float.arrow::after{
+	left:108px;
+	top:17px;
+	transform:rotateZ(-45deg);
+	-webkit-transform:rotateZ(-45deg);
+	-moz-transform:rotateZ(-45deg);
+	-ms-transform:rotateZ(-45deg);
+	-o-transform:rotateZ(-45deg);
+}
+.overview_top_bar .total_wrapper .icon-bg:hover{
+	background: #2a84d8;
+}
+.overview_top_bar .total_wrapper.arrow::after{
+	left:100%;
+	top:40px;
+	background: #f9fcff;
+	transform:rotateZ(45deg);
+	-webkit-transform:rotateZ(45deg);
+	-moz-transform:rotateZ(45deg);
+	-ms-transform:rotateZ(45deg);
+	-o-transform:rotateZ(45deg);
+}	
+
+.overview_top_bar .fenlei_info{
+	width: 350px;
+	padding-left:40px;
+	margin-top: -5px;
+}
+.overview_top_bar .fenlei_info li{
+	width: 50%;
+	float: left;
+}
+.overview_top_bar .fenlei_info li:nth-child(3),.overview_top_bar .fenlei_info li:nth-child(4){
+	margin-top: 10px;
+}
+.overview_top_bar .fenlei_info span{
+	color:#253b4c;
+	font-size: 16px;
+}
+.overview_top_bar .fenlei_info h3{
+	color: #7285a0;
+	font-size: 14px;
+	padding-top: 2px
+}
+.overview_top_bar .right{
+	width: 260px;
+	padding-left: 60px;
+	box-sizing: border-box;
+	border-left:1px solid #dde3e8;
+}
+.overview_top_bar .right li{
+	position: relative;
+	line-height: 34px;
+	top: -7px;
+}
+.overview_top_bar .right li span{
+	font-size: 14px;
+}
+.overview_top_bar .right li .l{
+	color: #7285a0;
+	margin-left: 32px;
+}
+.overview_top_bar .right li .icon{
+	position: absolute;
+	left:0;
+	top:50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+.overview_top_bar .right li:nth-of-type(1) .icon{
+	left:0px;
+}
+.overview_top_bar .right li:nth-of-type(2) .icon{
+	left:-3px;
+}
+.overview_top_bar .right li:nth-of-type(3) .icon{
+	left:-1px;
+}
+
+.overview_investment{
+	height: 374px;
+}
+.overview_investment section.left,.overview_investment section.right{
+	width: 423px;
+}
+.overview_loan section.left,.overview_loan section.right{
+	width: 423px;
+}
+.overview_loan{
+	height: 270px;
+}
+.overview_wrapper .tit{
+	font-size: 16px !important;
+	color: #7285a0 !important;
+}
+.overview_wrapper .index_title{
+	margin-bottom: 10px;
+}
+/*表格*/
+.tab{
+	width: 100%;
+	box-sizing: border-box;
+}
+.tab tr{
+	height: 46px;
+}
+.tab thead{
+	background: #e2ebf6;
+}
+.tab tr td:last-child{
+	padding-right:15px;
+}
+.tab tbody tr:nth-child(2n){
+	background: #ecf4ff;
+}	
+.tab tbody tr:nth-child(2n-1){
+	background: #f3f8ff;
+}
+.tab td{
+	text-align: center;
+	font-size: 14px;
+}
+.tab thead td{
+	color: #7285a0;
+}
+.tab tbody td{
+	color: #253b4c;
+}
+
+.tab td a,.tab td span{
+	color: #2a84d8;
+}
+
+.overview_loan_data{
+	margin-top: 30px;
+}
+.overview_loan_data .left{
+	width: 186px;
+	height: 138px;
+	border-right: 1px solid #dde3e8;
+	position: relative;
+}
+.overview_loan_data .left span{
+	font-size: 22px;
+	color: #253b4c;
+	line-height: 4;
+}
+.overview_loan_data .left h3{
+	font-size: 18px;
+	color: #7285a0;
+	position: relative;
+	top:-25px;
+}
+.overview_loan_data .arrow::after{
+	left:100%;
+	top:64px;
+	background: #f9fcff;
+	transform:rotateZ(45deg);
+	-webkit-transform:rotateZ(45deg);
+	-moz-transform:rotateZ(45deg);
+	-ms-transform:rotateZ(45deg);
+	-o-transform:rotateZ(45deg);
+}
+
+.overview_loan_data .right{
+	width: 210px;
+}
+.overview_loan_data .right li span{
+	font-size: 18px;
+	color: #253b4c;
+}
+.overview_loan_data .right li h3{
+	font-size: 14px;
+	color: #7285a0;
+}
+.overview_loan_data .right li:last-child{
+	margin-top: 53px;
+}
+.overview_income_statistics{
+	height: 388px;
+}
+.overview_income_statistics_tit{
+	line-height: 47px;
+}
+.overview_income_statistics_tit li{
+	float: left;
+	color: #7285a0;
+	font-size: 14px;
+	margin-right: 30px;
+}
+.overview_top_bar .icon-zh-tyj{
+	height: 20px;
+}
+.overview_top_bar .icon-zh-hb{
+	background-position: -1193px -410px;
+	height: 20px;
+}

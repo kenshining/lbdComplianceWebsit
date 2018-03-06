@@ -1,0 +1,66 @@
+.msgcode_btn{
+	width: 132px;
+	height: 40px;
+	margin: 0;
+	border: none;
+	font-size: 14px;
+}
+#regist_wrapper{
+	min-height: 645px;
+}
+.msgcode_btn.disabled{
+	background: #ff9a64;
+}
+.msgcode_btn:hover{
+	cursor: pointer; 
+}
+.regist_bg{
+	width: 1100px;
+	height: 512px;
+	position: relative;
+	margin: 0 auto;
+	background: url(/dist/images/regist_bg.png) no-repeat;
+}
+.set_tip{
+	width: 100%;
+	font-size: 12px;
+	color: #8190a7;
+	position: relative;
+	top:-12px;
+}
+.regist_dialog_wrapper{
+	width:300px;
+	height: 174px;
+	border-radius: 5px;
+	background: #fcfeff;
+	margin-top: 210px;
+	padding-top: 26px;
+}
+.regist_dialog_wrapper .ok{
+	margin:0 auto;
+}
+.regist_dialog_wrapper p{
+	text-align: center;
+}
+.regist_dialog_wrapper p:nth-of-type(1){
+	padding-top: 10px;
+	font-size: 18px;
+}
+.regist_dialog_wrapper p:nth-of-type(2){
+	font-size: 14px;
+	color: #8190a7;
+	padding-top: 10px;
+}
+.regist_dialog_wrapper p:nth-of-type(2) a{
+	color: #2a84d8;
+}
+.regist_dialog_wrapper p:nth-of-type(3){
+	font-size: 12px;
+	padding-top: 30px;
+}
+#read_agreement_ck,#regist_validate_imgCode{
+	cursor: pointer;
+}
+
+
+	

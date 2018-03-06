@@ -1,0 +1,405 @@
+/*common*/
+/*借款样式和投资样式基本相同，都用这个页面的css*/
+.lmybody{
+	font-size: 14px;
+	color: #253b4c;
+}
+.lmy_background{
+	background: #f9fcff;
+}
+.lmy_textblack{
+	color: #253b4c;
+}
+.contentNullImg{
+	width: 37px;
+	height: 53px; 
+	margin: 0 auto;
+	margin-top: 39px;
+	background: url('../images/ltip.png') no-repeat;  
+}
+.contentNullText{
+	color:#7285a0;
+	font-size:14px;
+	margin-top:10px;
+} 
+.lmy_mapview{
+	margin-bottom: 13px;
+}
+.lmy_mapview span.text{
+	color: #7285a0;
+	font-size: 14px;	
+}
+.lmybtn{
+	background: #ff7a33;
+	border-radius: 5px;
+	color: #fefefe;
+	font-size: 16px;
+	cursor: pointer;
+}
+/*分页*/
+.lmy_investPage{ 
+	margin-top:36px; 
+	padding-bottom: 29px; 
+	position: relative;
+}
+/*.lmybody div,.lmybody td,.lmybody p,.lmybody span,.lmybody ul,.lmybody li{ 
+	font-family:"华文细黑"; 
+} */
+/*baseinfo*/
+.lmy_investBaseInfo{
+	height: 191px;
+}
+.lmy_investBaseInfo .baseinfo{
+	float: left;
+	width: 290px;
+	padding-left: 90px;
+	box-sizing: border-box;
+}
+.baseinfo p.value{ 
+	font-size: 30px;
+	margin-top: 23px;
+	margin-left: -5px; 
+}
+.baseinfo p.orange,.baseinfo p.marginTop{
+	margin-top: 16px;
+}  
+.baseinfo p.text{
+	color: #7285a0;
+	font-size: 16px; 
+	margin-top: 4px;
+}
+
+/*listinfo*/
+.lmy_investList{
+	/*height: 715px; */
+	margin-top: 16px;
+	padding-top: 16px;
+}
+.lmy_investList .queryCon{
+	padding-left: 27px; 
+	margin-top: 15px;
+}
+.lmy_investList .queryCon2{ 
+	margin-top: 11px;
+}
+.queryCon .queryType{
+	color: #7285a0;
+	font-size: 14px;
+	float: left;
+	padding:6px 20px 6px 0px; 
+}
+.queryCon ul li{
+	float: left;
+	font-size: 14px;
+	color: #253b4c;
+	width: 81px;
+}
+.queryCon ul li:first-child{
+	width: 59px;
+}
+.queryCon ul li a{
+	display: inline-block; 
+	padding: 4px 7px; 
+}
+.queryCon ul li a.selected{
+	background: #ff7a33;
+	color: #eef8ff;
+	border-radius: 5px;
+} 
+.queryCon ul li a:hover{
+	color: #FF7A33;
+}
+.queryCon ul li a.selected:hover{
+	color: #eef8ff; 
+}
+.queryCon ul li.dateLi{
+	width: 102px; 
+	margin-top: -2px;
+}
+.queryCon ul li.sperateLine{
+	padding: 0px 8px; 
+	width: 30px; 
+	text-align: center;
+	line-height: 31px;
+	margin-top: -2px;
+}
+.queryCon ul li .dateInput{
+	border: 1px solid #e8ebf1;
+	border-radius: 5px;
+	width: 100px;
+	/*padding: 6px 0px;  */
+	height: 30px;
+	text-align: center;
+}
+.queryCon ul li .dateInput:focus{
+	border: 1px solid #9db9e5; 
+}
+
+.lmy_investList .investListTable{
+	margin-left: 27px; 
+	margin-top: 21px;
+	font-size: 14px; 
+	width: 889px;
+	box-sizing:border-box;
+}
+.investListTable table{
+	text-align: center; 
+	width: 100%; 
+}
+.investListTable table tr td{
+	padding: 15px 0px;
+}
+.investListTable table thead{
+	background: #e2ebf6;
+	color: #7285a0;
+}
+.investListTable table tbody tr:nth-child(odd){
+	background: #f3f8ff;
+}
+.investListTable table tbody tr:nth-child(even){
+	background: #ecf4ff;
+}
+.investListTable table tbody tr td a.viewLink{
+	color: #2a84d8;
+	cursor: pointer;
+}
+.investListTable table tbody tr.datanull{
+	background: #f9fcff; 
+} 
+.investListTable table tbody tr.datanull td{
+	padding: 3px 0px 65px 0px;
+}
+
+/*--------------------------------------------------------------------------*/
+/*详情页*/
+.lmy_investDespBaseInfo{
+	padding-right: 30px;
+	padding-top: 15px;
+	height: 151px;
+}
+.viewLoanProtocal{ 
+	text-align: right; 
+	margin-bottom: 8px;
+}
+.viewLoanProtocal a{
+	font-size: 12px;
+	color: #ff7a33;
+}
+.despBaseInfo{
+	overflow: hidden;
+	margin-left: 30px;
+}
+.importInfo{
+	width: 190px;
+}
+.importInfo p.value{
+	font-size: 30px;
+	margin-top: 10px;
+	margin-left: -5px;
+}
+.importInfo p.text{
+	color: #253b4c;
+	margin-top: 12px;
+	font-size: 18px; 
+}
+.secondImportInfo{
+	width: 197px;
+	padding-left: 32px; 
+	box-sizing:border-box;
+	border-left: 1px solid #e4e9ee;
+	border-right: 1px solid #e4e9ee;
+	position: relative;
+} 
+.secondImportInfo p.value{
+	color: #253b4c;
+	font-size: 16px; 
+}
+.secondImportInfo p.valuemargin{
+	margin-top: 25px;
+}
+.secondImportInfo p.text{
+	color: #7285a0; 
+}
+.secondImportInfo:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #f9fcff;
+    border-left: 1px solid #dde3e8;
+    border-top: 1px solid #dde3e8; 
+    left: -2px;
+    transform: rotate(-45deg) translateY(-50%); 
+    -ms-transform: rotate(-45deg) translateY(-50%);
+    -moz-transform: rotate(-45deg) translateY(-50%);
+    -webkit-transform: rotate(-45deg) translateY(-50%);
+    -o-transform: rotate(-45deg) translateY(-50%); 
+    top: 50%;
+}
+.lastImportInfo{
+	width: 211px;
+	padding-left: 41px; 
+	box-sizing:border-box; 
+}
+.lastImportInfoWidth{
+	width: 247px;  
+}
+.lastImportInfo p{
+	margin-top: 25px;
+}
+.lastImportInfo p:nth-child(1){
+	margin-top: 0px;
+} 
+.lastImportInfo p span.value{
+	color: #253b4c;
+	font-size: 12px; 
+} 
+.lastImportInfo p span.text{
+	color: #7285a0; 
+	font-size: 12px;
+	margin-right: 5px;
+}
+
+/*借款弹窗样式*/
+/*.test{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	position: fixed;
+	z-index: 1;
+	left: 0px;
+	top:0px;
+}*/
+.loanDialogSuccess{
+	width: 329px;
+	height: 207px;  
+    text-align: center; 
+}
+.dialog{
+	border-radius: 5px;
+    background: #fcfeff;
+    margin:210px auto 0;  
+}
+.dialog_box .dialog .ok{
+	width: 44px;
+	margin:0 auto;
+	margin-top: 43px;
+}
+.dialog .tip{
+	font-size: 22px;
+	margin-top: 15px;
+	margin-bottom: 28px;
+}
+.dialog .text{
+	font-size: 12px;
+	color: #7285a0;
+}
+.dialog .dialog_close_btn{
+	position: absolute;
+	right: -8px;
+	top:-8px;
+}
+.dialog .title{
+	color: #253b4c;
+	font-size: 18px;
+	padding-left: 33px;
+	padding-top: 19px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #e6eaee;
+	text-align: left;
+}
+.loanRepayDialog{
+	width:555px;
+	height:490px; 
+}
+.dialog .loaninfo{
+	width: 295px;
+	margin:0 auto;
+}
+.loaninfo div{
+	margin-top: 20px;
+}
+.loaninfo div span.label{
+	width: 100px;
+	text-align: right;
+	display: inline-block;
+	color: #7285a0;
+	font-size: 14px;
+}
+.loaninfo div span.value{ 
+	font-size: 14px; 
+}
+.loaninfo div .tradePassword{
+	border:1px solid #e9ecf1;
+	width: 180px;
+	height: 42px;
+	background: #f9fcff;
+	border-radius: 8px;
+	padding-left: 5px;
+}
+.loaninfo div .active{
+	border:1px solid #78a1df;
+}
+.loaninfo .inputPass{
+	position: relative;
+	display: inline-block;
+}
+.inputPass #errorText{
+	position: absolute;
+	top: -18px;
+	left: 0px;
+	display: inline-block; 
+	color: #e52f2c;
+    font-size: 12px;
+}
+.dialog .forgetPass{
+	width: 295px;
+	margin:0 auto; 
+	text-align: right;
+}
+.forgetPass .forgetLink{
+	margin-right: 4px;
+	margin-top: 8px;
+	color: #2a84d8;
+	font-size: 14px;
+	display: inline-block;
+}
+.dialog_box a.forgetLink{
+	background: none;
+	width: auto;
+	height: auto;
+	border-radius: none;
+	line-height: auto;
+}
+.buttonDiv{
+	width: 172px; 
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.buttonDiv .button{
+	width: 172px;
+	height: 42px;
+	background: #ff7a33;
+	border-radius: 5px;
+	color: #fefefe;
+	font-size: 16px;
+} 
+.buttonDiv .button:hover{
+	background: #e5641e;
+} 
+.loanPayDialog{
+	width:555px;
+	height:409px;
+}
+.SetPassDialog{
+	width:551px;
+	height:249px;
+	text-align: center;
+	/*253b4c*/
+}
+.dialog .desp{
+	color: #253b4c;
+	font-size: 14px;
+	margin-top:40px; 
+	padding-bottom: 20px;
+}

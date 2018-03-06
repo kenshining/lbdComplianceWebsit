@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title><%=title%></title>
+	     <!--使用webkit内核-->
+		<meta name="renderer" content="webkit">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	    <!--避免IE使用兼容模式-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="keywords" content="">
+	    <meta name="description" content="">
+		<!--使用webkit内核-->
+		<meta name="renderer" content="webkit"/>
+	    <meta baidu-gxt-verify-token="7cf3f0d6913ab476a3bb13b48d592221"/>
+	    <meta name="sogou_site_verification" content="ltlCd1kPBx"/>
+	    <meta http-equiv="Cache-Control" content="no-transform" />
+	    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+	    <link rel="stylesheet" href="/dist/stylesheets/style.min.css?v=d2c86e0cb8"/>
+	    <link rel="stylesheet" href="/dist/icon/sprite.css?v=1ab684fb46"/>
+	    <link rel="stylesheet" href="/plugins/layer/skin/layer.css"/>
+	    <link rel="stylesheet" href="/plugins/pager/jqPaginator.css"/>
+	    <link type="text/css" rel="stylesheet" href="/plugins/flickerplate/flickerplate.css">
+		<link href="/plugins/bootstrap-datetimepicker/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+		<link href="/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+
+	    <script type="text/javascript" src="/plugins/jQuery/jquery-1.12.0.min.js"></script>
+	    <script type="text/javascript" src="/plugins/jQuery/jquery.cookie.js"></script>
+	    <script type="text/javascript" src="/plugins/placeholder/jquery-placeholder.js"></script>
+	    <script type="text/javascript" src="/plugins/md5/md5.js"></script>
+	    <script type="text/javascript" src="/plugins/layer/layer.js"></script>
+	    <script type="text/javascript" src="/dist/javascripts/base.min.js?v=30c2134f9d"></script>
+		<script type="text/javascript" src="/dist/javascripts/CommonUtils.min.js?v=194e4994e9"></script>
+		<script type="text/javascript" src="/dist/javascripts/CommonValidationUtils.min.js?v=953c45f32f"></script>
+		<script type="text/javascript" src="/dist/javascripts/CommonValidationEmu_zh_cn.min.js?v=6bb17932fb"></script>
+		<script type="text/javascript" src="/dist/javascripts/floatRight.min.js?v=4fe06e6d57"></script>
+		<script type="text/javascript" src="/plugins/pager/jqPaginator.js"></script>
+		<script type="text/javascript" src="/plugins/flickerplate/modernizr-custom-v2.7.1.min.js"></script>
+		<script type="text/javascript" src="/plugins/flickerplate/hammer-v2.0.3.min.js"></script>
+		<script type="text/javascript" src="/plugins/flickerplate/flickerplate.min.js"></script>
+		<script type="text/javascript" src="/plugins/dialog/dialog.js"></script>
+		<script type="text/javascript" src="/dist/javascripts/jquery.lbdAjax.min.js?v=b1ffdcc5a6"></script>
+		<script type="text/javascript" src="/dist/javascripts/main_control.min.js?v=d7665457b0"></script>  
+		<script type="text/javascript" src="/plugins/bootstrap-datetimepicker/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+		<script type="text/javascript" src="/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script type="text/javascript" src="/dist/javascripts/DataDictionary.min.js?v=171d1d2503"></script>
+
+		<script type="text/javascript" src="/plugins/posfixed/posfixed.js"></script>
+		
+		<!--<script type="text/javascript" src="/dist/javascripts/window.error.monitor.min.js?v=31b04c175c"></script>-->
+	    
+	    <script type="text/javascript">
+	    function placeholderSupport() {
+            return 'placeholder' in document.createElement('input');
+        };
+        $(function () {
+            //通过value模拟placeholder
+            //$('input').placeholder();
+            //默认使用IE8模式下支持placeholder属性，使用Span模拟。
+            //不支持IE8以下浏览器模式
+            //通过插入元素模拟placeholder
+            if(!placeholderSupport()){   // 判断浏览器是否支持 placeholder
+                $('[placeholder]').focus(function() {
+                    var input = $(this);
+                    if (input.val() == input.attr('placeholder')) {
+                        input.val('');
+                        input.removeClass('placeholder');
+                    }
+                }).blur(function() {
+                    var input = $(this);
+                    if (input.val() == '' || input.val() == input.attr('placeholder')) {
+                        input.addClass('placeholder');
+                        input.val(input.attr('placeholder'));
+                    }
+                }).blur();
+            };
+            $(".topbar .login .follow").on("mouseover", function (e) {
+                $(".ercode").css("display", "block");
+            });
+
+            $(".topbar .login .follow").on("mouseout", function (e) {
+                $(".ercode").css("display", "none");
+            });
+
+      		
+      		$(".common_float_r").floatRight();
+
+      		//修改手机号的格式 undefined
+      		var telephone=$('#telephone').html()==undefined?'':$('#telephone').html();
+      		var regmobile=/^(.{3})(.{4})(.{4})$/;
+	 	 	if(telephone!=''){ 
+	 	 		$('#telephone').html(telephone.replace(regmobile,'$1****$3'));
+	 	 	}
+	 	 	//兼容旧版本JQuery的方式。
+	 	 	jQuery.browser={};
+	 	 	(function(){
+	 	 		jQuery.browser.msie=false; 
+	 	 		jQuery.browser.version=0;
+	 	 		if(navigator.userAgent.match(/MSIE ([0-9]+)./)){ 
+	 	 			jQuery.browser.msie=true;
+	 	 			jQuery.browser.version=RegExp.$1;
+	 	 		}
+	 	 	})();
+			// $(".header_bar_wrapper").posfixed({
+			// 		distance:0,
+			// 		pos:"top",
+			// 		type:"while",
+			// 		hide:false
+			// });
+			// $(".logo_bar_wrapper").posfixed({
+			// 		distance:30,
+			// 		pos:"top",
+			// 		type:"while",
+			// 		hide:false
+			// });  
+        });
+	    </script>
+	    
+    </head>
+	<body> 
+	<!-- 登录注册页面头部部分 -->
+	<div class='header_bar_wrapper'>
+		<div class="header_bar">
+			<div class="welcome">
+			    <span class="icon_c"></span>
+			    <span><em class='icon-t' style='display: inline-block;position: relative;right: 3px;top:2px'></em>欢迎致电：010-62234470 / 62234471 / 57170465</span><span> 服务时间：周一至周六 9:30-18:00</span>
+			</div>
+			<ol class="nav" id='nav_header_bar'>
+				<%if(userInfo && userInfo != null){%>
+				<!--用户登录判断-->
+				<li><a href="/account/accountOverview">欢迎您，<span id="telephone"><%=userInfo.telephone%></span></a></li>
+				<li><a href="#" onclick="logout();">退出</a></li>
+				<%}else{%>
+				<li><a id='login_href' href="/user/login" target='_blank'>登录</a></li> 
+				<li><a id='regist_href' href="/user/regist" target='_blank'>注册</a></li>
+				<%}%>
+				<li><a id='nav_header_bar_noviceGuide' href="/noviceGuide/noviceGuide">新手指引</a></li>
+				<li><a href="#">活动专区</a></li>
+				<li><a id='nav_header_bar_helpCenter' href="/helpCenter/helpCenter">帮助中心</a></li>
+			</ol>
+		</div>
+	</div> 
+	<div class="logo_bar_wrapper">
+		<div class="logo_bar">
+			<div class="logo_wrapper">
+				<div>
+	            	<a href="/"><span class='icon-logo'></span></a>
+	            	<span class='icon-logoText'></span>
+	        	</div>
+			</div>
+			<div class="r_navheader">
+				<ul id='header_nav'>
+	               <li class='select' id='nav_header_index_sub'><a href="/">首页</a></li>
+	               <li id='nav_header_investmentList_sub'><a href="/investment/investmentList">我要投资</a></li>
+	               <li id='nav_header_loan_sub'><a href="/loan/loan">我要借款</a></li>
+	               <li id='nav_header_insurance_sub'><a href="/insurance/insurance">安全保障</a></li>
+	               <li id='nav_header_operationData_sub'><a href="/operationData/operationData">运营数据</a></li>
+	               <li id='nav_header_aboutUsOverview_sub'><a href="/aboutUs/aboutUsOverview">关于我们</a></li>
+	               <li id='nav_header_accountOverview_sub'>
+	               	<a href="/account/accountOverview">
+	               		<span class="icon-laccount icon_myaccount">
+	               			<span class="myaccount_msg_vsmall">12</span>
+	               			<!-- <span class="myaccount_msg_value">99+</span> -->
+	               		</span>
+	               		我的账户
+	               	</a>
+	               </li>
+	           </ul>
+			</div> 
+		</div>
+	</div>
+	<!--右侧飘窗-->
+   <ul class="common_float_r">
+     <li class="common_online_custom">
+       <i class="float_img"></i>
+       <!-- <div class="common_float_dialog">
+         <div class="common_float_arrow"></div>
+         <div class="common_float_bordertansparent"></div>
+         <div class="common_float_border">
+           <a href="#"><img src="../images/online-server.jpg?v=a8b396bc73"></a>
+         </div>
+       </div> -->
+     </li>
+     <li class="common_complain">
+       <i class="float_img"></i>
+       <!-- <div class="common_float_dialog">
+         <div class="common_float_arrow"></div>
+         <div class="common_float_bordertansparent"></div>
+         <div class="common_float_border">
+           <a href="#"><img src="../images/weixin.png?v=bf1a4186ac"></a>
+         </div>
+       </div> -->
+     </li>
+     <li class="common_weixin">
+       <i class="float_img"></i>
+       <div class="common_float_dialog">
+       		<a href="#"><img src="../images/lweixin.png?v=6a8c723887"></a>
+       </div> 
+     </li>
+     <li class="common_app">
+       <i class="float_img"></i>
+       <div class="common_float_dialog">
+       		<a href="#"><img src="../images/lapp.png?v=88a6503604"></a>
+       </div> 
+     </li>
+     <li class="up up_disable" id="btn_up_page">
+       <i class="float_img"></i>
+     </li>
+   </ul>  

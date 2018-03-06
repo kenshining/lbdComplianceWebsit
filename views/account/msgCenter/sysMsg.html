@@ -1,0 +1,151 @@
+<div class="sysMsg_wrapper">
+	<ul class="sysMsg_topBtn_wrapper clearfix">
+		<li><a>删除</a></li>
+		<li><a>未读</a></li>
+		<li><a>已读</a></li>
+		<li><a class='on'>反选</a></li>
+	</ul>
+	<div class="sysMsg_list_wrapper" id='sysMsg_list_wrapper'>
+		<div class="sysMsg_list_title">
+			<div class="icon checkbox" id='checkbox_bos'></div><span class="title">消息</span><span class="time time_box">时间</span>
+		</div>
+		<ol class="sysMsg_list" id='sysMsg_list'>
+			<li data-isRead=false data-isdown=false class=''>
+				<div class="icon checkbox"></div>
+				<em class="red"></em>
+				<span class="title">注册成功</span>
+				<span class="time">2016-08-03  19:10:00</span>
+				<p>尊敬的用户151****001：您于2016-06-07 14:53:52充值100,000.00元成功。感谢您对我们的关注与尊敬的用户151****001：您于2016-06-07 14:53:52充值100,000.00元成功。感谢您对我们的关注与</p>
+				<a class='icon icon-zh-msg-up'></a>
+			</li>
+			<li data-isRead=false data-isdown=false class=''>
+				<div class="icon checkbox"></div>
+				<em class="red"></em>
+				<span class="title">注册成功</span>
+				<span class="time">2016-08-03  19:10:00</span>
+				<p>尊敬的用户151****001：您于2016-06-07 14:53:52充值100,000.00元成功。感谢您对我们的关注与</p>
+				<a class='icon icon-zh-msg-up'></a>
+			</li>
+			<li data-isRead=false data-isdown=false class=''>
+				<div class="icon checkbox"></div>
+				<em class="red"></em>
+				<span class="title">注册成功</span>
+				<span class="time">2016-08-03  19:10:00</span>
+				<p>尊敬的用户151****001：您于2016-06-07 14:53:52充值100,000.00元成功。感谢您对我们的关注与</p>
+				<a class='icon icon-zh-msg-up'></a>
+			</li>
+			<li data-isRead=true data-isdown=false class=''>
+				<div class="icon checkbox"></div>
+				<em class="red"></em>
+				<span class="title">注册成功</span>
+				<span class="time">2016-08-03  19:10:00</span>
+				<p>尊敬的用户151****001：您于2016-06-07 14:53:52充值100,000.00元成功。感谢您对我们的关注与</p>
+				<a class='icon icon-zh-msg-up'></a>
+			</li>
+			<li data-isRead=true data-isdown=false class=''>
+				<div class="icon checkbox"></div>
+				<em class="red"></em>
+				<span class="title">注册成功</span>
+				<span class="time">2016-08-03  19:10:00</span>
+				<p>尊敬的用户151****001：您于2016-06-07 14:53:52充值100,000.00元成功。感谢您对我们的关注与</p>
+				<a class='icon icon-zh-msg-up'></a>
+			</li>
+			<li data-isRead=true data-isdown=false class=''>
+				<div class="icon checkbox"></div>
+				<em class="red"></em>
+				<span class="title">注册成功</span>
+				<span class="time">2016-08-03  19:10:00</span>
+				<p>尊敬的用户151****001：您于2016-06-07 14:53:52充值100,000.00元成功。感谢您对我们的关注与</p>
+				<a class='icon icon-zh-msg-up'></a>
+			</li>
+			<li data-isRead=true data-isdown=false class=''>
+				<div class="icon checkbox"></div>
+				<em class="red"></em>
+				<span class="title">注册成功</span>
+				<span class="time">2016-08-03  19:10:00</span>
+				<p>尊敬的用户151****001：您于2016-06-07 14:53:52充值100,000.00元成功。感谢您对我们的关注与</p>
+				<a class='icon icon-zh-msg-up'></a>
+			</li>
+			<li data-isRead=true data-isdown=false class=''>
+				<div class="icon checkbox"></div>
+				<em class="red"></em>
+				<span class="title">注册成功</span>
+				<span class="time">2016-08-03  19:10:00</span>
+				<p>尊敬的用户151****001：您于2016-06-07 14:53:52充值100,000.00元成功。感谢您对我们的关注与</p>
+				<a class='icon icon-zh-msg-up'></a>
+			</li>
+			<li data-isRead=true data-isdown=false class=''>
+				<div class="icon checkbox"></div>
+				<em class="red"></em>
+				<span class="title">注册成功</span>
+				<span class="time">2016-08-03  19:10:00</span>
+				<p>尊敬的用户151****001：您于2016-06-07 14:53:52充值100,000.00元成功。感谢您对我们的关注与</p>
+				<a class='icon icon-zh-msg-up'></a>
+			</li>
+			<li data-isRead=true data-isdown=false class=''>
+				<div class="icon checkbox"></div>
+				<em class="red"></em>
+				<span class="title">注册成功</span>
+				<span class="time">2016-08-03  19:10:00</span>
+				<p>尊敬的用户151****001：您于2016-06-07 14:53:52充值100,000.00元成功。感谢您对我们的关注与</p>
+				<a class='icon icon-zh-msg-up'></a>
+			</li>
+		</ol>
+		<div class="lmy_investPage">
+			<div id="sysMsgPage"></div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	/*点击消息列表，消息详情的显示和右侧箭头变化*/
+	$('#sysMsg_list').on('click','li',function(){
+
+		var PHeight = $(this).find('p').height()+97;
+		var isdown = $(this).hasClass('isdown');
+
+		$('#sysMsg_list').find('li').css('height','67px').removeClass('isdown');
+		$('#sysMsg_list').find('a.icon').removeClass('up');
+
+		if(!isdown){
+			$(this).css('height',PHeight+'px').addClass('isdown');;
+			$(this).find('a.icon').addClass('up');
+		}else{
+			$(this).css('height','67px').removeClass('isdown');
+			$(this).find('a.icon').removeClass('up');
+		}
+	});
+	/*点击消息按钮，选中当前消息*/
+	$('#sysMsg_list').on('click','.checkbox',function(e){
+		e.stopPropagation();
+
+		$(this).parents('li').css('height','67px').removeClass('isdown');
+		$(this).parents('li').find('a.icon').removeClass('up');
+
+		if($(this).hasClass('icon-cked')){
+			$(this).removeClass('icon-cked');
+		}else{
+			$(this).addClass('icon-cked');
+		}
+	});
+	/*点击头部消息总按钮，全选或者全不选*/
+	$('#checkbox_bos').click(function(){
+		if($(this).hasClass('icon-cked')){
+			$(this).removeClass('icon-cked');
+			$('#sysMsg_list_wrapper').find('.checkbox').removeClass('icon-cked');
+		}else{
+			$(this).addClass('icon-cked');
+			$('#sysMsg_list_wrapper').find('.checkbox').addClass('icon-cked');
+		}
+	});
+
+	/*分页*/
+	$.jqPaginator("#sysMsgPage",{
+        totalPages : 5,
+        visiblePages: 5,
+        currentPage: 1,
+        totalnum:25,
+        onPageChange: function (num, type) {
+        	 
+        }
+    });
+</script>

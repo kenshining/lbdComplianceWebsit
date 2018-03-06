@@ -1,0 +1,31 @@
+<script type="text/javascript" src="/dist/javascripts/account/reviseLoginPwd_control.min.js?v=7356079656"></script>
+<div class="securitySetting_title">
+	<a class='orange' onclick="changeCurrentMenu('/account/securitySetting/securitySetting','securitySetting_sub_m_btn');">账户信息</a>
+	<a class='gary' href="javascript:;">> 修改登录密码</a>
+</div>
+<div class="reviseLoginPwd_wrapper">
+	<div class="securitySetting_form_wrapper">
+		<section>
+			<span class='l'>原登录密码</span>
+			<div class="s_input_wrapper"><input id="old_pwd" type="password" placeholder="请输入原登录密码" maxlength="20"/></div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+		<section>
+			<span class='l'>新登录密码</span>
+			<div class="s_input_wrapper"><input id="new_pwd" type="password" placeholder="请输入新登录密码" maxlength="20"/></div>
+			<div class="set_tip hide">6~20位字符，至少包含数字,字母(区分大小写),符号中的2种</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+		<section>
+			<span class='l'>确认登录密码</span>
+			<div class="s_input_wrapper"><input id="ok_pwd" type="password" placeholder="请输入新登录密码" maxlength="20"/></div>
+			<div class="set_tip hide">6~20位字符，至少包含数字,字母(区分大小写),符号中的2种</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+		<section style='margin-top:45px;'>
+			<span class='l'></span>
+			<input id="reviseLoginPwd_btn" type="button" value='确定' class='btn revise_mobile_btn'>
+		</section>
+	</div>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>

@@ -1,0 +1,63 @@
+<% include ../header.html %>
+<script type="text/javascript" src="/plugins/dialog/dialog.js"></script>
+<script type="text/javascript" src="/dist/javascripts/user/regist_control.min.js?v=f033872828"></script>
+<div class="logo_bar_wrapper">
+	<div class="logo_bar">
+		<div class="logo_wrapper">
+			<div>
+            	<a href="/"><span class='icon-logo'></span></a>
+            	<span class='logo_text icon-logoText'></span>
+        	</div>
+		</div>
+		<div class="welcome_login"><span>欢迎注册</span></div>
+		<div class="regist_go">
+			<span>已有账号，<a href="/user/login" target="_blank">去登录</a></span>
+		</div>
+	</div>
+</div>
+<div class="login_wrapper "  id='regist_wrapper'>
+	<div class="login_bg regist_bg">
+		<div class="login_box">
+			<p class="error_tip hide_op" id='regist_error_tip'></p>
+			<div class="input_wrapper hover">
+				<span class="icon icon-user"></span>
+				<input id="regist_mobile" type="text" name="" placeholder="请输入手机号" maxlength="11">
+			</div>
+			<div class="input_wrapper hover">
+				<span class="icon icon-pwd"></span>
+				<input type="password" name="" placeholder="请输入登录密码" id='regist_pwd' maxlength="20" textmode="text" >
+				<span class='icon_r icon-hide' id='ishidden_btn'></span>
+			</div>
+			<div class="set_tip hide" id='regist_pwd_tip'>6~20位字符，至少包含数字,字母(区分大小写),符号中的2种</div>
+			<div class='clearfix'>
+				<div class="input_wrapper imgcode_input_wrapper hover">
+					<input type="text" name="" placeholder="请输入图形验证码" id='regist_img_code' maxlength="4">
+				</div>
+				<div class="input_wrapper imgcode_wrapper">
+					<img src="" id="regist_validate_imgCode">
+				</div>
+			</div>
+			<div class='clearfix'>
+				<div class="input_wrapper imgcode_input_wrapper hover">
+					<input type="text" name="" placeholder="请输入短信验证码" id='regist_msg_code' maxlength="4"> 
+				</div>
+				<div class="input_wrapper imgcode_wrapper btn msgcode_btn" id='get_msg_code'>
+					获取短信验证码
+				</div>
+			</div>
+			<div class="input_wrapper hover">
+				<span class="icon icon-firend"></span>
+
+				<input type="text" name="" placeholder="好友邀请码（可不填）" id='regist_invitation_code'>
+			</div>
+			<div class='rem_username read_agreement'>
+				<span><input type="checkbox" name="" id='read_agreement_ck'><label for='read_agreement_ck'><em class='icon icon-cked' id='read_agreement_icon' ></em><em class='text'>我已阅读并同意<a href="/agreement/website_service_protocal" class='orange' target='_blank'>《乐百贷用户协议》</a></em></label></span>
+
+			</div>
+			<input type="button" class="btn regist_btn" id='regist_btn' value="立即注册"/>
+		</div>
+	</div>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+<% include ../footer.html %>
+

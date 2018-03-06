@@ -1,0 +1,1417 @@
+ a{
+	color: #253b4c;  
+}
+/*.invest_content_min_height{
+	min-height: 1521px;
+}*/ 
+.invest_content{
+	width: 1100px;
+	margin: 0 auto; 
+	font-size: 14px;
+	color: #253b4c;  
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	/*margin-bottom: 52px;*/
+}
+/*投资筛选*/ 
+.invest_filter{
+	background: #f9fcff;
+	padding: 20px;
+	margin-top: 35px;
+}
+.invest_filter .filter{
+	margin-top: 10px; 
+	overflow: hidden;
+} 
+.invest_filter .filter .typename{
+	float: left;
+	padding: 5px; 
+}
+.invest_filter .filter .typename span{
+	border-left: 5px solid #10438f;
+	padding-left: 10px;
+	color: #4e6484; 
+	display: inline-block;
+    height: 16px;
+    line-height: 15px;
+}
+.invest_filter .filter ul li{
+	float: left; 
+	padding: 5px 0px;
+}
+.invest_filter .filter ul li a{ 
+	padding: 5px 10px;
+}
+.invest_filter .filter ul li.select a{
+	background: #FF7A33;
+	color: #fff;
+	border-radius: 5px;
+}
+.invest_filter .filter ul li a:hover{
+	color: #FF7A33;
+}
+.invest_filter .filter ul li.select a:hover{
+	color: #fff; 
+}
+
+.invest_filter .filter ul li.filterall{
+	margin-right: 20px;
+	margin-left: 20px;  
+} 
+.invest_filter .filter ul li:not(.filterall){
+	width: 120px;
+} 
+
+/*投资项目列表*/
+.invest_pro{
+	background: #fff; 
+	margin-top: 30px;
+}
+.invest_sort{ 
+	border-bottom: 1px solid #ddd;
+	overflow: hidden;
+	padding: 20px; 
+}
+.invest_sort ul li{
+	float: left;
+	margin-right: 80px;
+	position: relative;
+} 
+.invest_sort .arrowsort{ 
+    position: absolute; 
+    right: 0px;
+    top: 3px;
+}
+.iconsortup{
+	position: absolute;
+	top:0px;
+	right: -15px;
+	transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	filter:progid:DXImageTransform.Microsoft.BasicImage(Rotation=2);
+}
+.iconsortdown{
+	position: absolute;
+	top:9px;
+	right: -15px;
+	
+}
+.invest_sort ul li.select a{
+	color: #FF7A33;
+}
+.invest_sort ul li a:hover{
+	color: #FF7A33;
+}
+.invest_sort ul .invert_pro_value{
+	float: right;
+	margin-right: 0px; 
+	color: #7285a0;
+}
+.invest_pro_bar{
+	background: #f9fcff;
+	position: relative;
+}
+.invest_pro_bar:hover{
+	background: #ebf2fe; 
+}
+.invest_pro_bar_even{
+	background: #f2f8ff;
+}
+.invest_flag{
+	position: absolute;
+	top:-2px;
+	right: -1px;
+}
+.invest_pro_bar .invest_proname{ 
+
+}
+.invest_pro_bar .invest_proname>div{
+	float: left;
+	margin-top: 22px;
+}
+.invest_proname .proname{
+	font-size: 16px; 
+	padding: 5px 16px; 
+	padding-left: 20px;
+}
+.invest_proname div.pronametip{  
+	margin-top: 27px;
+	position: relative;
+}
+.invest_proname .pronametip .pronametext{ 
+	padding: 1px 16px;
+	background: #faefea;
+	border-radius:15px;
+	border:1px solid #fda576;
+	margin-left: 16px; 
+	cursor: pointer;
+}
+.invest_proname .pronametip .pronametext:hover{
+	border:1px solid #ff7a33;
+	background: #f1dacf; 
+}
+.pronametip_hover{
+	position: absolute;
+	top:20px;
+	left: 0px;
+	width: 200px;
+}
+.pronametip_hover .arrow_border{
+	width:0;
+	height: 0;
+	border: 5px solid transparent;
+	border-bottom: 5px solid #d9dddf;
+	position: absolute;
+	top:0px;
+	left: 25%;
+}
+.pronametip_hover .arrow_border_trans{
+	width:0;
+	height: 0;
+	top: -10px;
+	border: 5px solid transparent;
+	border-bottom: 5px solid #fff;
+	position: absolute;
+	top:1px;
+	left: 25%;
+	z-index: 100;
+}
+.arrow_text{
+	position: absolute;
+	top:10px;
+	border:1px solid #d9dddf;
+	background: #fff;
+	padding: 3px 6px; 
+	border-radius: 5px;
+	font-size: 12px;  
+	left: 0;
+	min-width: 80px;
+}
+#investmentRecordList .arrow_text{
+	min-width: 50px; 
+}
+.invest_pro_instro{
+	overflow: hidden;
+	padding: 20px 20px 33px; 
+}
+.invest_pro_instro>div{
+	float: left; 
+}
+.invest_pro_instro div.invest_yield_rate{
+	width: 154px;  
+}
+.invest_pro_instro div.invest_deadline{
+	width: 106px;  
+}
+.invest_pro_instro div.invest_start_money{
+	width: 131px;  
+}
+.invest_pro_instro div.invest_borrow{
+	width: 165px;  
+}
+.invest_pro_instro div.invest_data_value{
+	width: 278px;  
+}
+
+.invest_pro_instro .investText{
+	margin-top: -13px;
+}
+.invest_pro_instro span.invest_yield_rate{
+	width: 154px;  
+	display: inline-block;
+}
+.invest_pro_instro span.invest_deadline{
+	width: 106px;  
+	display: inline-block;
+}
+.invest_pro_instro span.invest_start_money{
+	width: 131px;  
+	display: inline-block;
+}
+.invest_pro_instro span.invest_borrow{
+	width: 165px;  
+	display: inline-block;
+}
+.invest_pro_instro span.invest_data_value{
+	width: 278px;  
+	display: inline-block;
+}
+
+
+
+.invest_pro_instro div.invest_btn{
+	  
+}
+
+.invest_pro_instro .invest_text{
+	font-size: 12px;
+	color: #7285a0;
+	margin-top: 6px;
+} 
+.invest_pro_instro p.invest_text_top { 
+	height: 53px;
+    line-height: 71px;
+}
+.invest_pro_instro p.invest_text_center{ 
+	margin-top: 4px;
+	margin-bottom: -6px;
+}
+p.invest_text_center span.wleft,p.invest_text span.wleft{
+	display: inline-block;
+	width: 98px;
+	text-align: left;
+}
+p.invest_text_center span.wcenter,p.invest_text span.wcenter{
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+}
+p.invest_text_center span.wright,p.invest_text span.wright{
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+}
+.invest_pro_instro p.pro_bar{
+	width: 278px;
+	height: 10px; 
+	margin-top: -14px;
+}
+.invest_pro_instro p.pro_bar span{
+	height: 10px;
+    display: block;
+}
+.invest_pro_instro p.invest_text_top span{
+	font-size: 18px;
+}
+.invest_yield_rate .topline span{ 
+	font-size: 26px;
+}
+.invest_yield_rate .topline span.firstValue{
+	font-size: 42px;
+}
+.invest_pro_instro>.invest_btn{
+	float: right; 
+	position: relative;
+	margin-top: -14px;
+}
+/*.invest_btn a.btninvest{
+	color: #fefefe;
+}*/
+.iconstate{
+	display: inline-block;
+	position: absolute;
+	bottom: -73px;
+    right: -20px;
+}  
+.invest_yield_rate .topline span.percent{
+	font-size: 14px;
+}
+
+/*项目详情页面*/
+/*基本信息*/
+.invest_webmap{
+	margin-top: 15px;
+	padding-left: 25px;
+}
+.invest_baseinfo{
+	background: #f9fcff; 
+	margin-top: 15px;
+}
+.investdesp_info{
+	background: #f9fcff; 
+	margin-top: 15px;
+	margin-bottom: 5px; 
+}
+.baseinfo_title{
+	overflow: hidden;
+	height: 52px;
+	background: #f0f7ff;
+	line-height: 52px;
+	padding-left:25px;
+}
+.baseinfo_title .creditname{
+	font-size: 18px;
+	padding-right: 17px;
+}
+.baseinfo_title .creditnum{
+	font-size: 14px;
+	color: #7285a0;
+}
+.baseinfo_title a{
+	padding-right: 25px;
+	font-size: 12px;
+}
+.invest_baseinfo .baseinfo_con{
+	padding: 0px 25px;
+	background: #f9fcff;
+	overflow: hidden;
+	position: relative;
+}
+.invest_desp_type_info{
+	overflow: hidden;
+}
+/*.invest_desp_type_info div{
+	float: left;
+	margin-top: 45px;
+}
+.invest_desp_type_info div.rate{
+	width: 190px; 
+}
+.invest_desp_type_info div.otherrate{
+	padding-top: 40px;   
+}  
+ 
+.invest_desp_type_info div.otherrate p.desp_name{
+	padding-top: 10px;
+}
+.invest_desp_type_info div.invest_deadline{
+	width: 119px;	
+}
+.invest_desp_type_info div.invest_borrow_money{
+	width: 230px; 
+}
+.invest_desp_type_info div.invest_leave{
+	width: 212px; 
+}
+*/
+.invest_desp_type_info div{
+	float: left; 
+}
+.invest_desp_type_info .rateValue{
+	margin-top:27px;
+} 
+.invest_desp_type_info span.rate{
+	display: inline-block;
+	width: 190px;
+	/*height: 104px;*/
+} 
+.invest_desp_type_info span.invest_deadline{
+	width: 119px;	
+	display: inline-block;
+}
+.invest_desp_type_info span.invest_borrow_money{
+	width: 230px; 
+	display: inline-block;
+}
+.invest_desp_type_info span.invest_leave{
+	display: inline-block;
+	width: 212px; 
+}
+
+.baseinfo_con .invest_borrow_type{
+	margin-top: 43px;
+}
+.baseinfo_con .invest_borrow_type div{
+	float: left;	
+} 
+.baseinfo_con .invest_borrow_type div.repayment_type{
+	width: 260px;	
+} 
+.baseinfo_con .invest_borrow_type div.value_date{
+	width: 236px;	
+} 
+.invest_content .desp_name{
+	color: #7285a0;
+	font-size: 14px;
+	padding-right: 10px; 
+}
+.invest_content .desp_value{
+	color:#253b4c;
+	font-size: 14px;
+} 
+.invest_content .desp_value span{
+	font-size: 26px;
+}
+.invest_content .desp_info{
+	color:#253b4c; 
+	word-wrap: break-word;
+	/*background: #F1F8FF;*/
+}
+.invest_content .textDesp{
+	width: 1015px;
+	word-wrap: break-word; 
+}
+.invest_content .desp_info .value{
+	color:#ff6f21;
+}
+.invest_ok_con div.desp_time{
+	position: relative;
+	z-index: 1; 
+}
+#countDown .value{
+	color:#ff6f21; 
+}
+.invest_desp_type_info .topline{
+	font-size: 26px;
+}
+.invest_desp_type_info .topline .firstValue{
+	font-size: 64px;
+}
+.invest_baseinfo .invest_infoleft{
+	border-right: 1px solid #e4e9ee;
+	width:765px;
+}
+.invest_progress{
+	margin-top: 20px;
+	margin-bottom: 24px;
+}
+.invest_progress .pro_bar{
+	display: inline-block;
+	width: 126px;
+	height: 10px;
+	position: relative;
+}
+.invest_progress .pro_bar span{
+	display: inline-block; 
+	height: 10px;
+	position: absolute;
+}
+.investTip{
+	color: #9aa6b9;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+.invest_now{
+	width: 284px;
+	padding-left: 26px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+.invest_now_con{
+	margin-top: 34px;
+}
+.invest_now_con p{
+	margin-top: 6px;
+}
+.invest_ok_con{
+	padding-top: 1px;
+}
+.invest_ok_con .desp_name{
+	margin-top: 40px;
+}
+.invest_ok_con div.desp_value{
+	font-size: 26px;
+	margin-top: 1px;	
+}
+.invest_error_text{
+	color: #e52f2c;
+	font-size: 12px;
+	margin-top: 16px;
+	margin-bottom: 5px;
+} 
+.invest_now .money_input{
+	width: 257px;
+	height: 40px;
+	border:1px solid #e8ebf1;
+	border-radius: 4px; 
+	line-height: 40px;
+}
+.invest_now .money_input.error{ 
+	border:1px solid #e52f2c; 
+}
+.invest_now .money_input span.desp_name{
+	padding-left: 5px;
+	padding-right: 0px;
+}
+.invest_now .money_input input{
+	padding-left: 0px; 
+	height: 39px;
+	width: 230px;
+	background: #f9fcff;
+	font-size: 13px;
+} 
+.investdesp_iconstate{
+	display: inline-block;
+	position: absolute;
+	bottom: 0px;
+    right: 0px; 
+} 
+
+.fixedBorder{
+ 	position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid #ff7a33; 
+    width: 115px; 
+ }
+ .topline .percent{
+ 	font-size: 14px;
+ }
+/*借款信息*/
+.investdesp_title{
+	height: 49px;
+	border-bottom: 1px solid #e4e9ee;
+	overflow: hidden;
+	position: relative;
+}
+.investdesp_title div{
+	float: left;
+	width: 25%;
+	text-align: center;
+	height: 49px; 
+	line-height: 49px;
+
+}
+.investdesp_title div a{
+	color: #4e6484;
+	font-size: 16px;
+	height: 47px;
+	display: block;
+	width: 115px;
+	margin:0 auto;
+}
+.investdesp_title div a:hover{
+	color: #ff7a33;
+}
+.investdesp_title div.select a{
+	/*border-bottom: 2px solid #ff7a33;*/
+	color: #ff7a33;
+}
+.investdesp_con{
+	padding:0px 25px 20px;
+} 
+.loan_detail .detail_list{
+	margin-top: 40px;
+
+}
+.loan_detail .detail_list .detail_title{
+	font-size: 18px;
+}
+.loan_detail .detail_list .detail_title span{
+	margin-right: 8px;
+	padding-top: 2px;
+}
+.loan_detail .detail_list .detail_con{
+	overflow: hidden;
+	background: #f1f8ff;
+	padding:3px 17px 17px;
+	margin-top: 10px;
+}
+.loan_detail .detail_list .detail_assets_con{
+	overflow: hidden;
+	background: #f1f8ff;
+	padding:3px 17px 17px;
+	margin-top: 10px;
+} 
+.investdesp_con .desp_name{
+	padding-right: 0px;
+	/*background: #F1F8FF;*/
+}
+.detail_con div.width_div{
+	float: left;
+	margin-top:14px;
+	/*padding: 0px 8px;*/
+	box-sizing: border-box;
+}
+.detail_con .width30{
+	width: 30%;
+}
+.detail_con .width21{
+	width: 21%;
+}
+.detail_con .width22{
+	width: 22%;
+}
+.detail_con .width27{
+	width: 27%;
+}
+.detail_con div.width_div{
+	position: relative;
+}
+.detail_con div.width_div .alertTip{
+	position: absolute;
+	top:25px;
+	left: 20px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	/*width: 260px; */
+	border:1px solid #d9dddf;
+	background: #fcfeff;
+	z-index: 10;
+}
+.detail_con div.width_div .arrowtip{
+	position: absolute;
+	top:18px;
+	left: 41%;
+	z-index: 12;
+} 
+.detail_con div.width_div:nth-child(4n+1){
+	/*width: 28%; */
+	width: 260px;
+}
+.detail_con div.width_div:nth-child(4n+1) span.desp_name{
+	display:inline-block;
+	min-width:45px;
+	float:left;
+}
+.detail_con div.width_div:nth-child(4n+1) span.desp_info{
+	display:inline-block;
+	max-width:210px;
+	float:left;
+}
+.detail_con div.width_div:nth-child(4n+2){
+	/*width: 23%; */
+	width: 250px;
+}
+.detail_con div.width_div:nth-child(4n+2) span.desp_name{
+	display:inline-block;
+	min-width:45px;
+	float:left; 
+}
+.detail_con div.width_div:nth-child(4n+2) span.desp_info{
+	display:inline-block;
+	max-width:155px;
+	float:left; 
+}
+.detail_con div.width_div:nth-child(4n+3){
+	/*width: 22%; */
+	width: 200px;
+}
+.detail_con div.width_div:nth-child(4n+3) span.desp_name{
+	display:inline-block;
+	min-width:45px;
+	float:left; 
+}
+.detail_con div.width_div:nth-child(4n+3) span.desp_info{
+	display:inline-block;
+	max-width:130px;
+	float:left; 
+}
+.detail_con div.width_div:nth-child(4n+4){
+	/*width: 27%; */
+	width: 300px;
+}
+.detail_con div.width_div:nth-child(4n+4) span.desp_name{
+	display:inline-block;
+	min-width:45px; 
+	float:left; 
+}
+.detail_con div.width_div:nth-child(4n+4) span.desp_info{
+	display:inline-block;
+	max-width:200px;
+	float:left; 
+}
+.detail_con div.width_div1{ 
+	width:269px !important; 
+}
+.detail_con div.width_div2{
+	width:270px !important;
+}
+.detail_con div.width_div3{
+	width:270px !important;
+}
+.detail_con div.width_div4{
+	width:200px !important;
+}
+.detail_con div span.workUnit{
+	width: 168px; 
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.detail_con .desp_wrap{
+	margin-top:10px;
+}
+.detail_con .desp_wrap .desp_text{
+	line-height:25px;
+}
+.detail_list .history_borrow{
+	padding: 28px 17px 10px;
+}
+.borrow_table table{
+	width: 100%;
+	text-align: center;
+}
+.borrow_table table tr.head{
+	background: #f1f8ff;
+	color: #7285a0;
+}
+.borrow_table table tr.head .td1{
+	width: 32%
+}
+.borrow_table table tr.head .td2{
+	width: 18%
+}
+.borrow_table table tr.head .td3{
+	width: 16%
+}
+.borrow_table table tr.head .td4{
+	width: 11%
+} 
+.borrow_table table tr td{
+	border:1px solid #e4e9ee;
+	padding: 21px 0px;
+}
+.borrow_table table tr td:first-child{
+	border-left: none;
+}
+.borrow_table table tr td:last-child{
+	border-right: none;
+}
+.detail_assets{
+	margin-top: 18px;
+	overflow: hidden;
+}
+.detail_assets div{
+	float: left;
+	width: 125px;
+	margin-bottom: 10px;
+	height: 16px; 
+	line-height: 16px;
+} 
+.detail_assets span.icon{ 
+	line-height: 16px; 
+}
+.detail_assets .desp_info{
+	padding-left: 25px; 
+	height: 16px; 
+	line-height: 16px;
+	display: inline-block;
+}
+.detail_assets_photo{
+	width: 100%;
+	margin-top: 27px;
+}
+.symbolMargin{
+	margin-left: -6px;
+}
+/*项目周期*/
+.projectCycle{
+	width: 928px;
+	margin: 0 auto;
+}
+.projectCycle .cycleInfo{
+	width: 232px;
+	margin: 0 auto;
+	color: #7285a0; 
+	text-align: center;
+	margin-top: 62px;
+	margin-bottom: 42px;
+}
+.projectCycle .cycletitle{
+	background: url('../images/investment/cycleback.png') no-repeat;
+	width: 131px;
+	height: 146px;
+	margin: 0 auto; 
+}
+.projectCycle .cycleIcon{
+	padding-top: 25px;
+}
+.projectCycle .iconStart{
+	width: 33px;
+	height: 41px;
+	margin: 0 auto; 
+	padding-bottom: 4px;
+	display: inline-block;
+	background: url('../images/investment/startTime.png') no-repeat; 
+}
+.projectCycle .iconStartGray{
+
+}
+.projectCycle .iconRaise{
+	width: 30px;
+	height: 41px;
+	margin: 0 auto; 
+	padding-bottom: 4px;
+	display: inline-block;
+	background: url('../images/investment/raiseicon.png') no-repeat; 
+}
+.projectCycle .iconRaiseGray{
+	background: url('../images/investment/raiseicon_gray.png') no-repeat; 
+}
+.projectCycle .iconLoan{
+	width: 34px;
+	height: 41px;
+	margin: 0 auto; 
+	padding-bottom: 4px;
+	display: inline-block;
+	background: url('../images/investment/loanicon.png') no-repeat; 
+}
+.projectCycle .iconLoanGray{
+	background: url('../images/investment/loanicon_gray.png') no-repeat;  
+}
+
+.projectCycle .iconRepay{
+	width: 45px;
+	height: 41px;
+	margin: 0 auto; 
+	padding-bottom: 4px;
+	display: inline-block;
+	background: url('../images/investment/repayicon.png') no-repeat; 
+}
+.projectCycle .iconRepayGray{
+	background: url('../images/investment/repayicon_gray.png') no-repeat;  
+}
+
+
+
+
+
+.projectCycle .cycleline{
+	position: relative;
+	margin-top: 8px;
+}
+.projectCycle .cycleline .point{ 
+	background: url('../images/investment/cyclePoint.png') no-repeat; 
+	width: 17px;
+	height: 17px;  
+	display: inline-block;
+	margin: 0 auto;	
+}
+.projectCycle .cycleline .pointgray{ 
+	background: url('../images/investment/cyclePoint_gray.png') no-repeat;   
+}
+.projectCycle .cycleline .line{
+	position: absolute;
+	top:7px;
+	left: 124px;
+	height: 3px;
+	background: url('../images/investment/line.png') no-repeat;   
+	width: 217px;
+}
+.projectCycle .cycleTime{
+	margin-top: 16px;
+}
+.projectCycle .cycleTime .timeValue{
+	color: #253b4c;
+	font-size: 16px;
+	margin-top: 3px;
+}
+
+/*还款计划*/
+.repayment_plan .repayment_plan_table{
+	margin-top: 40px;
+}
+.repayment_plan_table table{
+	width: 100%;
+	text-align: center;
+}
+.repayment_plan_table table tr.head{
+	background: #e4eef9;
+	color: #7285a0;
+} 
+.repayment_plan_table table tr.odd{
+	background: #f3f8ff;
+}
+.repayment_plan_table table tr.even{
+	background: #ecf4ff;
+}
+.repayment_plan_table table tr td{
+	padding: 16px 0;
+}
+.contentNullImg{
+	width: 37px;
+	height: 53px; 
+	margin: 0 auto;
+	margin-top: 39px;
+	background: url('../images/ltip.png') no-repeat;  
+}
+.contentNullText{
+	color:#7285a0;
+	font-size:14px;
+	margin-top:10px;
+}
+/*投资记录*/
+.investment_record_table .record_table_desp{
+	margin-top: 20px;
+	margin-bottom: 8px;
+	text-align: right;
+}
+.record_table_desp .desp_name{
+	padding-left: 45px;
+}
+.investment_record_table table{
+	width: 100%;
+	text-align: center;
+}
+.investment_record_table table tr.head{
+	background: #e4eef9;
+	color: #7285a0;
+}
+.investment_record_table table tr.odd{
+	background: #f3f8ff;
+}
+.investment_record_table table tr.even{
+	background: #ecf4ff;
+}
+.investment_record_table table tr td{
+	padding: 16px 0;
+}
+.investment_record_table .invest_source{
+	margin-left:8px;
+	position: relative;
+}
+.invest_source .pronametip_hover{
+	position: absolute;
+    top: -42px;
+    left: -15px;
+    width: 200px;
+}
+.invest_source .pronametip_hover .arrow_border{
+	width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top: 5px solid #d9dddf;
+    position: absolute;
+    top: 34px;
+    left: 7%;
+}
+.invest_source .pronametip_hover .arrow_border_trans{
+	width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top: 5px solid #fff;
+    position: absolute;
+    top: 32px;
+    left: 7%;
+    z-index: 100;
+}
+/*分页*/
+.invest_pagination{
+	margin-top:36px; 
+	padding-bottom: 29px; 
+	position: relative;
+}
+ 
+/*dialog*/
+.dialog_box{
+  width:400px;
+  height: 200px;
+  border-radius: 5px;
+  background: #fcfeff;
+  margin-top: 210px;
+  padding-top: 26px;
+}
+.dialog_box .ok{
+  margin:0 auto;
+}
+.dialog_box a{ 
+	color: #fefefe;
+	background: #ff7a33; 
+	width: 121px;
+	height:30px;
+	border-radius: 6px; 
+	display: inline-block;
+	text-align: center;
+	font-size: 14px;
+	line-height: 30px;
+}
+.dialogbtn{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 37px; 
+}
+.dialogbtn a:first-child{
+	margin-right: 28px;
+}
+.dialog_box p{
+  text-align: center;
+}
+.dialog_box p:nth-of-type(1){
+  padding-top: 10px;
+  font-size: 22px;
+}
+.dialog_box p:nth-of-type(2){
+  font-size: 12px;
+  color: #8190a7;
+  padding-top: 10px;
+}
+.dialog_box p:nth-of-type(3){
+  font-size: 12px;
+  color: #8190a7;
+  padding-top: 30px;
+}
+.dialog_box p:nth-of-type(3) a{
+  color:#3974ce;
+}
+.dialog_close_btn{
+  position: absolute;
+  top:-8px;
+  right:-8px;
+}
+
+/*风险提示框*/
+ .filterlayer{
+  width: 100%; 
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px; 
+  background: rgba(0,0,0,0.6);
+  z-index: 9999;
+  overflow-y: auto;
+ }
+ .warnDialog{
+  position: absolute;
+  top: 0px;
+  left: 0px; 
+  right: 0px;
+  bottom: 0px;
+  width:906px;
+  height: 1153px;
+  z-index: 99999;
+  margin: 0 auto; 
+  border-radius: 5px;
+  background: #fcfeff;
+  margin-top: 150px; 
+  padding: 47px 44px 0px;
+  box-sizing:border-box;
+  /*word-spacing:8px; 
+  letter-spacing: 1px;*/
+ }  
+ .warnDialog h2{
+	text-align: center;
+	color: #253B4C;
+	font-size: 18px;
+}
+ .warnDialog p{
+ 	line-height: 24px;
+ 	text-indent: 28px;
+ 	padding: 2px 0px;
+ }
+ .warnDialog p.warnTitle{
+ 	text-indent:0px;
+ }
+ .warnDialog .warnIntroduce p.warnTitle{
+ 	margin-top: 30px;
+ 	margin-bottom: 8px;
+ }
+ 
+ .warnDialog .warnIntroduce{
+ 	color: #253B4C;
+ 	font-size: 14px;
+ }
+ .warnDialog .warnContent p.warnTitle{
+	color: #253B4C;
+ 	font-size: 16px;
+ 	font-weight: bold;
+ 	margin:5px 0px;
+ }
+ .warnDialog .warnContent{
+ 	color: #7285A0;
+ 	font-size: 14px;
+ }
+ .warnDialog .warnbottom{
+ 	text-align: right;
+ 	font-size: 14px;
+ 	margin-top: 10px;
+ }
+ .warnDialog .btnRead{
+ 	width: 203px;
+ 	height: 39px;
+ 	text-align: center; 
+ 	margin: 55px auto 0px;
+} 
+
+.invet_dialog_wrapper{
+	width: 550px;
+	border-radius: 5px;
+	background: #fcfeff;
+	margin-top: 80px;
+	margin-bottom: 20px;
+	position: relative;
+}
+.invet_dialog_wrapper .dialog_close_btn{
+	position: absolute;
+  	top:-8px;
+  	right:-8px;
+}
+.invet_dialog_wrapper .title{
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #e4e9ee;
+	font-size: 18px;
+	color: #253b4c;
+	text-indent: 30px;
+}
+.invet_dialog_wrapper .info{
+	width: 490px;
+	height: 190px;
+	margin: 10px auto 0;
+	text-align: left;
+
+}
+.invet_dialog_wrapper .info span{
+	font-size: 14px;
+	color:#8190a7;
+	line-height: 30px;
+}
+.invet_dialog_wrapper .info .r{
+	color: #253b4c;
+}
+.invet_dialog_wrapper .reward h2{
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color: #253b4c;
+	margin: 10px auto 0;
+	width: 490px;
+	border-top: 1px solid #e4e9ee;
+}
+.invet_dialog_wrapper .reward span{
+	font-size: 14px;
+	padding-left: 12px;
+	cursor: pointer;
+}
+.invet_dialog_wrapper .bottom{
+	width: 490px;
+	margin: 0 auto;
+	font-size: 14px;
+	border-top: 1px solid #e4e9ee;
+	padding-top: 15px;
+}
+.invet_dialog_wrapper .bottom p{
+	line-height: 24px;
+}
+.invet_dialog_wrapper .bottom .l{
+	color:#8190a7; 
+}
+.invet_dialog_wrapper .bottom .tip{
+	color: #9aa6b9;
+	font-size: 12px;
+	margin-top: 15px;
+}
+.invet_dialog_wrapper .bottom .icon-cked{
+	display: inline-block;
+	margin-right: 10px;
+	position: relative;
+	top:2px;
+}
+.invet_dialog_wrapper .bottom .icon-noagree{
+	display: inline-block;
+	margin-right: 10px;
+	position: relative;
+	top:2px;
+	width: 12px;
+	height: 12px;
+	border: 1px solid #2a84d8;
+    border-radius: 4px;
+}
+.invet_dialog_wrapper .bottom .ck_box{
+	margin-top: 10px;
+	font-size: 12px;
+	color:#8190a7; 
+}
+.invet_dialog_wrapper .bottom .btn{
+	margin: 0 auto;
+	margin-top: 30px;
+}
+.invet_dialog_wrapper{
+	width: 550px;
+	border-radius: 5px;
+	background: #fcfeff;
+	margin-top: 80px;
+	margin-bottom: 20px;
+	position: relative;
+}
+.invet_dialog_wrapper .dialog_close_btn{
+	position: absolute;
+  	top:-8px;
+  	right:-8px;
+}
+.invet_dialog_wrapper .title{
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #e4e9ee;
+	font-size: 18px;
+	color: #253b4c;
+	text-indent: 30px;
+}
+.invet_dialog_wrapper .info{
+	width: 490px;
+	height: 190px;
+	margin: 10px auto 0;
+}
+.invet_dialog_wrapper .info span{
+	font-size: 14px;
+	color:#8190a7;
+	line-height: 30px;
+}
+.invet_dialog_wrapper .info .r{
+	color: #253b4c;
+}
+.invet_dialog_wrapper .reward h2{
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color: #253b4c;
+	margin: 10px auto 0;
+	width: 490px;
+	border-top: 1px solid #e4e9ee;
+}
+.invet_dialog_wrapper .reward span{
+	font-size: 14px;
+	padding-left: 12px;
+}
+.invet_dialog_wrapper .bottom{
+	width: 490px;
+	margin: 0 auto;
+	font-size: 14px;
+	border-top: 1px solid #e4e9ee;
+	padding-top: 15px;
+}
+.invet_dialog_wrapper .bottom p{
+	line-height: 24px;
+}
+.invet_dialog_wrapper .bottom .l{
+	color:#8190a7; 
+}
+.invet_dialog_wrapper .bottom .tip{
+	color: #9aa6b9;
+	font-size: 12px;
+	margin-top: 15px;
+}
+.invet_dialog_wrapper .bottom .icon-cked{
+	display: inline-block;
+	margin-right: 10px;
+	position: relative;
+	top:2px;
+}
+.invet_dialog_wrapper .bottom .ck_box{
+	margin-top: 10px;
+	font-size: 12px;
+	color:#8190a7; 
+}
+.invet_dialog_wrapper .bottom .btn{
+	margin: 0 auto;
+}
+.invet_dialog_wrapper .btn_box{
+	height: 90px;
+	margin-top: 30px;
+}
+.invet_dialog_wrapper ._tip{
+	text-align: center;
+	line-height: 50px;
+	color: #253b4c;
+	font-size: 14px;
+}
+/*红包slider样式*/
+.invet_reward_slider_box{
+	width: 100%;
+	height: 239px;
+	position: relative;
+}
+.invet_reward_slider_wrapper{
+	width: 480px;
+	height: 224px;
+	overflow: hidden;
+	margin: 0 auto;
+	position: relative;
+}
+.invet_reward_slider_wrapper .slider_item_wrapper{
+	position: absolute;
+	left:0;
+	top:0;
+}
+.invet_reward_slider li{
+	float: left;
+	margin-left: 5px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.invet_reward_slider li:first-child,.inver_reward_slider li:nth-of-child(4){
+	margin-left: 0;
+}
+.invet_reward_slider_box .icon{
+	width: 12px;
+	height: 100%;
+	position: absolute;
+	top:0;
+}
+.invet_reward_slider_box .icon-left{
+	background: url(/dist/images/larrowleft-light.png) no-repeat center center;
+	left: 8px;
+}
+.invet_reward_slider_box .icon-right{
+	background: url(/dist/images/larrowright-light.png) no-repeat center center;
+	right: 8px;
+}
+.invet_reward_slider .t{
+	width: 100%;
+	height: 75px;
+	position: relative;
+}
+.invet_reward_slider .left,.invet_reward_slider .right{
+	position: absolute;
+	bottom: 10px;
+}
+.invet_reward_slider .left{
+	width: 40%;
+	color: #f0f7ff;
+	font-size: 12px;
+	line-height: 1.1;
+	left: 7%;
+	text-align: left;
+
+
+}
+.invet_reward_slider em{
+	font-size: 30px;
+}
+.invet_reward_slider .use_conditions{
+	width: 50%;
+	right: 0;
+}
+.invet_reward_slider .use_conditions li{
+	font-size: 12px;
+	color: #f0f7ff;
+	line-height: 1.4;
+	margin-bottom: 0;
+	margin-left: 0;
+	float: none;
+	text-align: left;
+}
+.slider_item_wrapper li{
+	position: relative;
+}
+.invet_reward_slider .use_date{
+	font-size: 12px;
+	text-align: center;
+	line-height: 30px;
+	color: #f0f7ff;
+}
+.invet_reward_slider .use_date span{
+	font-size: 10px;
+}
+.invet_reward_slider .reward_mask{
+	position: absolute;
+	left:0;
+	top:0;
+}
+.invet_reward_slider .icon-zh-ok{
+	position: absolute;
+	top:8px;
+	right:10px;
+}
+
+/*兼容*/
+.safariBackground{
+	background: #F1F8FF; 
+}
+/*button*/
+.btninvest{
+	padding: 10px 29px;
+	background: #ff7a33;
+	border-radius: 5px;
+	color: #fefefe;
+}    
+.btn_now_invest{
+	width: 259px;
+	height: 40px;
+	color: #fefefe;
+	font-size: 16px;
+	display: block;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 5px; 
+	margin-top: 16px;
+}
+.btninvest_disabled{
+	background: #ffbb97; 
+	color: #ffeadf;
+} 

@@ -1,0 +1,57 @@
+.bindEmail_wrapper{
+	width: 944px;
+	height: 283px;
+	background: #f9fcff;
+}
+.s_email_input_wrapper{
+	position: relative;
+	overflow: inherit!important;
+}
+.s_email_like_section .s_input_wrapper{
+	position: relative;
+	z-index: 100;
+}
+.like_wrapper{
+	position: absolute;
+	padding-top: 60px;
+	top:0;
+	right:1px;
+	width: 264px;
+	background: #f9fcff;
+	box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+	z-index:99;
+	border-radius: 4px;
+	padding-bottom: 20px;
+	overflow:hidden;
+}
+.like_wrapper li{
+	padding-left: 20px;
+	line-height: 24px;
+	cursor: pointer;
+}
+.like_wrapper li:hover{
+	color:#2a84d8;
+}
+.sended_Email_wrapper{
+	width: 944px;
+	height: 383px;
+	background: #f9fcff;
+}
+.sended_Email_wrapper div{
+	padding-top: 100px;
+	text-align: center;
+	font-size: 14px;
+	color: #253b4c;
+}
+.sended_Email_wrapper input{
+	margin: 0 auto;
+}
+.sended_Email_wrapper p{
+	font-size: 14px;
+	color: #7285a0;
+	text-align: center;
+	padding-top: 100px;
+}
+.sended_Email_wrapper p a{
+	color: #3974ce;
+}

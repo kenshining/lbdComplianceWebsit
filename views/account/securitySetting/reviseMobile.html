@@ -1,0 +1,73 @@
+<script type="text/javascript" src="/dist/javascripts/account/reviseMobile_control.min.js?v=d242432d83"></script>
+<div class="securitySetting_title">
+	<a class='orange'  onclick="changeCurrentMenu('/account/securitySetting/securitySetting','securitySetting_sub_m_btn');">账户信息</a>
+	<a class='gary' href="javascript:;">> 修改手机号码</a>
+</div>
+<div class="reviseMobile_wrapper" id="remove_mobile_wrapper">
+	<div class="securitySetting_form_wrapper">
+		<section>
+			<span class='l'>原手机号码</span>
+			<div id='reviseMobile_y_telephone'><%=userInfo.telephone%></div>
+		</section>
+		<section class='clearfix' >
+			<span class='l'>图形验证码</span>
+			<div class="s_input_wrapper s_img_input_wrapper">
+				<input id="reviseMobile_imgCode_val" maxlength="4" type="text" name="" placeholder="请输入图形验证码">
+			</div>
+			<div class="s_input_wrapper s_imgcode_wrapper">
+				<img id='reviseMobile_img_code' src="" >
+			</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码请输入正确格式的手机号码请输入正确格式的手机号码</p>
+		</section>
+		<section class='clearfix' >
+			<span class='l'>短信验证码</span>
+			<div class="s_input_wrapper s_msg_input_wrapper hover">
+				<input id="reviseMobile_msgCode_val" maxlength="4" type="text" name="" placeholder="请输入短信验证码">
+			</div>
+			<div id="reviseMobile_msg_code" class="s_msg_btn btn">获取短信验证码</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+		<section>
+			<span class='l'></span>
+			<input id="remove_tel_btn" type="button" value='解绑' class='btn revise_mobile_btn'>
+		</section>
+	</div>
+	<p class="revise_tip">
+		温馨提示：若原手机手机号码无法使用，请致电400-898-6699联系客服人员，客服服务时间，周一到周六9:30~18:00
+	</p>
+</div>
+<div class="reviseMobile_wrapper hide" id="set_newMobile_wrapper">
+	<div class="securitySetting_form_wrapper">
+		<section>
+			<span class='l'>新手机号码</span>
+			<div class="s_input_wrapper"><input id='n_reviseMobile_telephone' maxlength="11" type="text" placeholder="请输入新手机号码" /></div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+		<section class='clearfix' >
+			<span class='l'>图形验证码</span>
+			<div class="s_input_wrapper s_img_input_wrapper">
+				<input id="n_reviseMobile_imgCode_val" maxlength="4" type="text" name="" placeholder="请输入图形验证码">
+			</div>
+			<div class="s_input_wrapper s_imgcode_wrapper">
+				<img id='n_reviseMobile_img_code' src="">
+			</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码请输入正确格式的手机号码请输入正确格式的手机号码</p>
+		</section>
+		<section class='clearfix' >
+			<span class='l'>短信验证码</span>
+			<div class="s_input_wrapper s_msg_input_wrapper hover">
+				<input id="n_reviseMobile_msgCode_val" maxlength="4" type="text" name="" placeholder="请输入短信验证码">
+			</div>
+			<div id="n_reviseMobile_msg_code" class="s_msg_btn btn">获取短信验证码</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+		<section>
+			<span class='l'></span>
+			<input type="button" value='确定' class='btn revise_mobile_btn' id="reviseMobile_btn">
+		</section>
+	</div>
+	<p class="revise_tip">
+		温馨提示：若原手机手机号码无法使用，请致电400-898-6699联系客服人员，客服服务时间，周一到周六9:30~18:00
+	</p>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>

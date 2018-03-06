@@ -1,0 +1,33 @@
+.investGuide_wrapper{
+	background: #f9fcff;
+	padding: 0 28px  50px 28px;
+}
+.investGuide_wrapper h2{
+	color: #7285a0;
+	font-size: 16px;
+	line-height: 65px;
+}
+.investGuide_wrapper ul li{
+	border-bottom: 1px solid #e4e9ee;
+	padding: 10px 10px;
+	cursor: pointer;
+}
+.investGuide_wrapper ul li:hover{
+	background: #ebf2fe;
+}
+.investGuide_wrapper ul h3{
+	font-size: 14px;
+	color: #253b4c;
+	height: 45px;
+	line-height: 45px;
+}
+.investGuide_wrapper ul p{
+	font-size: 14px;
+	color:#7285a0;
+	line-height: 26px;
+	margin-top: -5px;
+	text-indent:2em;
+}
+.investGuide_wrapper .commonProblem_list_item_detail_wrapper{
+	text-indent:2em;
+}

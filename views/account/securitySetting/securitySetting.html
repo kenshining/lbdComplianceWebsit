@@ -1,0 +1,116 @@
+<script type="text/javascript" src="/dist/javascripts/account/securitySetting_control.min.js?v=babb315a6e"></script>
+<div class="securitySetting_wrapper">
+	<ul class="securitySetting_userInfo_list">
+		<li>
+			<h3>头像</h3>
+			<p class="note">识别访问的是否是乐百贷官网</p>
+			<%if(userInfo.headPortrait){%>
+				<div class="state state_ok"><em class='icon-z-ok icon'></em><span>已设置</span></div>
+				<section>
+					<a class='revise' onclick="changeCurrentMenu('/account/securitySetting/setUserPhoto','securitySetting_sub_m_btn','&control=update');">修改</a>
+				</section>
+			<%}else{%>
+				<div class="state state_no "><em class='icon icon-z-no'></em><span>未设置</span></div>
+				<section>
+					<a class='go' onclick="changeCurrentMenu('/account/securitySetting/setUserPhoto','securitySetting_sub_m_btn','&control=new');">设置</a>
+				</section>
+			<%}%>
+		</li>
+		<li>
+			<h3>手机认证</h3>
+			<p class="note"><%=userInfo.telephone%></p>
+			<div class="state state_ok"><em class='icon icon-z-ok'></em><span>已认证</span></div>
+			<section>
+				<a class='revise' onclick="changeCurrentMenu('/account/securitySetting/reviseMobile','securitySetting_sub_m_btn');">修改</a>
+			</section>
+		</li>
+		<li id='auth_username'>
+			<h3>实名认证</h3>
+			<%if(userInfo.name && userInfo.idCard){%>
+				<p class="note" id="userInfo.name"><%=userInfo.name.substr(0,1)%>**，<%=userInfo.idCard.substr(0,3)%>***************</p>
+			<%}else{%>
+				<p class="note">为保障您的权益，实名认证后即可投资、充值和提现</p>
+			<%}%>
+			<div class="state state_no hide"><em class='icon icon-z-no'></em><span>未认证</span></div>
+			<div class="state state_ok hide"><em class='icon icon-z-ok'></em><span>已认证</span></div>
+			<section>
+				<a onclick="changeCurrentMenu('/account/securitySetting/certification','securitySetting_sub_m_btn');" class='go hide'>认证</a>
+				<a class='green hide'>已认证</a>
+			</section>
+		</li>
+		<li id='auth_bankcard'>
+			<h3>银行卡</h3>
+			<p class="note">在乐百贷平台进行充值、提现交易时使用</p>
+			<div class="state state_no hide"><em class='icon icon-z-no'></em><span>未认证</span></div>
+			<div class="state state_ok hide"><em class='icon icon-z-ok'></em><span>已认证</span></div>
+			<section>
+				<a class='cannot hide'>实名后绑卡</a>
+				<a class='go hide' onclick="changeCurrentMenu('/account/securitySetting/bindBankCard','securitySetting_sub_m_btn');">认证</a>
+				<a id='revise_bindBankCard' class="revise hide">修改</a>
+			</section>
+		</li>
+		<li id='auth_cg'>
+			<h3>存管账户</h3>
+			<p class="note">开通*****资金存管账户</p>
+			<div class="state state_no hide"><em class='icon icon-z-no'></em><span>未开通</span></div>
+			<div class="state state_ok hide"><em class='icon icon-z-ok'></em><span>已开通</span></div>
+			<section>
+				<a class='cannot hide'>绑卡后开通</a>
+				<a class='go hide' href="" >开通</a>
+				<a class='green hide'>已开通</a>
+			</section>
+		</li>
+		<li>
+			<h3>登录密码</h3>
+			<p class="note">登录乐百贷时需输入密码</p>
+			<div class="state state_no hide"><em class='icon icon-z-no'></em><span>未设置</span></div>
+			<div class="state state_ok"><em class='icon icon-z-ok'></em><span>已设置</span></div>
+			<section>
+				<a class='revise' onclick="changeCurrentMenu('/account/securitySetting/reviseLoginPwd','securitySetting_sub_m_btn');" >修改</a>
+			</section>
+		</li>
+		<li id='auth_deal'>
+			<h3>交易密码</h3>
+			<p class="note">提现时需要输入交易密码</p>
+			<div class="state state_no hide"><em class='icon icon-z-no'></em><span>未设置</span></div>
+			<div class="state state_ok hide"><em class='icon icon-z-ok'></em><span>已设置</span></div>
+			<section>
+				<a class='go hide' onclick="changeCurrentMenu('/account/securitySetting/setDealPwd','securitySetting_sub_m_btn');">设置</a>
+				<a class='revise hide' onclick="changeCurrentMenu('/account/securitySetting/reviseDealPwd','securitySetting_sub_m_btn');" >修改 |</a>
+				<a class='findpwd hide' onclick="changeCurrentMenu('/account/securitySetting/findDealPwd','securitySetting_sub_m_btn');"> 找回</a>
+			</section>
+		</li>
+		<li id='auth_email'>
+			<h3>邮箱认证</h3>
+			<%if(userInfo.email){%>
+				<p class="note"><%=userInfo.email%></p>
+				<div class="state state_no hide"><em class='icon icon-z-no'></em><span>未认证</span></div>
+				<div class="state state_ok"><em class='icon icon-z-ok'></em><span>已认证</span></div>
+				<section>
+					<a class='go hide' onclick="changeCurrentMenu('/account/securitySetting/bindEmail','securitySetting_sub_m_btn');">认证</a>
+					<a class='revise' onclick="changeCurrentMenu('/account/securitySetting/reviseEmail','securitySetting_sub_m_btn');">修改</a>
+				</section>
+			<%}else{%>
+				<p class="note">获取账户资金变动通知和平台讯息</p>
+				<div class="state state_no"><em class='icon icon-z-no'></em><span>未认证</span></div>
+				<div class="state state_ok hide"><em class='icon icon-z-ok'></em><span>已认证</span></div>
+				<section>
+					<a class='go' onclick="changeCurrentMenu('/account/securitySetting/bindEmail','securitySetting_sub_m_btn');">认证</a>
+					<a class='revise hide' onclick="changeCurrentMenu('/account/securitySetting/reviseEmail','securitySetting_sub_m_btn');">修改</a>
+				</section>
+			<%}%>
+			
+		</li>
+		<!-- <li>
+			<h3>用户评级</h3>
+			<p class="note">根据评估选择适合您的投资项目</p>
+			<div class="state state_no"><em class='icon icon-z-no'></em><span>未评估</span></div>
+			<div class="state state_ok hide"><em class='icon icon-z-ok'></em><span>已评估</span></div>
+			<section>
+				<a class='go' href="">评估</a>
+				<a class='revise hide' href="">重新评估</a>
+			</section>
+		</li> -->
+	</ul>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>

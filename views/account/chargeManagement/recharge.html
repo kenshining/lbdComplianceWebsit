@@ -1,0 +1,95 @@
+<script type="text/javascript" src="/dist/javascripts/account/recharge_control.min.js?v=eb95b9003e"></script>
+<div class="recharge_paga">
+	<div class="recharge_title_wrapper" id='tab_titles'>
+		<div class="orange_slider"></div>
+		<ol>
+			<li>快捷充值</li>
+			<li>网银充值</li>
+		</ol>
+		<a class='recharge_record_btn' href="/account/accountOverview?v=/account/chargeManagement/tradeRecord&m=tradeRecord_sub_m_btn&tradeRecordType=1">充值记录</a>
+	</div>
+	<div class="recharge_tabpage_wrapper" id='tab_pages'>
+		<!-- 快捷充值 -->
+		<section class='recharge_kjcz recharge_tabpage' id='recharge_kjcz'>
+			<ul class="recharge_bankcard">
+				<li id='kjcz_bankCardImgBox'><!-- <img class='icon' src="http://192.168.1.187:9070/201610/COMM.png"> -->--</li>
+				<li id='kjcz_bankCardNumber'>尾号 --</li>
+			</ul>
+			<table class='tab'>
+				<thead>
+					<tr><td>卡种</td><td>单笔限额(元)</td><td>单日限额(元)</td></tr>
+				</thead>
+				<tbody id="kjcz_BankCardInfo">
+					
+				</tbody>
+			</table>
+			<div class="recharge_form_wrapper">
+				<ol class='recharge_form'>
+					<li><span class='l'>充值金额</span><input id='recharge_kjcz_input' type="text" placeholder="请输入充值金额"  /> <span class='error_tip hide_op'><em class='icon icon-er'></em></span></li>
+					<li><span class='l'>充值手续费</span><p><span class='orange recharge_sxf'>0.00</span> 元 </p><em class='tip recharge_sxf_tip hide'>(活动期间，手续费由平台承担)</em></li>
+					<li><span class='l'>实际到账金额</span><p><span class="orange recharge_dzje">0.00</span> 元</p></li>
+				</ol>
+				<div><input type="button" id="recharge_kjcz_btn" class='btn recharge_btn disabled' value="充值" disabled="true" ></div>
+			</div>
+			<ul class="sweet_reminders">
+				<li><em class='icon icon-tip'></em><h2>温馨提示</h2></li>
+				<li>1. 为了保障您的账户资金安全，充值投资前请开通第三方托管账户。</li>
+				<li>2. 您的账户资金由第三方平台托管，包括充值、购买债权、提现。</li>
+				<li>3. 活动期间充值手续费由乐百贷承担。</li>
+				<li>4. 请注意您的银行卡支付限额，以免造成充值超额。</li>
+				<li>5. 平台禁止洗钱、虚假交易等行为，一经发现并确认，将终止该账户的使用。</li>
+				<li>6. 如果充值金额没有及时到账，请联系客服。</li>
+			</ul>
+		</section>
+
+		<!-- 网银充值 -->
+		<section class='recharge_wycz recharge_tabpage hide' id='recharge_wycz'>
+			<div class="recharge_bankcard_used_wrapper recharge_bankcard_wrapper clearfix">
+				<div id='recharge_wycz_isUsed'>
+				<!-- 常用银行卡 -->
+				</div>
+				<a class='more' id='more_bank_btn'>更多银行 <em class='icon icon-up'></em><em class='icon icon-down' style='display: none'></em></a>
+			</div>
+			<div class="recharge_bankcard_wrapper clearfix hide" id='recharge_bankcard_more'>
+				
+			</div>
+			<table class='tab'> 
+				<thead>
+					<tr><td>单笔限额(元)</td><td>单日限额(元)</td><td>网银充值条件</td></tr>
+				</thead>
+				<tbody id='wycz_BankCardInfo'>
+					<tr><td>5万</td><td>10万</td><td>电子银行口令卡+短信验证</td></tr>
+				</tbody>
+			</table>
+			<div class="recharge_form_wrapper">
+				<ol class='recharge_form'>
+					<li><span class='l'>充值金额</span><input id="recharge_wycz_input" class='recharge_input' type="text" placeholder="请输入充值金额"  /> <span class='error_tip hide_op '><em class='icon icon-er'></em>快捷充值上线为“银行单笔限额”，超过上线请使用网银充值或分多次充值</span></li>
+					<li><span class='l'>充值手续费</span><p><span class='orange recharge_sxf'>0.00</span> 元 </p><em class='tip recharge_sxf_tip hide'>(活动期间，手续费由平台承担)</em></li>
+					<li><span class='l'>实际到账金额</span><p><span class="orange recharge_dzje">0.00</span> 元</p></li>
+				</ol>
+				<div><input id="recharge_wycz_btn" type="button" class='btn recharge_btn disabled ' value="充值" disabled=true></div>
+			</div>
+			<ul class="sweet_reminders">
+				<li><em class='icon icon-tip'></em><h2>温馨提示</h2></li>
+				<li>1. 为了保障您的账户资金安全，充值投资前请开通第三方托管账户。</li>
+				<li>2. 您的账户资金由第三方平台托管，包括充值、购买债权、提现。</li>
+				<li>3. 活动期间充值手续费由乐百贷承担。</li>
+				<li>4. 请注意您的银行卡支付限额，以免造成充值超额。</li>
+				<li>5. 平台禁止洗钱、虚假交易等行为，一经发现并确认，将终止该账户的使用。</li>
+				<li>6. 如果充值金额没有及时到账，请联系客服。</li>
+			</ul>
+		</section>
+	</div>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+<input type="hidden" name="_imageUrl" id='_imageUrl' value="<%=imageServerUrl%>"/ >
+<script type="text/javascript">
+	
+
+	/*充值成功提示框*/
+	/*var Dialog = $.dialog({
+			dialogDom:'<a class="dialog_close_btn icon-zh-close icon" id="dialog_close_btn"></a><div class="icon icon-ok"></div><p class="orange" style="color:#ff7a33;">恭喜您，充值成功</p><ul><li class="btn">我的账户</li><li class="btn">去理财</li></ul>',
+			className:'msgSetting_dialog_wrapper dia_wrapper rzFail_dialog_wrapper recharge_ok_dialog',
+			isClose:false
+		});*/
+</script>

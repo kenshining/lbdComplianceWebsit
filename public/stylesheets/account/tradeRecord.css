@@ -1,0 +1,59 @@
+.tradeRecord_wrapper{
+	width: 944px;
+}
+.tradeRecord_wrapper .loanview_total_datas{
+	height: 147px;
+	padding: 40px 80px;
+}
+.tradeRecord_wrapper .loanview_total_datas li:first-child span{
+	color:#ff7a33;
+}
+.tradeRecord_wrapper .loanview_total_datas li:first-child h2{
+	color: #253b4c;
+}
+.tradeRecord_wrapper .loanview_total_datas li:nth-child(3) h2{
+	position: relative;
+}
+.tradeRecord_wrapper .loanview_total_datas .icon{
+	position: relative;
+	top:2px;
+}
+.tradeRecord_wrapper .loanview_total_datas .float{
+	width: 210px;
+	top:-20px;
+	margin-left:-56px;
+	color: #253b4c;
+}
+.tradeRecord_wrapper .loanview_total_datas .arrow::after{
+	top:18px;
+	transform: rotateZ(-45deg);
+	-webkit-transform: rotateZ(-45deg);
+	-moz-transform: rotateZ(-45deg);
+	-ms-transform: rotateZ(-45deg);
+	-o-transform: rotateZ(-45deg);
+}
+.tradeRecord_wrapper .loatview_fliter_tit{
+	height: 140px;
+}
+.lmy_investPage{
+	font-size: 14px;
+}
+.tradeRecord_wrapper .dateLi{
+	width: 100px!important;
+	margin-top: -2px;
+}
+.tradeRecord_wrapper .dateInput{
+	border: 1px solid #e8ebf1;
+	border-radius: 5px;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	cursor: pointer;
+}
+.tradeRecord_wrapper .sperateLine{
+    font-size: 14px;
+	line-height: 27px;
+	float: left;
+	width: 80px;
+	text-align: center;
+}

@@ -1,0 +1,87 @@
+<script type="text/javascript" src="/plugins/zeroclipboard/ZeroClipboard.js"></script>
+<script type="text/javascript" src="/plugins/qrcode/jquery.qrcode.min.js"></script> 
+<script type="text/javascript" src="/dist/javascripts/account/invite_control.min.js?v=96b58dce66"></script>   
+<input type="hidden" id='identityCode' val="<%=inviteCode%>">
+<div class="lmybody">  
+	<div class="lmy_background"> 
+		<div class="invitemain">  
+			<p class="title">成功邀请好友投资，可获<span class="orange">现金奖励</span></p>
+			<p class="desp">这是您的专属推广邀请码，请您邀请的好友在注册时输入
+				<span class="orange"><%=inviteCode%></span>
+			</p>  
+			<div class="inviteProcess">
+				<div class="iconview left"> 
+					<div class="icon icon-shareIcon"></div>
+					<div class="processDesp"><p>1、通过以下方式</p> <p>邀请好友</p></div>
+				</div>
+				<div class="iconarrow left"> 
+					<div class="icon icon-inviteArrow"></div>
+				</div>
+				<div class="iconview left"> 
+					<div class="icon icon-friendicon"></div>  
+					<div class="processDesp"><p>2、好友成功</p> <p>注册/充值/投资</p></div>
+				</div>
+				<div class="iconarrow left"> 
+					<div class="icon icon-inviteArrow"></div> 
+				</div>
+				<div class="iconview left">
+					<div class="icon icon-moneyicon"></div>   
+					<div class="processDesp"><p>3、恭喜获得</p> <p>邀请奖励50元红包</p></div>
+				</div> 
+			</div>  
+			<div class="invitelink">  
+				<span class="inviteLinkText">邀请链接：
+					<!-- <span id="cardid">https://www.lebaidai.com/user/regist?invit=<%=inviteCode%></span> -->
+					<span id="cardid"><%=sharelink%>user/regist?invit=<%=inviteCode%></span>
+				</span>
+				<input type="button" class="lmybtn btncopylink" id="copycardid" value="复制链接"/>
+ 
+			</div> 
+			<div class="share">
+				<div class="iconshare iconwidth left">
+					<a class="aweixin" onclick="shareByWechat();" href="javascript:void(0);"> </a>
+				</div>
+				<div class="iconshare iconwidth left">
+					<a class="aqq" onclick="shareByQQ();" href="javascript:void(0);"></a>
+				</div>
+				<div class="iconshare iconwidth left">
+					<a class="aqone" onclick="shareByQZone();" href="javascript:void(0);"></a>
+				</div>
+				<div class="iconshare iconwidth left">
+					<a class="aweibo" onclick="shareWeibo();" href="javascript:void(0);"></a>
+				</div>
+			</div>
+			<div class="share">
+				<div class="iconwidth left"> 
+					<p>微信</p>
+				</div>
+				<div class="iconwidth left"> 
+					<p>QQ</p>
+				</div>
+				<div class="iconwidth left"> 
+					<p>QQ空间</p>
+				</div>
+				<div class="iconwidth left"> 
+					<p>微博</p>
+				</div>
+			</div> 
+			<div class="inviteRule">
+				<p class="inviteRuleTitle"><em class="iconrule"></em>邀请规则</p>
+				<p class="inviteRuleText">1.通过您的邀请链接，每成功邀请一位好友注册、充值、投资并且在30日之内完成，您即可获得50元红包奖励</p>
+				<p class="inviteRuleText">2.红包数量不封顶，多邀多得，您可以通过多个平台进行操作去邀请好友加入，赶快来获得红包吧</p>
+			</div> 
+
+			 
+		</div>
+	</div>
+</div>
+
+<div id="zeroClipboardDiv"></div>
+<!--分享微信弹出层-->
+
+<div class="weixin" style="display: none;" id="wechatContent">
+    <span class="weixin_tit">分享到微信</span>
+    <span class="weixin_icon"><div id="nncode"></div></span>
+    <span class="weixin_tit1">打开微信，使用“扫一扫”,点击右上角"发送给朋友或”分享到朋友圈“即可进行分享。</span>
+</div> 
+ 

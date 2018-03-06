@@ -1,0 +1,37 @@
+<script type="text/javascript" src="/dist/javascripts/account/certification_control.min.js?v=beb6ab70a6"></script>
+<div class="securitySetting_title">
+	<a class='orange' onclick="changeCurrentMenu('/account/securitySetting/securitySetting','securitySetting_sub_m_btn');">账户信息</a>
+	<a class='gary' href="javascript:;">> 实名认证</a>
+</div>
+<div class="certification_wrapper">
+	<div class="securitySetting_form_wrapper">
+		<section>
+			<span class='l'>真实姓名</span>
+			<div class="s_input_wrapper"><input id="auth_name_val" type="text" placeholder="请输入真实姓名" maxlength="" /></div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+		<section>
+			<span class='l'>身份证号码</span>
+			<div class="s_input_wrapper"><input id="auth_idCard_val" type="text" placeholder="请输入身份证号码" maxlength="18" /></div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+		<section>
+			<span class='l'></span>
+			<input id='certification_btn' type="button" value='确定' class='btn revise_mobile_btn'>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+	</div>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+<script type="text/javascript">
+
+	
+
+
+	/*实名认证失败弹出框*/
+	/*var Dialog = $.dialog({
+					dialogDom:'<div class="icon icon-fail"></div><p class="orange">很遗憾，实名认证失败！</p><section><h3>可能由于以下原因：</h3><p><strong>·</strong>姓名与身份证号码不匹配</p><p><strong>·</strong>身份证件已到期</p><p><strong>·</strong>身份信息存在安全隐患</p></section><ul><li class="btn">返回账户</li><li id="dialog_close_btn" class="btn" );">重新认证</li></ul>',
+					className:'dia_wrapper rzFail_dialog_wrapper',
+					isClose:false
+				});*/
+</script>

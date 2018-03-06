@@ -1,0 +1,55 @@
+<div class="left account_welcome clearfix">
+	<section id='top_userPhoto_wrapper' class="left icon_wrapper" onclick="changeCurrentMenu('/account/securitySetting/securitySetting','securitySetting_sub_m_btn','&control=new');">
+		<%if(userInfo.headPortrait){%>
+			<img id='top_userPhoto' class="icon" src="<%=imageServer%><%=userInfo.headPortrait%>">
+		<%}else{%>
+			<img id='top_userPhoto' class="icon icon_lbd" src="/dist/images/lbd.png?v=793a856322">
+		<%}%>
+	</section>
+	<section class="left">
+		<p class="t" id="topBar_telephone"><%=userInfo.telephone%> </p>
+		<p class='b'>欢迎进入乐百贷！</p>
+	</section>	
+</div>
+<div class="left">
+	<ul id='authenticate' class='account-authenticate clearfix left'>
+		<li data-href='/account/securitySetting/reviseMobile'><a><span class='icon icon-zh-account-topA1'></span></a><em class="float arrow done hide"></em></li>
+		<li data-href='/account/securitySetting/certification'><a><span class='icon'></span></a><em class="float arrow before hide"></em></li>
+		<li data-href='/account/securitySetting/bindBankCard'><a><span class='icon'></span></a><em class="float arrow before hide"></em></li>
+		<li data-href='/account/securitySetting/bindBankCard'><a><span class='icon'></span></a><em class="float arrow before hide"></em></li>
+		<li id='authenticate_pwd' data-href='/account/securitySetting/setDealPwd'><a><span class='icon'></span></a><em class="float arrow before hide"></em></li>
+	</ul>
+	<section class='account-safety-level right'>
+		<p>安全等级</p>
+		<!-- 高 -->
+		<ol class="account_safety_wrapper hide">
+			<li><div class='green'></div></li>
+			<li><div class='green'></div></li>
+			<li><div class='green'></div></li>
+			<li>高</li>
+		</ol>
+		<!-- 中 -->
+		<ol class="account_safety_wrapper hide">
+			<li><div class='yellow'></div></li>
+			<li><div class='yellow'></div></li>
+			<li><div class=''></div></li>
+			<li>中</li>
+			<li><a onclick="changeCurrentMenu('/account/securitySetting/securitySetting','securitySetting_sub_m_btn');" >提升</a></li>
+		</ol>
+		<!-- 低 -->
+		<ol class="account_safety_wrapper hide">
+			<li><div class='red'></div></li>
+			<li><div class=''></div></li>
+			<li><div class=''></div></li>
+			<li>低</li>
+			<li><a onclick="changeCurrentMenu('/account/securitySetting/securitySetting','securitySetting_sub_m_btn');" >提升</a></li>
+		</ol>
+	</section>
+</div>
+<div class="right account_money">
+	<p>可用余额：<span style="color:#253b4c;">￥</span><span id='topBar_balance'></span></p>
+	<div class='btns'>
+		<input class='btn' onclick="changeCurrentMenu('/account/chargeManagement/recharge','recharge_sub_m_btn');" type="button" name="" value="充值">
+		<input class='btn' onclick="changeCurrentMenu('/account/chargeManagement/withdraw','withdraw_sub_m_btn');" type="button" name="" value="提现">
+	</div>
+</div>

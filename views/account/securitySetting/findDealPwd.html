@@ -1,0 +1,56 @@
+<script type="text/javascript" src="/dist/javascripts/account/findDealPwd_control.min.js?v=e14f0cc7f8"></script>
+<div class="securitySetting_title">
+	<a class='orange' onclick="changeCurrentMenu('/account/securitySetting/securitySetting','securitySetting_sub_m_btn');">账户信息</a>
+	<a class='gary' href="javascript:;">> 找回交易密码</a>
+</div>
+<div class="setDealPwd_wrapper" >
+	<div class="securitySetting_form_wrapper">
+		<section>
+			<span class='l'>手机号码</span>
+			<div id="findDealPwd_telephone"><%=userInfo.telephone%></div>
+		</section>
+		<section class='clearfix' >
+			<span class='l'>图形验证码</span>
+			<div class="s_input_wrapper s_img_input_wrapper">
+				<input id='imgCode_val' maxlength="4" type="text" name="" placeholder="请输入图形验证码">
+			</div>
+			<div class="s_input_wrapper s_imgcode_wrapper">
+				<img src="" id='imgCode'>
+			</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em></p>
+		</section>
+		<section class='clearfix' >
+			<span class='l'>短信验证码</span>
+			<div class="s_input_wrapper s_msg_input_wrapper hover">
+				<input id='msgCode_val' maxlength="4" type="text" name="" placeholder="请输入短信验证码">
+			</div>
+			<div id='msgCode_btn' class="s_msg_btn btn">获取短信验证码</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em></p>
+		</section>
+		<section style='margin-top: 50px;'>
+			<span class='l'></span>
+			<input id='findDealPwd_next_btn' type="button" value='下一步' class='btn revise_mobile_btn'>
+		</section>
+	</div>
+</div>
+<div class="setDealPwd_next_wrapper hide">
+	<div class="securitySetting_form_wrapper">
+		<section>
+			<span class='l'>设置交易密码</span>
+			<div class="s_input_wrapper focus"><input id='set_pwd'  maxlength="6" type="password" placeholder="请输入交易密码"/></div>
+			<div class="set_tip hide">6位纯数字</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em></p>
+		</section>
+		<section>
+			<span class='l'>确认交易密码</span>
+			<div class="s_input_wrapper"><input id='ok_pwd' maxlength="6" type="password" placeholder="请输入交易密码"/></div>
+			<div class="set_tip hide">6位纯数字</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em></p>
+		</section>
+		<section  style='margin-top: 50px;'>
+			<span class='l'></span>
+			<input id="ok_pwd_btn" type="button" value='确定' class='btn revise_mobile_btn'>
+		</section>
+	</div>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>

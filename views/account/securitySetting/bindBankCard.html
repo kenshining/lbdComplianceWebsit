@@ -1,0 +1,39 @@
+<script type="text/javascript" src="/dist/javascripts/account/bindBankCard_control.min.js?v=072c63d78a"></script>
+<div class="securitySetting_title">
+	<a class='orange' onclick="changeCurrentMenu('/account/securitySetting/securitySetting','securitySetting_sub_m_btn');">账户信息</a>
+	<a class='gary' href="javascript:;">> 银行卡</a>
+</div>
+<div class="bindBankCard_wrapper">
+	<div class="securitySetting_form_wrapper">
+		<section>
+			<span class='l'>身份信息</span>
+			<%if(userInfo.name && userInfo.idCard){%>
+			<div><%=userInfo.name.substr(0,1)%>**，<%=userInfo.idCard.substr(0,3)%>******************</div>
+			<%}%>
+		</section>
+		<section>
+			<span class='l'>银行卡号码</span>
+			<div class="s_input_wrapper">
+				<input id="bankCard_input" maxlength="20" type="text" name="" placeholder="请输入银行卡号码">
+			</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em></p>
+		</section>
+		<span class='banks_introducation clearfix'><a id='bank_introduction'>银行介绍</a></span>
+		<section>
+			<span class='l'>开户行</span>
+			<div class="s_input_wrapper">
+				<input id="bindBankCard_location_input" type="text" name="" placeholder="请输入开户行支行名称">
+			</div>
+			<p class="s_error_tip error_tip"><em class='icon icon-er'></em></p>
+		</section>
+		<section>
+			<span class='l'>所属银行</span>
+			<div id='bindBankCard_location'>--</div>
+		</section>
+		<section>
+			<span class='l'></span>
+			<input id='bindBankCard_btn' type="button" value='确定' class='btn revise_mobile_btn'>
+		</section>
+	</div>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>

@@ -1,0 +1,46 @@
+<script type="text/javascript" src="/dist/javascripts/account/withdraw_control.min.js?v=9d002f0019"></script>
+<div class="withdraw_wrapper">
+	<div class='top'>
+		<a class='withdraw_record_btn' href="/account/accountOverview?v=/account/chargeManagement/tradeRecord&m=tradeRecord_sub_m_btn&tradeRecordType=2">提现记录</a>
+	</div>
+	<div class="withdraw_form_wrapper">
+		<ol class='withdraw_form'>
+			<li>
+				<span class='l'>银行卡</span>
+				<div class="withdraw_bankcard">
+					<p id="withdraw_bankcard_img_wrapper"><!--  -->--</p>
+					<p id='withdraw_bankcard_lastcode'>尾号 --</p>
+				</div>
+			</li>
+			<li><span class='l'>可用余额</span><p><span class="orange formatMoney" id="balance_val">0.00</span> 元</p></li>
+			<li>
+				<span class='l'>提现金额</span>
+				<input id='withdraw_input' type="text" placeholder="请输入提现金额" class='' /> 
+				<span class='error_tip hide_op'><em class='icon icon-er'></em>提现金额最多到小数点后两位</span>
+			</li> 
+			<li><span class='l'>提现手续费</span><p><span class='orange formatMoney' id='withdraw_sxf'>0.00</span>元</p><em id="handingfee" class='tip hide'>(活动期间，手续费由平台承担)</em></li>
+			<li><span class='l'>实际到账金额</span><p><span class="orange formatMoney" id="withdraw_dzje">0.00</span>元</p></li> 
+			<li>
+				<span class='l'>交易密码</span>
+				<input id="withdraw_dealpwd_input" maxlength="6" type="text" name="withdraw_dealpwd_input" placeholder="请输入交易密码"  />
+				<span class='error_tip hide_op'><em class='icon icon-er'></em>提现金额最多到小数点后两位</span>
+			</li>  
+
+			<li><span class='l'></span><a onclick="changeCurrentMenu('/account/securitySetting/findDealPwd','securitySetting_sub_m_btn');" class='forget_jypwd_btn'>忘记密码</a></li>
+		</ol>
+		<div><span class='l'></span><input id="withdraw_sumit_btn" type="button" class='btn withdraw_btn disabled ' value="提现" disabled="true"></div>
+	</div>
+	<ul class="sweet_reminders">
+		<li><em class='icon icon-tip'></em><h2>温馨提示</h2></li>
+		<li>1. 身份认证、账户存管开通、交易密码、提现银行卡均设置成功后，才能进行提现操作；</li>
+		<li>2. 提现到账时间：预计T+1工作日到账，遇双休日法定节假日顺延，实际到账时间依据银行存管方及提现银行而有所差异；</li>
+		<li>3. 提现必须为银行借记卡，不支持存折、信用卡提现；</li>
+		<li>4. 根据《反洗钱法》规定，禁止洗钱、信用卡套现、虚假交易等行为，平台对上述可疑行为的用户发起的提现将采取延迟付款
+或终止该账户的使用。</li>
+
+	</ul>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+<input type="hidden" name="_imageUrl" id="_imageUrl" value="<%=imageServerUrl%>"/>
+
+

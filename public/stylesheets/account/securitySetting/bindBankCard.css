@@ -1,0 +1,38 @@
+.bindBankCard_wrapper{
+	width: 944px;
+	height: 470px;
+	background: #f9fcff;
+}
+.securitySetting_form_wrapper section div{
+	line-height: 40px;
+}
+.securitySetting_form_wrapper .banks_introducation a{
+	float: right;
+	color: #3974ce;
+	position: relative;
+	top:-25px;
+}
+.bindBanks_dialog_wrapper{
+	width: 770px;
+	height: 740px;
+	margin-top: 100px;
+}
+.bindBanks_dialog_wrapper .recharge_bankcard{
+	background: #f9fcff;
+}
+.bindBanks_dialog_wrapper .recharge_bankcard_wrapper{
+	margin-left: 35px;
+}
+.bindBanks_dialog_wrapper h3{
+	font-size: 14px;
+	color: #253b4c;
+	padding: 30px 30px 15px 30px;
+}
+.bindBanks_dialog_wrapper h3 span{
+	color: #7285a0;
+}
+.bindBanks_dialog_wrapper .bindBanks_btn{
+	width: 166px;
+	height: 42px;
+	margin:10px auto;
+}

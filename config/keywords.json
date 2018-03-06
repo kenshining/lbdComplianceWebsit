@@ -1,0 +1,14 @@
+{
+	"websiteTitle":"乐百贷-P2P借贷信息撮合服务，为您打造便捷高效的P2P网贷",
+	"keywords":"乐百贷, P2P理财,网络理财,互联网金融,网络借贷,网上理财,投资理财,债权转让,理财计划,网络贷款,理财专家,理财,金融,小额借贷,P2P理财借贷专家。",
+	"description":"乐百贷是仁远集团投资的P2P理财借贷平台，独家使用中科院大数据风控技术（“央行级别”风控模型）加强风险管理能力，致力搭建安全、透明、高效、诚信的理财借贷平台。",
+	"pages":{
+		"investment_title":"我要投资",
+		"investment_discription":"",
+		"404":"乐百贷-找不到页面"
+	},
+	"staticVersion":{
+        "resourceJsVersion":"1.1.1",
+        "resourceCssVersion":"1.1.2"
+    }
+}

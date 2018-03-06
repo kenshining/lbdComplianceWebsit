@@ -1,0 +1,130 @@
+.helpCenterOverview_wrapper{
+	width: 100%;
+	height: 1062px;
+	background: url(/dist/images/helpCenter_bg.png) no-repeat center center;
+	padding-top: 30px;
+	position: relative;
+}
+.novice_guide_wrapper,.clipper_service_wrapper,.common_problem_wrapper{
+	width: 1100px;
+	background: #f9fcff;
+	margin:0 auto;
+}
+.helpCenterOverview_wrapper h2{
+	width: 100%;
+	padding-left: 30px;
+	line-height: 80px;
+	font-size: 18px;
+	color: #7285a0;
+}
+.flex_box{
+	margin: 0 auto;
+	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	justify-content:space-between;
+}
+.novice_guide_wrapper{
+	height: 177px;
+}
+.common_problem_wrapper{
+	height: 378px;
+	margin-top: 15px;
+}
+.clipper_service_wrapper{
+	height: 217px;
+	margin-top: 15px;
+}
+
+
+.novice_guide_wrapper .flex_box{
+	width: 800px;
+}
+.novice_guide_wrapper .flex_item{
+	margin-left: -15px;
+}
+.novice_guide_wrapper .flex_item .icon,.novice_guide_wrapper .flex_item div{
+	float: left;
+}
+.flex_item{
+	width: auto;
+}
+.novice_guide_wrapper .flex_item div{
+	position: relative;
+	top:-2px;
+	left: 15px;
+}
+.novice_guide_wrapper .flex_item h3{
+	font-size: 18px;
+	padding-bottom: 8px;
+	color: #253b4c;
+}
+.novice_guide_wrapper .flex_item p{
+	font-size: 14px;
+	color: #7285a0;
+}
+
+
+.clipper_service_wrapper .flex_box{
+	width: 940px;
+	margin-top: 10px;
+	text-align: center;
+}
+.clipper_service_wrapper .icon_h{
+	display: none;
+}
+.clipper_service_wrapper h4{
+	font-size: 18px;
+	padding-top: 8px;
+	color: #3974ce;
+}
+.clipper_service_wrapper a:hover .icon{
+	display: none;
+}
+.clipper_service_wrapper a:hover .icon_h{
+	display: inline-block;
+}
+
+.common_problem_wrapper ul{
+	width: 385px;
+	float: left;
+	padding-left: 80px;
+}
+.common_problem_wrapper ul:last-child{
+	float: right;
+	padding-right: 90px;
+}
+.common_problem_wrapper ul li:last-child{
+	
+}
+.common_problem_wrapper h4{
+	line-height: 60px;
+	font-size: 18px;
+	color: #253b4c;
+	position: relative;
+}
+.common_problem_wrapper ol{
+	border-top: 1px solid #e4e9ee;
+	width: 100%;
+	padding-top: 20px;
+}
+.common_problem_wrapper ol li a{
+	float: left;
+	width: 25%;
+	padding-bottom: 12px;
+	font-size: 14px;
+	color: #253b4c;
+}
+.common_problem_wrapper ol li a:hover{
+	color: #2a84d8;
+}
+.common_problem_wrapper .icon{
+	position: absolute;
+	left: 0;
+	top:54px;
+}
+.common_problem_wrapper .bottom{
+	margin-top: 40px;
+}

@@ -1,0 +1,50 @@
+<script type="text/javascript" src="/dist/javascripts/account/tradeRecord_control.min.js?v=727eab6a95"></script>
+<div class="tradeRecord_wrapper">
+	<div class="loanview_total_datas">
+		<ul>
+			<li><span class='formatMoney'>￥<%=tradeDatas.rechargeTotal%></span><h2>充值总额</h2></li>
+			<li><span class='formatMoney'>￥<%=tradeDatas.withdrawalTotal%></span><h2>提现总额</h2></li>
+			<li><span class='formatMoney'>￥<%=tradeDatas.feeTotal%></span><h2>费用总额 <a class='icon icon-float' id='trade_float'></a><a class='tip arrow float hide'>平台服务费+提现手续费+充值手续费</a></h2></li>
+		</ul>
+	</div>
+
+	<div class="loanview_list_wrapper">
+		<ol class='loatview_fliter_tit '>
+			<li class='loatview_date clearfix' id='tradeTypeParams'>
+				<h3>交易类型</h3><span class='one'><a class='orange-bg' data-param=''>全部</a></span><span><a data-param='3'>投资</a></span><span><a data-param='1'>充值</a></span><span><a data-param='2'>提现</a></span><span><a data-param='6'>投资回款</a></span><span><a data-param='4'>流标回款</a></span><span><a data-param='5'>满标放款</a></span><span><a data-param='7'>到期还款</a></span>
+			</li>
+			<li class='clearfix' id='tradeStateParams'>
+				<h3>交易状态</h3><span class='one'><a class='orange-bg' data-param=''>全部</a></span><span><a data-param='2'>成功</a></span><span><a data-param='1'>处理中</a></span><span><a data-param='3'>失败</a></span>
+			<li id='tradeDateParams'>
+				<h3>交易日期</h3><span class='one'><a class='orange-bg' data-param=''>全部</a></span><span><a data-param='7'>近7天</a></span><span><a data-param='30'>近1个月</a></span><span><a data-param='90'>近3个月</a></span><span><a data-param='180'>近6个月</a></span><span><a data-param='365'>近1年</a></span>
+				<span class="dateLi">
+					<input type="text" class="dateInput" id="fromDateParam"  readonly="true" placeholder="开始日期"/>
+				</span>
+				<span class="sperateLine">——</span>
+				<span class="dateLi">
+					<input type="text" class="dateInput" id="endDateParam"  readonly="true" placeholder="结束日期"/>	
+				</span>
+				<div class='calendar_wrapper'></div>
+			</li>
+		</ol>
+		<section class="loatview_tab-wrapper tradeRecord_tab_wrapper">
+			<table class='tab'>
+				<thead>
+					<tr><td>交易时间</td><td>交易类型</td><td>存入(元)</td><td>支出(元)</td><td>余额(元)</td><td>状态</td><td>备注</td></tr>
+				</thead>
+				<tbody class='' id="tradeList">
+					
+				</tbody>
+			</table>
+			<div class="no_data_wrapper">
+				<div class="icon icon-zh-no" style='top:40px;'></div>
+				<p style='padding-top: 108px;'>暂无交易记录</p>
+			</div>
+			<div class="lmy_investPage">
+				<div id="tradeRecordPage"></div>
+			</div>
+		</section>
+	</div>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+

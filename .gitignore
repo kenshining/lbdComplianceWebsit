@@ -1,0 +1,16 @@
+/node_modules
+
+/config/config.json
+
+/public/dist/stylesheets/style.min.css
+/public/dist/revStylesheets/style.min.css
+
+/public/dist/icon/sprite.css
+/public/dist/icon/sprite.png
+
+/public/dist/javascripts
+
+/public/dist/images
+
+/public/dist/rev
+

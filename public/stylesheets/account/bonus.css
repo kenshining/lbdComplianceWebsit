@@ -1,0 +1,169 @@
+.lmybody .bonustype{
+	/*border-bottom: 1px solid #e4e9ee;*/
+	padding-left: 30px;
+	overflow: hidden;
+	position: relative;
+}
+.lmybody .bonusTitle{
+	color: #7285a0;
+	font-size: 18px;
+	float: left;
+	padding-top: 20px;
+}
+.bonustype .slideBorder{
+	display:inline-block;
+	border-bottom:4px solid #ff7a33;
+	width: 84px;
+	height: 0px;
+	position: absolute;
+	left: 28px;
+	bottom:0px;
+}
+.bonustype ul{
+	overflow: hidden;
+	width: 400px;
+	float: left;
+}
+.bonustype ul li{
+	float: left; 
+	margin-right: 35px;
+	font-size: 18px;
+	width:80px;
+	height:68px; 
+	text-align: center;
+	line-height: 68px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.bonustype ul li:hover{
+	color: #ff7a33; 
+}
+.bonustype ul li.selected{
+	color: #ff7a33; 
+	box-sizing:border-box; 
+	/*border-bottom:4px solid #ff7a33;*/
+}
+.bonustype .useRule{
+	float: right;
+	display: inline-block; 
+	height:68px; 
+	text-align: center;
+	line-height: 68px;
+	vertical-align: middle;
+	padding-right: 28px;
+}
+.bonustype .useRule a{
+	color: #3974ce;
+	font-size: 14px;
+}
+.lmybody .bonuscontent{
+	overflow: hidden;
+	width: 884px;
+	/*margin: 31px auto 0px;*/
+	margin: 20px auto 0px;
+}
+.bonuscontent .queryCon{
+	overflow: hidden;
+}
+.bonuscontent .bonuslist{
+	overflow: hidden;
+	margin-top:19px;
+}
+.bonuscontent .bonuslist ul{
+	overflow: hidden;
+}
+.bonuscontent .bonuslist ul li{
+	width: 286px;
+	height: 145px;
+	margin-top: 15px;
+	margin-right: 13px;
+} 
+.bonuscontent .bonuslist ul li:nth-child(3n+3){ 
+	margin-right: 0px;
+}
+.bonuscontent .bonuslist ul li.noUse{
+	background: url('/dist/images/account/bonusUse.png');
+}
+.bonuscontent .bonuslist ul li.used{
+	background: url('/dist/images/account/bonusUsed.png');
+}
+.bonuscontent .bonuslist ul li.pass{
+	background: url('/dist/images/account/bonusUsedFail.png');
+}
+
+.bonuslist .bonusText{
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+.bonuslist .bonusText .bonusleft{
+	width: 110px;
+	height: 145px;  
+	padding-left: 22px;
+	box-sizing:border-box;
+}
+.bonusText .value{
+	font-size: 28px;
+	color: #fff;
+	margin-top: 35px;
+}
+.bonusText .value .smallfont{
+	font-size: 12px;
+}
+.bonusText .valueName{
+	color: #fff;
+	font-size: 14px;
+} 
+.bonusText .moneyText{
+	color: #c5e2ff;
+	font-size: 12px;
+	transform:scale(0.9);
+	-ms-transform:scale(0.9); 	/* IE 9 */
+	-moz-transform:scale(0.9); 	/* Firefox */
+	-webkit-transform:scale(0.9); /* Safari 和 Chrome */
+	-o-transform:scale(0.9); 	/* Opera */
+	margin-left: -6px;  
+}
+.bonusText .dateText{
+	margin-top: 24px; 
+}
+.bonusText .moneyValue{
+	color: #e3f1ff;
+	font-size: 12px;
+	transform:scale(0.9);
+	-ms-transform:scale(0.9); 	/* IE 9 */
+	-moz-transform:scale(0.9); 	/* Firefox */
+	-webkit-transform:scale(0.9); /* Safari 和 Chrome */
+	-o-transform:scale(0.9); 	/* Opera */
+	margin-left: -6px;
+}
+.bonusText .mgtop{
+	margin-top: 13px;
+}
+.bonusText .conditionMgtop{
+	margin-top: -2px;
+}
+@-moz-document url-prefix(){
+	.bonusText .conditionMgtop{
+		margin-top: -3px;
+	}
+} 
+.bonusText .date{
+	color: #f0f7ff;
+	font-size: 12px; 
+	margin-top: 15px;
+}
+.used .bonusText .moneyText,.pass .bonusText .moneyText{
+	color: #e0e7ee;
+}
+
+.bonuslist .bonusNull{
+	width: 62px;
+	margin: 0 auto;
+	text-align: center; 
+	margin-top: 5px;
+}
+.bonuslist .bonusNull .bonusNullText{
+	margin-top: 10px;
+	color: #7285a0;
+}

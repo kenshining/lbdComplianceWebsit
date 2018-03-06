@@ -1,0 +1,122 @@
+.securitySetting_title{
+	padding-bottom: 18px;
+	line-height: 0.8;
+}
+.securitySetting_title a{
+	font-size: 14px;
+}
+.securitySetting_title a.gary{
+	color: #7285a0;
+}
+.reviseMobile_wrapper{
+	width: 944px;
+	height: 518px;
+	background: #f9fcff;
+}
+.securitySetting_form_wrapper{
+	width: 370px;
+	margin:0 auto;
+	padding-top: 60px;
+	font-size: 14px;
+}
+.securitySetting_form_wrapper section{
+	height: 40px;
+	margin-bottom: 30px;
+	position: relative;
+}
+#remove_mobile_wrapper .securitySetting_form_wrapper section:nth-child(1){
+	margin-bottom: 12px;
+}
+.securitySetting_form_wrapper section span,.s_input_wrapper{
+	float: left;
+}
+.securitySetting_form_wrapper section span{
+	color: #7285a0;
+	width: 90px;
+	text-align: right;
+	margin-right: 15px;
+	font-size: 14px;
+	line-height: 40px;
+	height: 40px;
+}
+.securitySetting_form_wrapper div.set_tip{
+	position: relative;
+	left: 105px;
+	line-height: 46px;
+}
+.s_input_wrapper{
+	width: 265px;
+	height: 40px;
+	border:1px solid #e8ebf1;
+	border-radius: 4px;
+	box-sizing: border-box;
+	padding:0 10px;
+	overflow: hidden;
+}
+.s_img_input_wrapper,.s_msg_input_wrapper{
+	width: 136px;
+}
+.s_imgcode_wrapper,.s_msg_btn{
+	width: 118px;
+	float: right;
+}
+.s_imgcode_wrapper{
+	padding: 0 0;
+	cursor: pointer;
+}
+.s_imgcode_wrapper img{
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+.s_msg_btn{
+	font-size: 14px;
+	margin-top: 0;
+}
+.revise_mobile_btn{
+	width: 260px;
+}
+.s_input_wrapper input{
+	line-height: 19px;
+	width: 100%;
+	background: none;
+}
+.s_error_tip{
+	position: absolute;
+	left:390px;
+	top:50%;
+	width: 248px;
+	line-height: 20px;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	display: none;
+}
+.s_error_tip .icon-er{
+	position: absolute;
+	left: -15px;
+	top:4px;
+}
+.revise_tip{
+	width: 360px;
+	margin: 0 auto;
+	color: #9aa6b9;
+	font-size: 12px;
+	line-height: 20px;
+	margin-top: 100px;
+}
+
+.revise_mobile_wrapper{
+	width: 326px;
+	height: 184px;
+	text-align: center;
+}
+.dia_wrapper .icon-ok{
+	margin-top: 40px
+}
+.dia_wrapper .orange{
+	font-size: 20px;
+	margin-top: 10px;
+}

@@ -1,0 +1,40 @@
+<script type="text/javascript" src="/dist/javascripts/account/reviseEmail_control.min.js?v=6de1fbdc3e"></script>
+<div class="securitySetting_title">
+	<a class='orange' onclick="changeCurrentMenu('/account/securitySetting/securitySetting','securitySetting_sub_m_btn');">账户信息</a>
+	<a class='gary' href="javascript:;">> 修改邮箱</a>
+</div>
+<div class="bindEmail_wrapper">
+	<div class="securitySetting_form_wrapper">
+		<section class='s_email_like_section'>
+			<span class='l'>新邮箱地址</span>
+			<ol class="like_wrapper hide not" id='email_like_wrapper'>
+				<li><em></em>@qq.com</li>
+				<li><em></em>@163.com</li>
+				<li><em></em>@126.com</li>
+				<li><em></em>@yahoo.com</li>
+				<li><em></em>@sina.com</li>
+				<li><em></em>@hotmail.com</li>
+				<li><em></em>@gmail.com</li>
+				<li><em></em>@sohu.com</li>
+			</ol>
+			<div class="s_input_wrapper ">
+				<input id="email_val" class="not" type="text" placeholder="请输入邮箱地址"/>
+			</div>
+			<p id="emailError_tip" class="s_error_tip error_tip"><em class='icon icon-er'></em>请输入正确格式的手机号码</p>
+		</section>
+		<section  style='margin-top: 50px;'>
+			<span class='l'></span>
+			<input id="bind_email_btn" type="button" value='发送验证邮件' class='btn revise_mobile_btn'>
+		</section>
+	</div>
+</div>
+<div id="bindEmailOk_wrapper" class="sended_Email_wrapper hide">
+		<div id='email_url'>激活邮件已发送至您的邮箱，请前往验证，接收邮箱：</div>
+		<section  style='margin-top: 50px;'>
+			<input id='go_email_btn' type="button" value='前往邮箱' class='btn revise_mobile_btn'>
+		</section>
+		<p>未收到邮件？<a id="send_email_again">重新发送</a></p>
+</div>
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+<input type="hidden" name="_serverUrl" id="_serverUrl" value="<%=serverInfo.url%>"/>
+<input type="hidden" name="_serverPort" id="_serverPort" value="<%=serverInfo.port%>"/>

@@ -1,0 +1,197 @@
+<script type="text/javascript" src="/dist/javascripts/account/loanViewDesp_control.min.js"></script> 
+<div class="lmybody"> 
+	<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/>
+	<input type="hidden" name="targetId" id="targetId" value="<%=targetId%>"/>
+	<input type="hidden" name="accountBalance" id="accountBalance" value=""/>
+	<input type="hidden" name="contractServer" id="contractServer" value="<%=contractServer%>"/> 
+	<div class="lmy_mapview">
+		<a href="#" class="orange" onclick="changeCurrentMenu('/account/loan/loanView','loanView_sub_m_btn');">我的借款</a>
+		<span class="text">></span>
+		<span class="text">还款详情</span>
+	</div>
+	<div class="lmy_investDespBaseInfo lmy_background">
+		<div class="viewLoanProtocal">
+			<a href="/account/loan/loanProtocol?targetId=<%=targetId.split('?')[0]%>" target='_blank'>查看借款协议</a>
+			<a href="javascript:void(0);" id="protocolDown">下载</a>
+		</div>
+		<div class="despBaseInfo">
+			<div class="importInfo left">
+				<p class="value">￥<span id='receiveBX'></span></p>
+				<p class="text">待还本息</p>
+			</div>
+			<div class="secondImportInfo left">
+				<p class="value">￥<span id="receivePrincipal"></span></p>
+				<p class="text">待还本金</p>
+				<p class="value valuemargin">￥<span id="receivedInterest"></span></p>
+				<p class="text">待还利息</p>
+			</div>
+			<div class="lastImportInfo left">
+				<p><span class="text">借款编号:</span><span class="value" id="loanNumber"></span></p>
+				<p><span class="text">借款利率:</span><span class="value" id="nhsyl"></span></p>
+				<p><span class="text">借款期限:</span><span class="value"><span id='htqx'></span>个月</span></p>
+			</div>
+			<div class="lastImportInfo lastImportInfoWidth left">
+				<p><span class="text">产品名称:</span><span class="value" id="productid"></span></p>
+				<p><span class="text">还款方式:</span><span class="value" id="hkfs"></span></p>
+				<p><span class="text">借款时间:</span><span class="value" id="dateRange"></span></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="lmy_investList lmy_background"> 
+		<div class="investListTable">
+			<table>
+				<thead>
+					<tr id="loanOver">
+						<td style="width:5.4%;">期数</td>
+						<td style="width:10.3%;">本期还款日</td>
+						<td style="width:12%;">应还本息(元)</td>
+						<td style="width:10.1%;">实还日期</td>
+						<td style="width:12.5%;">实还本金(元)</td>
+						<td style="width:12.1%;">实还利息(元)</td>
+						<td style="width:9.6%;">逾期天数(天)</td>
+						<td style="width:12.7%;">已还本息(元)</td>
+						<td style="width:6.3%;">状态</td>
+						<td style="width:8.6%;">当期还款</td>
+					</tr>
+					<!-- <tr id="loanRunning" >
+						<td style="width:5.4%;">期数</td>
+						<td style="width:10.3%;">本期还款日</td>
+						<td style="width:12%;">应还本息(元)</td>
+						<td style="width:10.1%;">实还日期</td>
+						<td style="width:12.5%;">实还本金(元)</td>
+						<td style="width:12.1%;">实还利息(元)</td>
+						<td style="width:9.6%;">逾期天数(天)</td>
+						<td style="width:12.7%;">已还本息(元)</td>
+						<td style="width:6.3%;">状态</td> 
+					</tr> -->
+				</thead>
+				<tbody id="loadDespList">
+					<!-- <tr>
+						<td>1</td>
+						<td>2016-01-20 </td>
+						<td>600,000,000.00</td>
+						<td>2016-01-20</td>
+						<td>600,000,000.00</td>
+						<td>600,000,000.00</td>
+						<td>1</td>
+						<td>600,000,000.00</td>
+						<td>已完结</td>
+						<td><a class="viewLink" href="javascript:void(0);">立即还款</a></td>
+					</tr> 
+					<tr>
+						<td>1</td>
+						<td>2016-01-20 </td>
+						<td>600,000,000.00</td>
+						<td>2016-01-20</td>
+						<td>600,000,000.00</td>
+						<td>600,000,000.00</td>
+						<td>1</td>
+						<td>600,000,000.00</td>
+						<td>已完结</td>
+						<td><a class="viewLink" href="javascript:void(0);">立即还款</a></td> 
+					</tr> 
+					<tr>
+						<td>1</td>
+						<td>2016-01-20 </td>
+						<td>600,000,000.00</td>
+						<td>2016-01-20</td>
+						<td>600,000,000.00</td>
+						<td>600,000,000.00</td>
+						<td>1</td>
+						<td>600,000,000.00</td>
+						<td>已完结</td>
+						<td><a class="viewLink" href="javascript:void(0);">立即还款</a></td> 
+					</tr> 
+					<tr>
+						<td>1</td>
+						<td>2016-01-20 </td>
+						<td>600,000,000.00</td>
+						<td>2016-01-20</td>
+						<td>600,000,000.00</td>
+						<td>600,000,000.00</td>
+						<td>1</td>
+						<td>600,000,000.00</td>
+						<td>已完结</td>
+						<td><a class="viewLink" href="javascript:void(0);">立即还款</a></td> 
+					</tr> 
+					<tr>
+						<td>1</td>
+						<td>2016-01-20 </td>
+						<td>600,000,000.00</td>
+						<td>2016-01-20</td>
+						<td>600,000,000.00</td>
+						<td>600,000,000.00</td>
+						<td>1</td>
+						<td>600,000,000.00</td>
+						<td>已完结</td>
+						<td><a class="viewLink" href="javascript:void(0);">立即还款</a></td> 
+					</tr> 
+					<tr>
+						<td>1</td>
+						<td>2016-01-20 </td>
+						<td>600,000,000.00</td>
+						<td>2016-01-20</td>
+						<td>600,000,000.00</td>
+						<td>600,000,000.00</td>
+						<td>1</td>
+						<td>600,000,000.00</td>
+						<td>已完结</td>
+						<td><a class="viewLink" href="javascript:void(0);">立即还款</a></td> 
+					</tr> 
+					<tr>
+						<td>1</td>
+						<td>2016-01-20 </td>
+						<td>600,000,000.00</td>
+						<td>2016-01-20</td>
+						<td>600,000,000.00</td>
+						<td>600,000,000.00</td>
+						<td>1</td>
+						<td>600,000,000.00</td>
+						<td>已完结</td>
+						<td><a class="viewLink" href="javascript:void(0);">立即还款</a></td> 
+					</tr> 
+					<tr>
+						<td>1</td>
+						<td>2016-01-20 </td>
+						<td>600,000,000.00</td>
+						<td>2016-01-20</td>
+						<td>600,000,000.00</td>
+						<td>600,000,000.00</td>
+						<td>1</td>
+						<td>600,000,000.00</td>
+						<td>已完结</td>
+						<td><a class="viewLink" href="javascript:void(0);">立即还款</a></td> 
+					</tr> 
+					<tr>
+						<td>1</td>
+						<td>2016-01-20 </td>
+						<td>600,000,000.00</td>
+						<td>2016-01-20</td>
+						<td>600,000,000.00</td>
+						<td>600,000,000.00</td>
+						<td>1</td>
+						<td>600,000,000.00</td>
+						<td>已完结</td>
+						<td><a class="viewLink" href="javascript:void(0);">立即还款</a></td> 
+					</tr> 
+					<tr>
+						<td>1</td>
+						<td>2016-01-20 </td>
+						<td>600,000,000.00</td>
+						<td>2016-01-20</td>
+						<td>600,000,000.00</td>
+						<td>600,000,000.00</td>
+						<td>1</td>
+						<td>600,000,000.00</td>
+						<td>已完结</td>
+						<td><a class="viewLink" href="javascript:void(0);">立即还款</a></td> 
+					</tr>  -->
+				</tbody> 
+			</table>
+		</div>
+		<div class="lmy_investPage">
+			<div id="investDespPage"></div>
+		</div>
+	</div> 
+</div>

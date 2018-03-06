@@ -1,0 +1,11 @@
+.setDealPwd_wrapper,.setDealPwd_next_wrapper{
+	width: 944px;
+	height: 400px;
+	background: #f9fcff;
+}
+.setDealPwd_next_wrapper{
+	height: 358px;
+}
+.setDealPwd_wrapper #imgCode{
+	cursor: pointer;
+}

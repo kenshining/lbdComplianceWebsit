@@ -1,0 +1,852 @@
+<% include ../navheader.html %> 
+<%if(investmentDesp.state=='SUCCESS'){%> 
+<input type="hidden" value="<%=targetid%>" id="targetidHidden"/>
+<input type="hidden" value="<%=investmentDesp.timestamp%>" id="hd_server_time"/>
+<input type="hidden" value="<%=investmentDesp.data.mjStart%>" id="hd_auto_bid_time"/>
+<input type="hidden" value="<%=investmentDesp.data.mjEnd%>" id="hd_manual_bid_time"/>
+<input type="hidden" value="<%=investmentDesp.data.targetState%>" id="targetState"/>
+<input type="hidden" value="<%=investmentDesp.data.resultAmonut%>" id="resultAmonutOrigin"/>
+<input type="hidden" value="<%=investmentDesp.data.nhsyl%>" id="rateConfirm"/>
+<input type="hidden" value="" id="couponList"/> 
+<input type="hidden" value="<%=user%>" id="userInfo"/>
+<%if(user){%>
+	  <input type="hidden" value="<%=user.evaluateState%>" id="userEvaluateState"/>
+<%}else{%>
+	 <input type="hidden" value="0" id="userEvaluateState"/>
+<%}%>  
+
+<input type="hidden" value="<%=investmentDesp.data.otherContent.proves%>" id="proves"/>
+
+
+ 
+<div class="invest_main">  
+	<!-- 弹框 -->
+	<div class="hide" id="warnHtml">
+		<div class="filterlayer"></div>
+		<div class="warnDialog">
+			<h2>《投资资金风险提示书》</h2>
+			<div class="warnIntroduce">
+				<p class="warnTitle">尊敬的用户，您好！</p>
+				<p>欢迎您来到北京乐百贷财富投资有限公司（以下简称“乐百贷”）理财平台。您可根据您的投资需求，自愿选择通过乐百贷平台进行资金出借，以期获得相应预期收益。但在您出借资金的过程中，也许会面临可能导致您资金及收益受损的各种风险。为保障您出借资金的安全及相关合法权益，请您在与债务人达成资金交易前仔细阅读以下内容，了解资金出借的特征，并根据自身的风险承受能力选择是否出借资金及出借资金的数额。</p>
+				<p>当您点击“确认”“投资”“同意”或其他类似涵义选项时，即视为您已经充分理解本提示书内容，并自愿承担相应风险。</p>
+			</div>
+			<div class="warnContent">
+				<p class="warnTitle">1.政策风险</p>
+				<p>因国家宏观政策、财政政策、货币政策、监管导向、行业政策、地区发展政策等因素引起的风险。</p>
+				<p class="warnTitle">2.市场风险</p>
+				<p>因市场资金面紧张或利率波动、行业不景气、企业效益下滑等因素引起的风险。</p>
+				<p class="warnTitle">3.债务人/保证人信用风险</p>
+				<p>当债务人/保证人短期或者长期丧失还款能力，包括但不限于债务人/保证人收入情况、财产状况发生变化、人身出现意外、发生疾病、死亡等情况，或者债务人/保证人的还款意愿发生变化时，您出借的资金可能无法按时回收；乐百贷作为信息中介平台，不承诺本息保障。</p>
+				<p class="warnTitle">4.资金流动性风险</p>
+				<p>您按照约定将资金投资给债务人使用，在债务人不主动提前还款的情况下，债务人将按照约定的期限分期偿还本金和利息，您投资的资金将分期回收，因此资金回收需要一定的期限。同时，乐百贷平台将在您提出需要以及其他对您有利的时机，努力帮助您寻找、推荐愿意受让您通过乐百贷平台获得的债权的第三方，但乐百贷平台不能确保一定能够在您指定的时间内协助寻找到合适的债权受让人。</p>
+				<p class="warnTitle">5.技术风险</p>
+				<p>由于无法控制和不可预测的系统故障、设备故障、通讯故障、电力故障、网络故障、黑客或计算机病毒攻击、以及其它因素，可能导致乐百贷平台出现非正常运行或者瘫痪，由此导致您无法及时进行查询、出借、提现等操作。</p>
+				<p class="warnTitle">6.操作风险</p>
+				<p>如果您缺乏必要的互联网经验，可能出现因操作不当导致资金交易失败或失误。如果您未能谨慎保管自己的账号和密码，或者设置的密码简单导致密码被破解，以及您在进行资金交易时未能确保所使用的操作终端、网络以及周围环境的安全性，导致账号和密码被他人盗取、使用，可能导致违反您本人意愿的资金交易以及资金损失。由于乐百贷平台以账号和密码进行身份识别，一切以您认证方式进行的操作等均被视为您本人的操作，您将对此发生的一切后果承担全部责任。</p>
+				<p class="warnTitle">7.不可抗力风险</p>
+				<p>由于战争、动乱、自然灾害等不可抗力因素的出现而可能导致出借资金损失的风险。</p>
+			</div>
+ 			<div class="warnbottom">
+ 				<p>"本人已经阅读《投资资金风险提示书》的所有内容，充分了解并清楚知晓相应的权利义务，并愿意承担相关风险。"</p>
+				<p>风险提示方：北京乐百贷财富投资有限公司</p>
+ 			</div> 
+
+			<div>
+				<a class="btn btnRead" id="btnRead" href="#">我已阅读</a> 
+			</div>
+		</div>
+		<!-- <div class="dialog_close_btn icon-zh-close"></div> -->
+		<!-- <div class="ok icon-ok"></div>
+		<p class="orange">恭喜您，投资成功！</p>
+		<div class="dialogbtn">
+			<a href="">查看交易记录</a> 
+		</div> --> 
+	</div>
+	<div class="invest_content invest_desp_content_min_height"> 
+		<div class="invest_webmap">
+			<a href="/investment/investmentList" class="orange">我要投资</a>
+			>
+			<a href="#">项目详情</a>
+		</div>
+		<div class="invest_baseinfo">
+			<div class="baseinfo_title">
+				<div class='left'>
+					<span class="creditname">
+						<%if(investmentDesp.data.productid==103){%>
+							车辆周转贷
+						<%}%>
+						<%if(investmentDesp.data.productid==104){%>
+							房产周转贷
+						<%}%>
+						<%if(investmentDesp.data.productid==105){%>
+							个人消费贷
+						<%}%>
+						<%if(investmentDesp.data.productid==106){%>
+							个体经营贷
+						<%}%>
+						<%if(investmentDesp.data.productid==107){%>
+							农业贷
+						<%}%>
+						<%if(investmentDesp.data.productid==108){%>
+							企业经营贷
+						<%}%>
+
+					</span>
+					<span class="creditnum">借款编号 <span id="loanNumber"><%=investmentDesp.data.loanNumber%></span></span>
+				</div>
+				<div class='right'>
+					<!-- 是否登录 -->
+					<%if(user){%>
+						 <a class="orange" target="_blank" href="/investment/investorRiskAssessmentTest?history=/investment/investmentDescriptionById?id=<%=targetid%>">投资者风险评估测评</a>
+					<%}else{%>
+						<!-- 未登录 -->
+					 	<a class="orange" target="_blank" href="/user/login?history=/investment/investmentDescriptionById?id=<%=targetid%>">投资者风险评估测评</a>
+					<%}%>  
+					<a class="orange" id="riskWarningBook" href="javascript:void(0);">风险提示书</a>
+					<a class="orange" target="_blank" href="/agreement/sb_loan_protocol?targetId=<%=targetid%>">借款协议范本</a>
+
+				</div>
+			</div> 
+			<div class="baseinfo_con">
+				<div class="left invest_infoleft"> 
+					<div class="invest_desp_type_info clearfix">
+						<div class="rateValue">
+							<span class="rate">
+								<span class="topline orange"><span class="firstValue" id="rate" data-value='<%=investmentDesp.data.nhsyl%>'></span><span id="rateback" data-value='<%=investmentDesp.data.addRate%>'></span>
+								</span>
+							</span>
+							<span class="invest_deadline otherrate">
+								<span class="desp_value"><span id='investmentDeadline'><%=investmentDesp.data.htqx%></span>个月</span>
+							</span>
+							<span class="invest_borrow_money otherrate">
+								<span class="desp_value"><span class="symbolMargin">￥</span><span id='borrowMoney' data-value='<%=investmentDesp.data.htje%>'></span></span>
+							</span>
+							<span class="invest_leave otherrate">
+								<span class="desp_value"><span class="symbolMargin">￥</span><span id='resultAmonut' data-value='<%=investmentDesp.data.resultAmonut%>'></span></span>
+							</span>  
+						</div>
+						<div class="rateText">
+							<span class="rate">
+								<p class="desp_name">预期年化收益率</p> 
+							</span>
+							<span class="invest_deadline otherrate">
+								<p class="desp_name">投资期限</p> 
+							</span>
+							<span class="invest_borrow_money otherrate">
+								<p class="desp_name">借款金额</p>
+							</span>
+							<span class="invest_leave otherrate">
+								<p class="desp_name">剩余可投金额</p>
+							</span>  
+						</div>
+					 
+					</div>
+					<div class="invest_borrow_type clearfix">
+						<div class="repayment_type">
+							 <span class="desp_name">还款方式</span>
+							 <span class="desp_info" id="repaymentMethod">
+							 	<%if(investmentDesp.data.hkfs==3){%>
+									等额本息
+							 	<%}%>
+							 	<%if(investmentDesp.data.hkfs==2){%>
+									按月付息到期还本
+							 	<%}%>
+							 	<%if(investmentDesp.data.hkfs==1){%>
+									一次性还本付息
+							 	<%}%> 
+							 </span>
+						</div>
+						<div class="value_date">
+							 <span class="desp_name">计息方式</span>
+							 <span class="desp_info">放款次日计息</span>
+						</div>
+						<div class="remain_time" id='countDown'> 
+							
+						</div> 
+					</div>
+					<div class="invest_progress clearfix">
+						<div class='left' style="width:260px;">
+							<span class="desp_name">风险保障</span>
+							<span class="desp_info">项目备付金</span> 
+						</div>
+						<div class="left">
+							<span class="desp_name">项目进度</span> 
+						<%if(Math.round(investmentDesp.data.investAmount/investmentDesp.data.htje*100)>100){%>
+							<span class="pro_bar bg_gray"><span class="bg_blue" style="width:100%;"></span></span>
+							<span class="desp_info">100%</span>  
+						<%}else{%>
+							<span class="pro_bar bg_gray"><span class="bg_blue" style="width:<%=Math.floor(investmentDesp.data.investAmount/investmentDesp.data.htje*100)%>%;"></span></span>
+							<span class="desp_info"><%=Math.floor(investmentDesp.data.investAmount/investmentDesp.data.htje*100)%>%</span>  
+						<%}%> 
+						</div>
+						
+					</div>
+					<div class="investTip">温馨提示：市场有风险，投资需谨慎</div>
+
+				</div>
+				<div class="left invest_now">
+					<div class="invest_now_con "> 
+						<!-- 标的状态:1立即投资 2即将开放 3已满标 4还款中 5已完结  --> 
+						<%if(investmentDesp.data.targetState==1){%>
+							<!-- 是否登录 -->
+							<%if(user){%>
+								<p>
+									<span class="desp_name">账户可用余额</span> 
+									<span class="right orange" data-value="<%=accountBalance%>" id="accountBalance"><%=accountBalance%></span> 
+								</p>
+								<p>
+									<span class="desp_name">可用优惠劵</span>
+									<span class="right"><span class="orange" id="bonusLength"><%=bonuslength%></span>张</span>
+								</p>
+								<div id="errorText" class="invest_error_text invisibility">金额必须为10的整数倍且不少于¥100</div>
+								<div class="money_input">
+									<span class="desp_name invisibility">￥</span>
+									<input class="" type="text" id="inputInvestMoney" placeholder="起投金额￥100.00，以10的整数倍叠加" >
+								</div>
+								<p>
+									<span class="desp_name">预期收益</span>
+									<span class="right orange" id="planYield">--</span>
+								</p>
+								<div>
+									<a href="#" class="btn_now_invest bg_orange btnhover" id='btnImmediateInvest'>立即投资</a> 
+								</div>
+							<%}else{%>
+								<!-- 未登录 -->
+								<p>
+									<span class="desp_name">账户可用余额</span>
+									<span class="right"><a target="_blank" class="orange" id="btnlogin">登录</a>可见</span> 
+								</p>
+								<p class="invisibility">
+									<span class="desp_name">可用优惠劵</span>
+								</p>
+								<div id="errorText" class="invest_error_text invisibility">金额必须为10的整数倍且不少于¥100</div>
+								<div class="money_input">
+									<span class="desp_name invisibility">￥</span>
+									<input class="" type="text" id="inputInvestMoney" placeholder="起投金额￥100.00，以10的整数倍叠加" >
+								</div>
+								<p>
+									<span class="desp_name">预期收益</span>
+									<span class="right orange" id="planYield">--</span>
+								</p>
+								<div>
+									<a href="#" class="btn_now_invest bg_orange btnhover" id='btnImmediateInvest'>立即投资</a> 
+								</div>
+							<%}%> 
+						<%}%>
+						<%if(investmentDesp.data.targetState==2){%>
+							<!-- 是否登录 -->
+							<%if(user){%>
+								<p>
+									<span class="desp_name">账户可用余额</span>
+									<span class="right orange" id="accountBalance"><%=accountBalance%></span> 
+								</p>
+								<p>
+									<span class="desp_name">可用优惠劵</span>
+									<span class="right"><span class="orange" id="bonusLength"><%=bonuslength%></span>张</span>
+								</p>
+								<div id="errorText" class="invest_error_text invisibility">金额必须为10的整数倍且不少于¥100</div>
+								<div class="money_input">
+									<span class="desp_name invisibility">￥</span>
+									<input class="" type="text" id="inputInvestMoney" placeholder="起投金额￥100.00，以10的整数倍叠加" >
+								</div>
+								<p>
+									<span class="desp_name">预期收益</span>
+									<span class="right orange" id="planYield">--</span>
+								</p>
+								<div> 
+									<a href="#" class="btn_now_invest bg_orange btninvest_disabled">即将开放</a>
+								</div>
+							<%}else{%>
+								<!-- 未登录 -->
+								<p>
+									<span class="desp_name">账户可用余额</span>
+									<span class="right"><a class="orange" id="btnlogin" href="#">登录</a>可见</span> 
+								</p>
+								<p class="invisibility">
+									<span class="desp_name">可用优惠劵</span>
+									 
+								</p>
+								<div id="errorText" class="invest_error_text invisibility">金额必须为10的整数倍且不少于¥100</div>
+								<div class="money_input">
+									<span class="desp_name invisibility">￥</span>
+									<input class="" type="text" id="inputInvestMoney" placeholder="起投金额￥100.00，以10的整数倍叠加" >
+								</div>
+								<p>
+									<span class="desp_name">预期收益</span>
+									<span class="right orange" id="planYield">--</span>
+								</p>
+								<div> 
+									<a href="#" class="btn_now_invest bg_orange btninvest_disabled">即将开放</a>
+								</div>
+							<%}%> 
+
+						<%}%>
+						<%if(investmentDesp.data.targetState==3){%>
+							<div class="invest_ok_con">
+								 <div class="desp_name">待还本息</div>
+								 <div class="desp_value desp_money"><%=investmentDesp.data.whbjlx%></div>
+								 <div class="desp_name">满标时间</div>
+								 <div class="desp_value desp_time" style="font-size:20px;"><%=investmentDesp.data.fullDate%></div> 	
+								 <a href="#" class="investdesp_iconstate icon-lfullmark"></a>  
+							</div> 
+						<%}%> 
+						<%if(investmentDesp.data.targetState==4){%>
+							<div class="invest_ok_con">
+								 <div class="desp_name">本期待还本息</div>
+								 <div class="desp_value desp_money"><%=investmentDesp.data.whbjlx%></div>
+								 <div class="desp_name">本期还款日</div>
+								 <div class="desp_value desp_time" style="font-size:20px;">
+									<%if(investmentDesp.data.yhkr){%>
+										<%=investmentDesp.data.yhkr.split(" ")[0]%>
+									<%}%>
+								 	</div> 	
+								 <a href="#" class="investdesp_iconstate icon-lpaying"></a>  
+							</div> 
+						<%}%> 
+						<%if(investmentDesp.data.targetState==5){%>
+							<div class="invest_ok_con">
+								 <div class="desp_name">已还本息</div>
+								 <div class="desp_value desp_money"><%=investmentDesp.data.backTotal%></div>
+								 <div class="desp_name">完结时间</div>
+								 <div class="desp_value desp_time" style="font-size:20px;"><%=investmentDesp.data.endDate%></div> 	
+								 <a href="#" class="investdesp_iconstate icon-lover"></a>  
+							</div> 
+						<%}%> 
+						<%if(investmentDesp.data.targetState==6){%>
+							<div class="invest_ok_con">
+								 <div class="desp_name">已募集金额</div>
+								 <div class="desp_value desp_money"><%=investmentDesp.data.investAmount%></div>
+								 <div class="desp_name">流标时间：</div>
+								 <div class="desp_value desp_time" style="font-size:20px;"><%=investmentDesp.data.mjEnd%></div> 	
+								 <a href="#" class="investdesp_iconstate icon-flowLabel"></a>  
+							</div> 
+						<%}%> 
+						 
+					</div>
+					
+				</div>
+
+			</div>
+		</div>
+		<div class="investdesp_info">
+			<div class="investdesp_title">
+				<div class="select"><a href="javascript:void(0);">借款详情</a></div>
+				<div class=""><a href="javascript:void(0);">项目周期</a></div>
+				<div class=""><a href="javascript:void(0);">还款计划</a></div>
+				<div class=""><a href="javascript:void(0);">投资记录</a></div>
+
+				<p class="fixedBorder"></p>
+			</div>
+			<div class="investdesp_con">
+				<div id="tab0" class="loan_detail">
+					<div class="detail_list">
+						<div class="detail_title"><span class="icon icon-lpoint"></span>借款人信息</div>
+						<div class="detail_con"> 
+                            <div class="width_div"> 
+								<span class="desp_name">真实姓名：</span>
+								<span class="desp_info" id='realname'><%=investmentDesp.data.otherContent.realname%></span>
+							</div>
+							 <div class="width_div">
+								<span class="desp_name">性别：</span>
+								<span class="desp_info">
+									<%if(investmentDesp.data.otherContent.sex==1){%>
+									女
+									<%}%>
+									<%if(investmentDesp.data.otherContent.sex==2){%>
+									男
+									<%}%>
+								</span>
+							</div>
+							 <div class="width_div">
+								<span class="desp_name">年龄(岁)：</span>
+								<span class="desp_info" id="userage">
+									<%=investmentDesp.data.otherContent.age%></span>
+							</div>
+							<div class="width_div">
+								<span class="desp_name">身份证号：</span>
+								<span class="desp_info" id="idcard"><%=investmentDesp.data.otherContent.idcard%></span>
+							</div> 
+							<div class="width_div">
+								<span class="desp_name">联系电话：</span>
+								<span class="desp_info" id='mobile'><%=investmentDesp.data.otherContent.mobile%></span>
+							</div> 
+							<div class="width_div">
+								<span class="desp_name">教育情况：</span>
+								<span class="desp_info">
+									<%if(investmentDesp.data.otherContent.edustate==1){%>
+										初中及以下
+									<%}else if(investmentDesp.data.otherContent.edustate==2){%>
+										高中
+									<%}else if(investmentDesp.data.otherContent.edustate==3){%>
+										专科
+									<%}else if(investmentDesp.data.otherContent.edustate==4){%>
+										本科
+									<%}else if(investmentDesp.data.otherContent.edustate==5){%>
+										硕士及以上
+									<%}else{%>
+
+									<%}%> 
+								</span>
+							</div> 
+							<div class="width_div">
+								<span class="desp_name">婚姻状况：</span> 
+								<span class="desp_info"> 
+									<%if(investmentDesp.data.otherContent.marriagestate==1){%>
+										未婚
+									<%}else if(investmentDesp.data.otherContent.marriagestate==2){%>
+										已婚
+									<%}else if(investmentDesp.data.otherContent.marriagestate==3){%>
+										离异
+									<%}else if(investmentDesp.data.otherContent.marriagestate==4){%>
+										丧偶
+									<%}else{%>
+									
+									<%}%>
+								</span>
+							</div> 
+							<div class="width_div">
+								<span class="desp_name">户籍所在地：</span> 
+								<span class="desp_info" id="hjaddress"><%=investmentDesp.data.otherContent.hjaddress%></span>
+							</div> 
+							<div class="width_div">
+								<span class="desp_name">现居住地：</span>
+								<span class="desp_info" id='xxjzaddress'><%=investmentDesp.data.otherContent.xxjzaddress%></span>
+							</div> 
+							<div class="width_div">
+								<span class="desp_name">居住年限(年)：</span>
+								<span class="desp_info"><%=investmentDesp.data.otherContent.bdjznx%></span>
+							</div>  
+						</div>
+					</div>
+					<div class="detail_list">
+						<div class="detail_title"><span class="icon icon-lpoint"></span>资产信息</div>
+						<div class="detail_con"> 
+							<div class="width_div">
+								<span class="desp_name">月收入：</span>
+								<span class="desp_info" id="moneyByMonth"><%=investmentDesp.data.otherContent.ygzsr.toString()%></span>
+							</div> 
+							<div class="width_div">
+								<span class="desp_name">家庭年收入：</span>
+								<span class="desp_info" id="moneyByYear"><%=investmentDesp.data.otherContent.nzsr%></span>
+							</div> 
+							<div class="width_div">  
+								<span class="desp_name">购车情况：</span>
+								<span class="desp_info"> 
+									<%if(investmentDesp.data.otherContent.gcqk==1){%>
+										全款购车
+									<%}else if(investmentDesp.data.otherContent.gcqk==2){%>
+										按揭购车
+									<%}else if(investmentDesp.data.otherContent.gcqk==3){%>
+										无
+									<%}%>
+								</span>
+							</div> 
+							<div class="width_div">
+								<span class="desp_name">住房情况：</span>
+								<span class="desp_info">
+									<%if(investmentDesp.data.otherContent.housestate==1){%>
+										自有完全产权住宅
+									<%}else if(investmentDesp.data.otherContent.housestate==2){%>
+										按揭
+									<%}else if(investmentDesp.data.otherContent.housestate==3){%>
+										租赁
+									<%}else if(investmentDesp.data.otherContent.housestate==4){%>
+										亲属/父母家
+									<%}else if(investmentDesp.data.otherContent.housestate==5){%>
+										公司宿舍
+									<%}else if(investmentDesp.data.otherContent.housestate==6){%>
+										其他
+									<%}%>
+
+								</span>
+							</div>  
+						</div>
+					</div>
+					<div class="detail_list">
+						<div class="detail_title"><span class="icon icon-lpoint"></span>工作信息</div>
+						<div class="detail_con"> 
+							<div class="width_div">
+								<span class="desp_name">工作单位类型：</span>
+								<span class="desp_info"><%=investmentDesp.data.otherContent.wcompanytype%></span>
+							</div>  
+							<div class="width_div">
+								<span class="desp_name">公司规模：</span>
+								<span class="desp_info"><%=investmentDesp.data.otherContent.gsgm%></span>
+							</div> 
+							<div class="width_div">
+								<span class="desp_name">职业类型：</span>
+								<span class="desp_info"> 
+									<%if(investmentDesp.data.otherContent.occutype==1){%>
+										工薪族
+									<%}else if(investmentDesp.data.otherContent.occutype==2){%>
+										企业主
+									<%}else if(investmentDesp.data.otherContent.occutype==3){%>
+										自由职业
+									<%}else if(investmentDesp.data.otherContent.occutype==4){%>
+										其他
+									<%}%>
+								</span>
+							</div> 
+							<div class="width_div">
+								<span class="desp_name">工作单位行业：</span>
+								<span class="desp_info workUnit"><span><%=investmentDesp.data.otherContent.gszyyw%></span></span> 
+								<div id="workUnitTip" class="hide">
+									<div><img class="arrowtip" src="/dist/images/tipArrow.png?v=ccf0acb14d"></div>
+									<div class="alertTip">
+ 										<%=investmentDesp.data.otherContent.gszyyw%>
+									</div>
+								</div>
+								
+
+							</div>
+							<div class="width_div">
+								<span class="desp_name">工作地点：</span>
+								<span class="desp_info" id='workAddress'><%=investmentDesp.data.otherContent.gsadd%></span>
+							</div> 
+							<div class="width_div">
+								<span class="desp_name">入职日期：</span>
+								<span class="desp_info"><%=investmentDesp.data.otherContent.wjoindate.split(' ')[0]%></span>
+							</div>  
+						</div>
+					</div> 
+					<div class="detail_list">
+						<div class="detail_title"><span class="icon icon-lpoint"></span>借款描述</div>
+						<div class="detail_con">
+							<div class="desp_wrap">
+								<span class="desp_info desp_text"><%=investmentDesp.data.borrowuse%></span>
+							</div>
+						</div>
+					</div> 
+					<%if(investmentDesp.data.otherContent.proves.length!=0){%>
+					<div class="detail_list">
+						<div class="detail_title"><span class="icon icon-lpoint"></span>资料证明</div> 
+						<div class="detail_assets_con">
+							<div class="detail_assets">
+								<%investmentDesp.data.otherContent.proves.forEach(function(resource){%>
+									<div>
+										<span class="icon icon-lok">
+											<span class="desp_info" style="width:110px;">
+												<%if(resource.otype==2){%>
+													身份证正反面
+												<%}else if(resource.otype==3){%>
+													收入证明
+												<%}else if(resource.otype==4){%>
+													工作证明
+												<%}else if(resource.otype==5){%>
+													居住地证明
+												<%}else if(resource.otype==6){%>
+													信用报告
+												<%}else if(resource.otype==8){%>
+													房产证明
+												<%}else if(resource.otype==12){%>
+													其他
+												<%}else if(resource.otype==19){%>
+													车辆证明
+												<%}else if(resource.otype==20){%>
+													户口信息
+												<%}else if(resource.otype==21){%>
+													银行流水
+												<%}%> 
+											</span>
+										</span> 
+									</div>  
+								<%})%> 
+							</div>
+							<div class="detail_assets_photo"> 
+							    <div class="dscont clearfix">
+							        <ul class="pic_slide" data-index="1"> 
+							        	<%investmentDesp.data.otherContent.proves.forEach(function(resource,index){%>   
+											<li>
+						                    	<a href="<%=imageServer%><%=resource.filecontent%>" class="fancybox1" rel="fancybox1"data-title="
+												<%if(resource.otype==2){%>
+													身份证正反面
+												<%}else if(resource.otype==3){%>
+													收入证明
+												<%}else if(resource.otype==4){%>
+													工作证明
+												<%}else if(resource.otype==5){%>
+													居住地证明
+												<%}else if(resource.otype==6){%>
+													信用报告
+												<%}else if(resource.otype==8){%>
+													房产证明
+												<%}else if(resource.otype==12){%>
+													其他
+												<%}else if(resource.otype==19){%>
+													车辆证明
+												<%}else if(resource.otype==20){%>
+													户口信息
+												<%}else if(resource.otype==21){%>
+													银行流水
+												<%}%> 
+						                		">
+						                    		<img src="<%=imageServer%><%=resource.filecontent%>">
+						                    	</a>
+						                    	<div class="resourceDesp">
+						                    		<%if(resource.otype==2){%>
+														身份证正反面
+													<%}else if(resource.otype==3){%>
+														收入证明
+													<%}else if(resource.otype==4){%>
+														工作证明
+													<%}else if(resource.otype==5){%>
+														居住地证明
+													<%}else if(resource.otype==6){%>
+														信用报告
+													<%}else if(resource.otype==8){%>
+														房产证明
+													<%}else if(resource.otype==12){%>
+														其他
+													<%}else if(resource.otype==19){%>
+														车辆证明
+													<%}else if(resource.otype==20){%>
+														户口信息
+													<%}else if(resource.otype==21){%>
+														银行流水
+													<%}%> 
+						                    	</div>
+						                    </li>
+										<%})%>  
+							    	</ul>
+							    </div> 
+							</div>
+						</div>
+					</div> 
+					<%}%>
+					<div class="detail_list">
+						<div class="detail_title"><span class="icon icon-lpoint"></span>风控师意见</div>
+						<div class="detail_con">
+							<div class="desp_wrap"><span class="desp_info textDesp desp_text"><%=investmentDesp.data.remark%></span></div>
+						</div>
+					</div> 
+					<div class="detail_list">
+						<div class="detail_title"><span class="icon icon-lpoint"></span>乐百贷信用信息</div>
+						<div class="detail_con"> 
+							<div class="width_div width_div1">
+								<span class="desp_name safariBackground">申请借款（笔）：</span>
+								<span class="desp_info safariBackground"><%=investmentDesp.data.credit.Totlejiekuannumber%></span>
+							</div>
+							<div class="width_div width_div2">
+								<span class="desp_name safariBackground">信用额度：</span>
+								<span class="desp_info safariBackground" id="creditLine"><%=investmentDesp.data.credit.Totlexinyong%></span>
+							</div>
+							<div class="width_div width_div3">
+								<span class="desp_name safariBackground">逾期金额：</span>
+								<span class="desp_info safariBackground" id='pastDue'><%=investmentDesp.data.credit.Totalyuqijine%></span>
+							</div>
+							<div class="width_div width_div4">
+								<span class="desp_name safariBackground">成功借款（笔）：</span>
+								<span class="desp_info safariBackground"><%=investmentDesp.data.credit. TotlecountAmount%></span>
+							</div> 
+							<div class="width_div width_div1">
+								<span class="desp_name safariBackground">借款总额：</span>
+								<span class="desp_info safariBackground" id="borrowTotal"><%=investmentDesp.data.credit.Totlejiekuanzonge%></span>
+							</div>
+							<div class="width_div width_div2">
+								<span class="desp_name safariBackground">逾期次数（次）：</span>
+								<span class="desp_info safariBackground"><%=investmentDesp.data.credit.Totleyuqicishu%></span>
+							</div>
+							<div class="width_div width_div3">
+								<span class="desp_name safariBackground">完结笔数（笔）：</span>
+								<span class="desp_info safariBackground"><%=investmentDesp.data.credit.Totlewanjiebishu%></span>
+							</div>
+							<div class="width_div width_div4">
+								<span class="desp_name safariBackground">待还本息：</span>
+								<span class="desp_info safariBackground" id="toRepay"><%=investmentDesp.data.credit.Totlebenxi%></span>
+							</div> 
+						</div> 
+						<%if(investmentDesp.data.history.length!=0){%>
+						<div class="history_borrow">历史借款（最近5笔）</div>
+						<div class="borrow_table">
+							<table>
+								<tr class="head">
+									<td class="td1">借款编号</td>
+									<td class="td2">预期年化收益率</td>
+									<td class="td3">金额（元）</td>
+									<td class="td4">状态</td>
+									<td class="td5">标的发布时间</td>
+								</tr> 
+								<%investmentDesp.data.history.forEach(function(historyitem){%>
+									<tr>
+										<td><%=historyitem.loanNumber%></td>
+										<td class="history_nhsyl"><%=historyitem.nhsyl%></td>
+										<td class="swfkje"><%=historyitem.htje%></td>
+										<td>
+											<%if(historyitem.targetState==5||historyitem.targetState==4){%>
+												成功
+											<%}else{%>
+												流标
+											<%}%>
+										</td>
+										<td><%=historyitem.auditTime%></td>
+									</tr>
+								<%})%> 
+							</table>
+						</div>
+						<%}%> 
+						<%if(investmentDesp.data.overdues.length!=0||investmentDesp.data.overdues==null){%>
+						<div class="history_borrow">逾期记录（12个月内的逾期，与应还款日比较）</div>
+						<div class="borrow_table">
+							<table>
+								<tr class="head">
+									<td>应还款日期</td>
+									<%investmentDesp.data.overdues.forEach(function(duedate){%>
+										<td><%=duedate.backMoneyDay%></td>
+									<%})%>  
+								</tr>
+								<tr>
+									<td>最大逾期天数</td>
+									<%investmentDesp.data.overdues.forEach(function(duedate){%>
+										<td><%=duedate.overDay%></td>
+									<%})%> 
+								</tr> 
+							</table>
+						</div>
+						<%}%>
+					</div>
+				</div>
+				<div id="tab1" class="projectCycle hide">
+					<div class="clearfix">
+						<div class="left cycleInfo" id="cycleStartTime">
+							<div class="cycletitle">
+								<div class="cycleIcon">
+									<em class="iconStart"></em>
+								</div>
+								<p>项目开标</p>
+								<p>立即投资</p>
+							</div>
+							<div class="cycleline">
+								<em class="point"></em>
+								<div class="line"></div>
+							</div>
+							<div class="cycleTime">
+								<p class="timeText">开始时间</p>
+								<p class="timeValue"> </p>
+							</div>
+						</div>
+						<div class="left cycleInfo" id="cycleDuration">
+							<div class="cycletitle">
+								<div class="cycleIcon">
+									<em class="iconRaise iconRaiseGray"></em>
+								</div>
+								<p>募集满标</p>
+								<p>财务审核</p>
+							</div>
+							<div class="cycleline">
+								<em class="point pointgray"></em>
+								<div class="line"></div>
+							</div>
+							<div class="cycleTime">
+								<p class="timeText">募集时长</p>
+								<p class="timeValue"> </p>
+							</div>
+						</div>
+						<div class="left cycleInfo" id="cycleLendingDay">
+							<div class="cycletitle">
+								<div class="cycleIcon">
+									<em class="iconLoan iconLoanGray"></em>
+								</div>
+								<p>放款给</p>
+								<p>借款人</p>
+							</div>
+							<div class="cycleline">
+								<em class="point pointgray"></em>
+								<div class="line"></div>
+							</div>
+							<div class="cycleTime">
+								<p class="timeText">放款时间</p>
+								<p class="timeValue"> </p>
+							</div>
+						</div>
+						<div class="left cycleInfo" id="cycleDeadline">
+							<div class="cycletitle">
+								<div class="cycleIcon">
+									<em class="iconRepay iconRepayGray"></em>
+								</div>
+								<p>借款人还款</p>
+								<p>投资人收款</p>
+							</div>
+							<div class="cycleline">
+								<em class="point pointgray"></em> 
+							</div>
+							<div class="cycleTime">
+								<p class="timeText">还款期限</p>
+								<p class="timeValue"> </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="tab2" class="repayment_plan hide">
+					<div class="repayment_plan_table">
+						<table>
+							<tr class="head">
+								<td width="129px">序号</td>
+								<td width="102px">期数</td>
+								<td width="173px">还款本息(元)</td>
+								<td width="164px">还款本金(元)</td>
+								<td width="167px">还款利息(元)</td>
+								<td width="153px">本期还款日</td>
+								<td width="168px">还款状态</td>
+							</tr>
+							<tbody id="repaymentPlanlist">
+								
+							</tbody> 
+						</table> 
+						<div class="invest_pagination">
+							<div id="repayment_pager"></div>
+						</div> 
+					</div>
+				</div>
+				<div id="tab3" class="investment_record hide">
+					<div class="investment_record_table">
+						<div class="record_table_desp">
+							<span class="desp_name">投资人数(人)：</span>
+							<span class="desp_info" id="investmentNum"></span>
+							<span class="desp_name">投资金额：</span>
+							<span class="desp_info" id="investmentMoney"></span>
+						</div>
+						<table>
+							<tr class="head">
+								<td>投资人</td>
+								<td>投资金额(元)</td>
+								<td>投资时间</td>
+							</tr>
+							<tbody id='investmentRecordList'>
+								
+							</tbody> 
+						</table>
+						<div class="invest_pagination">
+							<div id="investment_record_pager"></div>
+						</div> 
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+</div>
+<%}else{%>  
+	<input type="hidden" value="<%=investmentDesp.message%>" id="errorText"/> 
+<%}%>
+
+
+
+<input type="hidden" name="_csrf" id="_csrf" value="<%=_csrf%>"/> 
+
+<link rel="stylesheet" href="/plugins/fancybox/css/carousel.css">   
+<link rel="stylesheet" type="text/css" href="/plugins/fancybox/css/jquery.fancybox.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/plugins/fancybox/css/jquery.fancybox-buttons.css"> 
+ 
+<script src="/plugins/fancybox/js/jquery.bxslider.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="/plugins/fancybox/js/jquery.mousewheel.pack.js"></script>
+<script type="text/javascript" src="/plugins/fancybox/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="/plugins/fancybox/js/jquery.fancybox-buttons.js"></script> 
+<script type="text/javascript" src="/dist/javascripts/main_control.min.js?v=d7665457b0"></script>
+<script type="text/javascript" src="/dist/javascripts/investment/investmentDescription_control.min.js?v=a4efdde49c"></script>
+
+<script type="text/javascript" src="/dist/javascripts/countdown_load.min.js?v=5daa80bf91"></script>
+
+<% include ../footer.html %> 
+
+

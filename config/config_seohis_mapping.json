@@ -1,0 +1,25 @@
+{
+	"seoHost":"https://www.lebaidai.com",
+	"seoPathConfig":[
+		{"acceptURL":"/aboutus","redirectURL":"/about/companyProfile"},
+		{"acceptURL":"/app/loadApp","redirectURL":"/index/appDownload"},
+		{"acceptURL":"/cnews","redirectURL":"/about/companNews"},
+		{"acceptURL":"/contactus","redirectURL":"/about/contact"},
+		{"acceptURL":"/detail","redirectURL":"/about/announcement_details"},
+		{"acceptURL":"/lecunbao","redirectURL":"/investment/lecunbaoInvestment"},
+		{"acceptURL":"/loanInfoMore","redirectURL":"/investment/standardInvestment"},
+		{"acceptURL":"/newerGuide","redirectURL":"/guide/newbieGuide"},
+		{"acceptURL":"/notices","redirectURL":"/about/announcement"},
+		{"acceptURL":"/purposeLoan/toPurposeLoan","redirectURL":"/loan/loan"},
+		{"acceptURL":"/question","redirectURL":"/about/frequentlyAskedQuestions"},
+		{"acceptURL":"/regist/toLogin","redirectURL":"/user/login"},
+		{"acceptURL":"/regist/toRegist","redirectURL":"/user/regist"},
+		{"acceptURL":"/report","redirectURL":"/about/mediaNews"},
+		{"acceptURL":"/sitemap.html","redirectURL":"/about/websiteMaps"},
+		{"acceptURL":"/tnews","redirectURL":"/about/industryNews"},
+		{"acceptURL":"/toInvestProductList","redirectURL":"/investment/lecunbaoInvestment"},
+		{"acceptURL":"/userAccount/accountBrowse","redirectURL":"/user/login"},
+		{"acceptURL":"/toTH","redirectURL":"/investment/lecunbaoInvestment"},
+		{"acceptURL":"/joinUs","redirectURL":"/about/joinUs"}
+	]
+}
